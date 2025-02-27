@@ -1,0 +1,1 @@
+﻿// Identity-related configurations (if using Identity)
