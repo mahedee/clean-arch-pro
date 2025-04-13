@@ -1,6 +1,6 @@
-﻿using EduTrack.Application.Features.Students.Queries;
+﻿using EduTrack.Application.Features.Students.Commands;
+using EduTrack.Application.Features.Students.Queries;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduTrack.Api.Controllers
@@ -25,6 +25,44 @@ namespace EduTrack.Api.Controllers
         {
             var result = await _mediator.Send(new GetAllStudentsQuery());
             return Ok(result);
+        }
+
+        // GET: api/students/{id}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var query = new GetStudentByIdQuery { Id = id };
+            var result = await _mediator.Send(query);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+
+        // POST: api/students
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateStudentCommand command)
+        {
+            var id = await _mediator.Send(command);
+            return CreatedAtAction(nameof(GetById), new { id }, command);
+        }
+
+        // PUT: api/students/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateStudentCommand command)
+        {
+            if (id != command.Id)
+                return BadRequest("ID mismatch");
+
+            var result = await _mediator.Send(command);
+            return result ? NoContent() : NotFound();
+        }
+
+        // DELETE: api/students/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var command = new DeleteStudentCommand { Id = id };
+            var result = await _mediator.Send(command);
+            return result ? NoContent() : NotFound();
         }
     }
 }
