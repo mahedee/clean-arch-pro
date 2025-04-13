@@ -1,6 +1,7 @@
 
 using EduTrack.Application.DependencyInjection;
 using EduTrack.Infrastructure.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 namespace EduTrack.Api
 {
@@ -13,8 +14,12 @@ namespace EduTrack.Api
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+
+            // Add Swagger generation and configure OpenAPI (Swagger) services
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EduTrack API", Version = "v1" });
+            });
 
             // Add application services
             builder.Services.AddApplication();
@@ -29,7 +34,13 @@ namespace EduTrack.Api
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+                // Enable Swagger UI in development environment
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "EduTrack API v1");
+                    c.RoutePrefix = string.Empty; // To serve Swagger UI at the root (e.g., http://localhost:5000)
+                });
             }
 
             app.UseHttpsRedirection();
