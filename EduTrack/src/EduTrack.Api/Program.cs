@@ -1,4 +1,7 @@
 
+using EduTrack.Application.DependencyInjection;
+using EduTrack.Infrastructure.DependencyInjection;
+
 namespace EduTrack.Api
 {
     public class Program
@@ -12,6 +15,14 @@ namespace EduTrack.Api
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            // Add application services
+            builder.Services.AddApplication();
+
+            // Add infrastructure services
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+
 
             var app = builder.Build();
 
