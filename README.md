@@ -114,23 +114,34 @@ __5. Browse Swagger__
 
 ---
 
-## ✅ Contribution
-
-We welcome contributions from the community! Check out our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
-
-Some ways to contribute:
-- Report bugs
-- Suggest new features
-- [Create pull requests](pullrequest-guidelines.md)
-- Improve documentation
+Here's the rewritten and improved version of your contribution section with relevant issue templates and pull request guideline links included:
 
 ---
 
-## 🐛 Reporting Issues
+## ✅ Contributing
 
-If you discover a bug, please [open an issue](https://github.com/mahedee/clean-arch-pro/issues/new?template=bug_report.md) using our bug report template.
+We welcome contributions from the community! Whether you're fixing a bug, adding a feature, or improving documentation, your help is appreciated.
 
+🔧 To get started, please read our [Contribution Guidelines](CONTRIBUTING.md).
 
+### 🙌 Ways to Contribute
+
+* 🐞 [Report a bug](https://github.com/mahedee/clean-arch-pro/issues/new?template=bug_report.md)
+* 💡 [Suggest a new feature](https://github.com/mahedee/clean-arch-pro/issues/new?template=feature_request.md)
+* 📝 [Improve the documentation](https://github.com/mahedee/clean-arch-pro/issues/new?template=documentation_improvement.md)
+* 🔁 [Submit a pull request](pullrequest-guidelines.md)
+
+---
+
+Here's the rewritten section for general issues, excluding the 4 specific categories you've already mentioned:
+
+---
+
+### 🛠️ General Issues
+
+If you have any concerns, suggestions, or questions that don't fall into the categories of bugs, features, or documentation improvements, please [open a general issue](https://github.com/mahedee/clean-arch-pro/issues/new?template=general_issue.md).
+
+Feel free to provide as much detail as possible to help us understand your request or discussion point. Whether it’s feedback, a discussion about potential improvements, or something else entirely, we welcome your input!
 
 
 ## 📜 License
