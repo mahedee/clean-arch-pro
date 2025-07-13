@@ -1,5 +1,5 @@
-﻿using EduTrack.Infrastructure.Data;
-using EduTrack.Infrastructure.Repositories.Interfaces;
+﻿using EduTrack.Domain.Repositories;
+using EduTrack.Infrastructure.Data;
 
 namespace EduTrack.Infrastructure.Repositories
 {

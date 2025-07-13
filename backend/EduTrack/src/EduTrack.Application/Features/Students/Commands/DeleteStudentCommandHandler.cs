@@ -1,4 +1,4 @@
-﻿using EduTrack.Infrastructure.Repositories.Interfaces;
+﻿using EduTrack.Domain.Repositories;
 using MediatR;
 using System;
 using System.Collections.Generic;

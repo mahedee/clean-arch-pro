@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EduTrack.Application\EduTrack.Application.csproj" />
+    <ProjectReference Include="..\EduTrack.Infrastructure\EduTrack.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

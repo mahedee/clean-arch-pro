@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EduTrack.Application.Features.Students.Dtos;
-using EduTrack.Infrastructure.Repositories.Interfaces;
+using EduTrack.Domain.Repositories;
 using MediatR;
 using System;
 using System.Collections.Generic;

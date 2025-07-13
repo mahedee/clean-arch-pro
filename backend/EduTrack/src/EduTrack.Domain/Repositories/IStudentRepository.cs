@@ -1,6 +1,6 @@
-﻿using EduTrack.Domain.Entities;
+using EduTrack.Domain.Entities;
 
-namespace EduTrack.Infrastructure.Repositories.Interfaces
+namespace EduTrack.Domain.Repositories
 {
     public interface IStudentRepository
     {

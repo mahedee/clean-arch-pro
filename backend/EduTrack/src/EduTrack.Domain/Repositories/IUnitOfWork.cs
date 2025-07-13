@@ -1,4 +1,4 @@
-﻿namespace EduTrack.Infrastructure.Repositories.Interfaces
+namespace EduTrack.Domain.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {

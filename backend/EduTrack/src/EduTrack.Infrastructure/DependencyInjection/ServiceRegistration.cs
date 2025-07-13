@@ -1,6 +1,6 @@
-﻿using EduTrack.Infrastructure.Data;
+﻿using EduTrack.Domain.Repositories;
+using EduTrack.Infrastructure.Data;
 using EduTrack.Infrastructure.Repositories;
-using EduTrack.Infrastructure.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;

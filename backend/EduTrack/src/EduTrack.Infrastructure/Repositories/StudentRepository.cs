@@ -1,6 +1,6 @@
 ﻿using EduTrack.Domain.Entities;
+using EduTrack.Domain.Repositories;
 using EduTrack.Infrastructure.Data;
-using EduTrack.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduTrack.Infrastructure.Repositories

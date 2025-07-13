@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EduTrack.Domain.Entities;
-using EduTrack.Infrastructure.Repositories.Interfaces;
+using EduTrack.Domain.Repositories;
 using MediatR;
 
 namespace EduTrack.Application.Features.Students.Commands
