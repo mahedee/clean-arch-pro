@@ -18,6 +18,11 @@
 appsettings.Development.json
 appsettings.Production.json
 appsettings.Staging.json
+
+# GitHub Personal Access Tokens and other API keys
+scripts/token.txt
+token.txt
+*.token
 appsettings.Local.json
 
 # User secrets (alternative to appsettings for sensitive data)

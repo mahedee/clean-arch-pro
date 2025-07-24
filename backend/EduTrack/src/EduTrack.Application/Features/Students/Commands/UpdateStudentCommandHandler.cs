@@ -19,9 +19,12 @@ namespace EduTrack.Application.Features.Students.Commands
             if (student == null)
                 return false;
 
-            student.FullName = request.FullName;
-            student.DateOfBirth = request.DateOfBirth;
-            student.Email = request.Email;
+            // Use domain methods to update the student
+            student.UpdateFullName(request.FullName);
+            student.UpdateContactInformation(request.Email ?? string.Empty);
+            
+            // Note: DateOfBirth is not changeable after creation in this domain model
+            // This is a business rule - if needed, we could add a specific method for correction
 
             _unitOfWork.Students.Update(student);
             await _unitOfWork.SaveChangesAsync();

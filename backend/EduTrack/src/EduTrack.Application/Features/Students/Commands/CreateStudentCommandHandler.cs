@@ -18,13 +18,10 @@ namespace EduTrack.Application.Features.Students.Commands
 
         public async Task<Guid> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
         {
-            var student = new Student
-            {
-                Id = Guid.NewGuid(),
-                FullName = request.FullName,
-                DateOfBirth = request.DateOfBirth,
-                Email = request.Email
-            };
+            var student = Student.Create(
+                request.FullName,
+                request.DateOfBirth,
+                request.Email ?? string.Empty);
 
             await _unitOfWork.Students.AddAsync(student, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
