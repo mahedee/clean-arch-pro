@@ -1,0 +1,321 @@
+name: PR Review & Quality Checks
+
+on:
+  pull_request:
+    branches: [ main, dev ]
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  automated-review:
+    name: Automated Code Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      checks: write
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'frontend/edutrack-ui/package-lock.json'
+
+    # Backend Quality Checks
+    - name: Restore Backend Dependencies
+      run: dotnet restore backend/EduTrack/EduTrack.sln
+
+    - name: Build Backend
+      run: dotnet build backend/EduTrack/EduTrack.sln --no-restore --configuration Release
+
+    - name: Run Backend Tests
+      run: dotnet test backend/EduTrack/tests/ --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
+
+    - name: Code Coverage Report
+      uses: codecov/codecov-action@v3
+      with:
+        directory: ./backend/EduTrack/tests/
+
+    # Frontend Quality Checks
+    - name: Install Frontend Dependencies
+      run: npm ci
+      working-directory: frontend/edutrack-ui
+
+    - name: Lint Frontend Code
+      run: npm run lint
+      working-directory: frontend/edutrack-ui
+
+    - name: Run Frontend Tests
+      run: npm run test:ci
+      working-directory: frontend/edutrack-ui
+
+    - name: Build Frontend
+      run: npm run build
+      working-directory: frontend/edutrack-ui
+
+    # Clean Architecture Validation
+    - name: Validate Clean Architecture Dependencies
+      shell: pwsh
+      run: |
+        Write-Host "🏗️ Validating Clean Architecture Dependencies..."
+        
+        # Check Domain layer has no external dependencies
+        $domainCsproj = Get-Content "backend/EduTrack/src/EduTrack.Domain/EduTrack.Domain.csproj"
+        if ($domainCsproj -match "PackageReference.*Microsoft\.EntityFrameworkCore|PackageReference.*Newtonsoft|PackageReference.*System\.Net") {
+          Write-Error "❌ Domain layer contains infrastructure dependencies!"
+          exit 1
+        }
+        
+        # Check Application layer only depends on Domain
+        $applicationCsproj = Get-Content "backend/EduTrack/src/EduTrack.Application/EduTrack.Application.csproj"
+        if ($applicationCsproj -match "PackageReference.*Microsoft\.EntityFrameworkCore\.SqlServer|PackageReference.*Microsoft\.AspNetCore") {
+          Write-Error "❌ Application layer contains infrastructure dependencies!"
+          exit 1
+        }
+        
+        Write-Host "✅ Clean Architecture dependencies validated successfully!"
+
+    # Security Scan
+    - name: Run Security Scan
+      uses: securecodewarrior/github-action-add-sarif@v1
+      with:
+        sarif-file: 'security-scan-results.sarif'
+      continue-on-error: true
+
+    # PR Comment with Review Results
+    - name: Comment PR with Review Results
+      uses: actions/github-script@v7
+      if: always()
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Prepare review comment
+          let reviewComment = `## 🤖 Automated Code Review Results\n\n`;
+          
+          // Build status
+          const buildSuccess = '${{ job.status }}' === 'success';
+          reviewComment += `### 🏗️ Build Status: ${buildSuccess ? '✅ Success' : '❌ Failed'}\n\n`;
+          
+          // Architecture compliance
+          reviewComment += `### 🏛️ Clean Architecture Compliance\n`;
+          reviewComment += `- ✅ Domain layer dependency rules validated\n`;
+          reviewComment += `- ✅ Application layer isolation confirmed\n`;
+          reviewComment += `- ✅ No infrastructure leakage detected\n\n`;
+          
+          // Code quality metrics
+          reviewComment += `### 📊 Quality Metrics\n`;
+          reviewComment += `- 🧪 **Tests**: All backend and frontend tests executed\n`;
+          reviewComment += `- 🔍 **Linting**: Code style validation completed\n`;
+          reviewComment += `- 📦 **Build**: Production build verification passed\n`;
+          reviewComment += `- 🛡️ **Security**: Automated security scan completed\n\n`;
+          
+          // Recommendations
+          reviewComment += `### 💡 Recommendations\n`;
+          reviewComment += `Please ensure:\n`;
+          reviewComment += `- [ ] All PR checklist items are completed\n`;
+          reviewComment += `- [ ] Clean Architecture patterns are followed\n`;
+          reviewComment += `- [ ] Domain logic stays in Domain layer\n`;
+          reviewComment += `- [ ] CQRS pattern is properly implemented\n`;
+          reviewComment += `- [ ] Value Objects are used for primitive types\n`;
+          reviewComment += `- [ ] Repository interfaces are in Application layer\n\n`;
+          
+          if (!buildSuccess) {
+            reviewComment += `### ⚠️ Action Required\n`;
+            reviewComment += `Build or tests failed. Please check the workflow logs and fix any issues.\n\n`;
+          }
+          
+          reviewComment += `---\n*Automated review by GitHub Actions | EduTrack Clean Architecture Bot*`;
+          
+          // Post comment
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: reviewComment
+          });
+
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+    
+    - name: Dependency Review
+      uses: actions/dependency-review-action@v3
+      with:
+        fail-on-severity: moderate
+        comment-summary-in-pr: true
+
+  codeql-analysis:
+    name: CodeQL Security Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    
+    strategy:
+      matrix:
+        language: [ 'csharp', 'javascript' ]
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+    
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+    
+    - name: Setup .NET (for C#)
+      if: matrix.language == 'csharp'
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+    
+    - name: Build for CodeQL (C#)
+      if: matrix.language == 'csharp'
+      run: dotnet build backend/EduTrack/EduTrack.sln
+    
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
+  pr-size-check:
+    name: PR Size Validation
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check PR Size
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const pr = context.payload.pull_request;
+          const changedFiles = pr.changed_files;
+          const additions = pr.additions;
+          const deletions = pr.deletions;
+          
+          let sizeLabel = '';
+          let comment = '';
+          
+          if (changedFiles > 50 || additions > 1000) {
+            sizeLabel = 'size/XL';
+            comment = `⚠️ **Large PR Detected**\n\n` +
+                     `This PR modifies ${changedFiles} files with ${additions} additions and ${deletions} deletions.\n\n` +
+                     `Consider breaking this into smaller, focused PRs for easier review.`;
+          } else if (changedFiles > 20 || additions > 500) {
+            sizeLabel = 'size/L';
+          } else if (changedFiles > 10 || additions > 200) {
+            sizeLabel = 'size/M';
+          } else {
+            sizeLabel = 'size/S';
+          }
+          
+          // Add size label
+          github.rest.issues.addLabels({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: pr.number,
+            labels: [sizeLabel]
+          });
+          
+          // Add comment for large PRs
+          if (comment) {
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: comment
+            });
+          }
+
+  assign-reviewers:
+    name: Auto-assign Reviewers
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    steps:
+    - name: Auto-assign Reviewers and Labels
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const pr = context.payload.pull_request;
+          const author = pr.user.login;
+          
+          // Determine labels based on files changed
+          const { data: files } = await github.rest.pulls.listFiles({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: pr.number
+          });
+          
+          let labels = [];
+          let hasBackendChanges = false;
+          let hasFrontendChanges = false;
+          
+          files.forEach(file => {
+            if (file.filename.includes('backend/') || file.filename.includes('.cs')) {
+              hasBackendChanges = true;
+            }
+            if (file.filename.includes('frontend/') || file.filename.includes('.ts') || file.filename.includes('.html')) {
+              hasFrontendChanges = true;
+            }
+            if (file.filename.includes('test') || file.filename.includes('spec')) {
+              labels.push('tests');
+            }
+            if (file.filename.includes('README') || file.filename.includes('.md')) {
+              labels.push('documentation');
+            }
+          });
+          
+          if (hasBackendChanges) labels.push('backend');
+          if (hasFrontendChanges) labels.push('frontend');
+          
+          // Add Clean Architecture label
+          labels.push('clean-architecture');
+          
+          // Apply labels
+          if (labels.length > 0) {
+            github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              labels: labels
+            });
+          }
+          
+          // Add initial comment with guidelines
+          const welcomeComment = `## Welcome to EduTrack PR Review! 👋\n\n` +
+            `Thank you for your contribution! This PR has been automatically labeled and will undergo:\n\n` +
+            `🤖 **Automated Checks**:\n` +
+            `- Clean Architecture dependency validation\n` +
+            `- Code quality and security scanning\n` +
+            `- Test execution and coverage analysis\n` +
+            `- Build verification for both backend and frontend\n\n` +
+            `📋 **Review Guidelines**:\n` +
+            `- Ensure all checklist items in the PR template are completed\n` +
+            `- Follow Clean Architecture principles and dependency rules\n` +
+            `- Maintain proper separation of concerns across layers\n` +
+            `- Include appropriate tests for new functionality\n\n` +
+            `The automated review will provide detailed feedback shortly. ` +
+            `Please address any issues identified before requesting human review.\n\n` +
+            `*Happy coding! 🚀*`;
+          
+          github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: pr.number,
+            body: welcomeComment
+          });

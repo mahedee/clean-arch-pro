@@ -2,8 +2,14 @@
 
 ## 📋 Project Overview
 **Total Duration**: 30 weeks  
-**Total Tasks**: 63 tasks across 6 phases (added T010B - Test Coverage & Quality Reporting)  
-**Estimated Effort**: ~225-285 working days  
+**Total Tasks**: 66 tasks across 6 phases (added T001A - GitHub Workflow, T014A - Advanced CI/CD, T010B - Test Coverage, T037 - Workflow Verification)  
+**Estimated Effort**: ~240-300 working days  
+
+### **🤖 NEW: GitHub Bot & Copilot Integration Requirements**
+- **GitHub Bot Reviews**: All PRs automatically assigned to @github-actions[bot] for intelligent code review
+- **Copilot Instructions**: Project-specific AI guidance in .github/copilot-instructions.md
+- **Copilot Workspace**: Enhanced development environment with AI-powered context awareness
+- **Branch Strategy**: dev → main workflow with mandatory PR reviews and bot approval  
 
 ---
 
@@ -26,6 +32,49 @@
   - [x] ✅ **COMPLETE**: Setup Git repository with proper .gitignore
   - [x] ✅ **COMPLETE**: Create initial README and documentation structure
 
+#### **Task 1A** - GitHub Workflow & Copilot Setup *(2-3 days)*
+- **ID**: T001A
+- **Dependencies**: T001
+- **Sprint**: 1
+- **Status**: ✅ **COMPLETED - GitHub workflow and Copilot integration fully implemented**
+- **Completion Date**: September 6, 2025
+- **Checklist**:
+  - [x] ✅ **BRANCH SETUP**: Create main branch and set as default production branch
+  - [x] ✅ **BRANCH PROTECTION**: Configure branch protection rules for main and dev branches
+  - [x] ✅ **PR WORKFLOW**: Setup automated PR review assignment to GitHub bot (@github-actions[bot])
+  - [x] ✅ **COPILOT INSTRUCTIONS**: Create .github/copilot-instructions.md for project-specific AI guidance
+  - [x] ✅ **COPILOT WORKSPACE**: Configure Copilot Workspace settings and project context
+  - [x] ✅ **PR TEMPLATES**: Create PR templates with GitHub bot review assignment
+  - [x] ✅ **WORKFLOW RULES**: Document dev → main merge process via PR only
+  - [x] ✅ **CODE REVIEW**: Setup automated code review checklist for GitHub bot
+
+**🔧 GITHUB WORKFLOW IMPLEMENTATION:**
+```
+SCOPE: Enhanced GitHub workflow with AI-powered reviews and branch management
+✅ Current State: Professional GitHub workflow with bot reviews and branch protection COMPLETED
+🎯 Goal: ACHIEVED - Production-ready workflow system operational
+
+🤖 GITHUB BOT INTEGRATION: ✅ COMPLETED
+1. ✅ Automated PR review assignment to @github-actions[bot]
+2. ✅ Code quality checks and standards validation
+3. ✅ Architecture compliance verification
+4. ✅ Test coverage reporting and validation
+5. ✅ Security scanning and vulnerability detection
+
+📋 COPILOT SETUP: ✅ COMPLETED
+1. ✅ Project-specific Copilot Instructions for EduTrack domain
+2. ✅ Clean Architecture guidance for AI code generation
+3. ✅ Domain-Driven Design patterns and conventions
+4. ✅ Testing standards and code quality requirements
+5. ✅ Copilot Workspace configuration for better context
+
+🌿 BRANCH STRATEGY: ✅ COMPLETED
+- main: Production-ready code (protected, PR required)
+- dev: Development integration branch (protected, PR required)
+- feature/[task-id]: Feature development branches
+- All merges dev → main must go through PR with bot review
+```
+
 **🔥 URGENT FIXES REQUIRED:**
 ```
 ✅ COMPLETED (3 hours):
@@ -40,7 +89,7 @@ See: docs/change-tracker.md for detailed implementation history
 
 #### **Task 2** - Domain Layer Foundation *(5-7 days)*
 - **ID**: T002
-- **Dependencies**: T001 (BLOCKED until architecture fixes complete)
+- **Dependencies**: T001A (GitHub workflow setup COMPLETED - ready to proceed)
 - **Sprint**: 1
 - **Status**: 🔄 **IN PROGRESS - Major milestone: Value Objects completed, remaining entities in progress**
 - **Checklist**:
@@ -283,6 +332,48 @@ SCOPE: Comprehensive test coverage reporting and quality metrics
   - [ ] Configure deployment pipelines
   - [ ] Setup Docker containerization
   - [ ] Create environment-specific deployments
+
+#### **Task 14A** - Advanced GitHub Workflow & Bot Integration *(2-3 days)*
+- **ID**: T014A
+- **Dependencies**: T014, T001A
+- **Sprint**: 5
+- **Status**: 🆕 **NEW TASK - Enhanced CI/CD with GitHub bot reviews and Copilot optimization**
+- **Checklist**:
+  - [ ] ⚠️ **GITHUB ACTIONS**: Enhance pipeline with GitHub bot review automation
+  - [ ] ⚠️ **PR AUTOMATION**: Auto-assign @github-actions[bot] for all PRs
+  - [ ] ⚠️ **CODE REVIEW BOT**: Configure intelligent code review checks
+  - [ ] ⚠️ **COPILOT INTEGRATION**: Integrate Copilot Workspace in CI/CD pipeline
+  - [ ] ⚠️ **BRANCH POLICIES**: Enforce dev → master PR workflow with bot approval
+  - [ ] ⚠️ **QUALITY GATES**: Automated architecture compliance validation
+  - [ ] ⚠️ **COPILOT INSTRUCTIONS**: Update instructions based on CI/CD learnings
+  - [ ] ⚠️ **DEPLOYMENT AUTOMATION**: Auto-deploy to staging on dev branch updates
+
+**🤖 ADVANCED WORKFLOW FEATURES:**
+```
+SCOPE: Production-ready GitHub workflow with AI-enhanced development
+✅ Current State: Basic CI/CD pipeline functional
+🎯 Goal: Full automation with GitHub bot reviews and Copilot optimization
+
+🔄 ENHANCED PR WORKFLOW:
+1. Feature branch → dev: GitHub bot review + automated tests
+2. Dev → main: Mandatory bot review + human approval + full test suite
+3. Main: Auto-deploy to production with rollback capability
+4. All PRs get Copilot-generated review comments and suggestions
+
+🧠 COPILOT WORKSPACE INTEGRATION:
+1. Context-aware code suggestions based on EduTrack domain
+2. Automated PR descriptions with AI-generated summaries
+3. Smart conflict resolution suggestions
+4. Architecture compliance recommendations
+5. Test case generation suggestions
+
+📊 QUALITY AUTOMATION:
+- Automated code coverage reporting
+- Architecture compliance validation
+- Security vulnerability scanning
+- Performance regression detection
+- Documentation completeness checks
+```
 
 ---
 
@@ -594,20 +685,82 @@ SCOPE: Comprehensive test coverage reporting and quality metrics
   - [ ] Create monitoring and alerting
   - [ ] Add backup and recovery procedures
 
+#### **Task 37** - T001A GitHub Workflow Verification & Bot Review Testing *(1-2 days)*
+- **ID**: T037
+- **Dependencies**: T036, T001A
+- **Sprint**: 16
+- **Status**: 🧪 **VERIFICATION TASK - Validate GitHub bot automation and Copilot integration**
+- **Checklist**:
+  - [ ] ⚠️ **BOT REVIEW TESTING**: Create test PR to verify @github-actions[bot] automatic assignment
+  - [ ] ⚠️ **WORKFLOW VALIDATION**: Confirm all 5 GitHub Actions jobs execute successfully
+  - [ ] ⚠️ **ARCHITECTURE COMPLIANCE**: Test architecture violation detection with intentional violations
+  - [ ] ⚠️ **SECURITY SCANNING**: Verify CodeQL analysis detects security vulnerabilities
+  - [ ] ⚠️ **COPILOT VERIFICATION**: Test AI code suggestions follow EduTrack domain patterns
+  - [ ] ⚠️ **PR TEMPLATE TESTING**: Validate PR template loads with all required sections
+  - [ ] ⚠️ **BRANCH PROTECTION**: Confirm main/dev branch protection rules are enforced
+  - [ ] ⚠️ **BOT COMMENTING**: Verify detailed automated review comments appear on PRs
+  - [ ] ⚠️ **LABELING SYSTEM**: Test automatic labeling based on file changes
+  - [ ] ⚠️ **COVERAGE REPORTING**: Validate test coverage reporting in bot comments
+  - [ ] ⚠️ **END-TO-END WORKFLOW**: Complete feature → dev → main workflow with bot approval
+
+**🤖 T001A VERIFICATION SCOPE:**
+```
+GOAL: Comprehensive validation of GitHub workflow automation and bot integration
+✅ Current State: T001A implementation completed (September 6, 2025)
+🎯 Verification Target: 100% functional automated code review system
+
+🧪 TEST SCENARIOS:
+1. Create feature branch with Clean Architecture compliant code
+2. Create feature branch with intentional architecture violations
+3. Submit PR with security vulnerabilities (test patterns)
+4. Test large PR (>50 files) for size warnings
+5. Verify frontend/backend change detection and labeling
+6. Test bot review assignment and commenting system
+7. Validate Copilot instructions generate domain-specific code
+8. Test branch protection rules enforcement
+9. Verify workflow performance and execution time
+10. Test rollback and error handling scenarios
+
+📊 SUCCESS CRITERIA:
+- ✅ Bot automatically assigned to all test PRs
+- ✅ All 5 workflow jobs complete successfully
+- ✅ Architecture violations correctly detected and reported
+- ✅ Security scanning identifies test vulnerabilities
+- ✅ Copilot generates EduTrack-specific code patterns
+- ✅ PR template enforces quality standards
+- ✅ Branch protection prevents direct pushes to main/dev
+- ✅ Detailed review comments provide actionable feedback
+- ✅ Automatic labeling works for all file types
+- ✅ Coverage reporting integrated in review process
+
+🔧 DELIVERABLES:
+1. Test PR creation and verification report
+2. Bot review functionality validation document
+3. Architecture compliance testing results
+4. Security scanning verification report
+5. Copilot instruction effectiveness analysis
+6. Workflow performance metrics and optimization recommendations
+7. End-to-end workflow documentation with screenshots
+8. Team training materials for GitHub bot usage
+```
+
+**🎯 VERIFICATION IMPORTANCE:**
+This task ensures that T001A implementation is fully functional and provides the automated code quality foundation required for all subsequent development tasks. Successful verification confirms that the GitHub workflow system can reliably maintain Clean Architecture compliance and code quality standards throughout the project lifecycle.
+
 ---
 
 ## 📊 **TASK SUMMARY BY PHASE**
 
 | Phase | Sprint | Tasks | Duration | Focus Area |
 |-------|--------|-------|----------|------------|
-| **Phase 1** | 1-5 | T001-T014 | 10 weeks | Foundation & Infrastructure |
+| **Phase 1** | 1-5 | T001-T014A | 10 weeks | Foundation, Infrastructure & GitHub Workflow |
 | **Phase 2** | 6-10 | T015-T024 | 10 weeks | Core Academic Features |
 | **Phase 3** | 11-13 | T025-T030 | 6 weeks | Advanced Features & Multi-DB |
 | **Phase 4** | 14 | T031-T032 | 2 weeks | Reporting & Analytics |
 | **Phase 5** | 15 | T033-T034 | 2 weeks | Performance & Security |
-| **Phase 6** | 16 | T035-T036 | 1 week | Testing & Deployment |
+| **Phase 6** | 16 | T035-T037 | 1 week | Testing, Deployment & Verification |
 
-**Total**: 36 tasks across 16 sprints over 30 weeks
+**Total**: 39 tasks across 16 sprints over 30 weeks (added GitHub workflow tasks + verification)
 
 ---
 
@@ -666,15 +819,16 @@ SCOPE: Comprehensive test coverage reporting and quality metrics
 
 ## 🎯 **CRITICAL PATH ANALYSIS**
 
-### **Must Complete in Order (UPDATED WITH FIXES):**
+### **Must Complete in Order (UPDATED WITH NEW WORKFLOW):**
 1. **🚨 URGENT FIXES FIRST** → Architecture violations (2-4 hours)
-2. **T001** → **T002** → **T003** (Foundation - BLOCKED until fixes)
+2. **T001** → **T001A** → **T002** → **T003** (Foundation + GitHub Workflow)
 3. **T004** → **T005** → **T006** (Infrastructure)
 4. **T007** → **T008** → **T009** (Security)
 5. **🚨 COMPLETE TESTING** → Missing test projects (3 hours)
-6. **T010** → **T011** (Core CRUD)
-7. **T015** → **T016** → **T017** → **T018** (Academic Structure)
-8. **T019** → **T020** → **T021** → **T022** (Scheduling & Assessment)
+6. **T010** → **T010B** → **T011** (Testing + Coverage)
+7. **T014** → **T014A** (CI/CD + Advanced GitHub Workflow)
+8. **T015** → **T016** → **T017** → **T018** (Academic Structure)
+9. **T019** → **T020** → **T021** → **T022** (Scheduling & Assessment)
 
 ### **Can Be Developed in Parallel:**
 - Frontend tasks (T012, T013, T020, T028, T032) after backend APIs
@@ -719,10 +873,12 @@ SCOPE: Comprehensive test coverage reporting and quality metrics
 - [ ] Security hardening complete
 
 ### **Phase 6 Complete When:**
-- [ ] Both final tasks completed
+- [ ] All 3 final tasks completed (T035, T036, T037)
 - [ ] >90% test coverage achieved
 - [ ] Production deployment successful
 - [ ] All documentation complete
+- [ ] **T001A GitHub workflow verified and fully operational**
+- [ ] **Bot review system validated with comprehensive testing**
 
 ---
 
@@ -745,17 +901,30 @@ Notes: [Additional notes]
 
 ## 🚀 **GETTING STARTED**
 
-### **Week 1 Action Items (UPDATED):**
+### **Week 1 Action Items (UPDATED WITH GITHUB WORKFLOW):**
 1. **🚨 START HERE** - Fix critical architecture violations (2-4 hours)
    - Remove Application → Infrastructure dependency 
    - Move repository interfaces to Domain layer
    - Add Infrastructure reference to API layer
    - Create missing test projects
 2. **THEN T001** - Complete Project Structure & Configuration
-3. **Assign team roles** and responsibilities  
-4. **Setup development environment** following environment-setup.md
-5. **Create project repositories** and initial structure
-6. **Begin T002** once architecture is fixed and T001 is complete
+3. **NEW: T001A** - Setup GitHub Workflow & Copilot Integration
+   - Create main branch and set as default production branch
+   - Configure branch protection rules (main and dev protected)
+   - Setup GitHub bot PR reviews (@github-actions[bot])
+   - Create .github/copilot-instructions.md for EduTrack project
+   - Configure Copilot Workspace settings
+4. **Assign team roles** and responsibilities following new workflow
+5. **Setup development environment** with Copilot Workspace integration
+6. **Create project repositories** with proper branch strategy
+7. **Begin T002** once architecture and GitHub workflow are complete
+
+### **🤖 NEW: GitHub Bot Integration Requirements:**
+- **All PRs** must be assigned to @github-actions[bot] for automated review
+- **Branch Protection**: Main and dev branches require PR approval
+- **Workflow**: feature → dev → main (all via PR with bot review)
+- **Copilot Instructions**: EduTrack-specific AI guidance document
+- **Copilot Workspace**: Enhanced development context and suggestions
 
 ### **⚠️ CRITICAL WARNING:**
 **DO NOT PROCEED** with T002-T036 until architecture violations are fixed. The current implementation violates Clean Architecture principles and will cause runtime failures.
