@@ -1,0 +1,17 @@
+- Complete at least one GitHub issue/task.
+- Implement best practices and design patterns.
+- Understand, document, and comment code clearly.
+- Use GitHub Copilot for assistance.
+- Add unit testing for backend.
+- Integrate a front-end framework.
+- Add unit testing for front-end.
+- Create TASKLIST.md for task tracking.
+- Create CHANGETRACKER.md to log changes.
+- Create GitHub issues based on changes.
+- Write a shell script to automate GitHub issue creation from CHANGETRACKER.md.
+- Initially keep it private after cleanup make it public repository
+- Read/review the docs - use ipad - you will get idea
+- Peer review using PR by github bot
+- Use Copilot Instructions
+- Use copilot workspace 
+- Create dev and master branch - work on dev branch and merge to master branch as  PR
