@@ -1,0 +1,19 @@
+{
+  "title": "{{issue_title}}",
+  "body": "## Issue Description\n\n{{issue_description}}\n\n## Acceptance Criteria\n\n{{acceptance_criteria}}\n\n## Additional Context\n\n{{additional_context}}\n\n---\n\n**Created**: {{timestamp}}\n**Priority**: {{priority}}\n**Type**: {{issue_type}}",
+  "labels": [
+    "{{priority}}",
+    "{{issue_type}}"
+  ],
+  "assignees": [],
+  "milestone": null,
+  "variables": [
+    "issue_title",
+    "issue_description", 
+    "acceptance_criteria",
+    "additional_context",
+    "priority",
+    "issue_type",
+    "timestamp"
+  ]
+}

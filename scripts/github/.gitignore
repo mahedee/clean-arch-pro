@@ -1,0 +1,40 @@
+# GitHub Scripts - Security Files
+# These files contain sensitive information and should not be committed
+
+# GitHub Personal Access Tokens
+*.token
+github-token.txt
+.github-token
+token.txt
+auth.txt
+
+# Configuration files with sensitive data
+config-local.json
+.env.local
+secrets.json
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+temp/
+
+# Log files
+*.log
+logs/
+
+# IDE files
+.vscode/settings.json
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PowerShell execution policy files
+*.ps1.policy

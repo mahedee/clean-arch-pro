@@ -1,0 +1,6 @@
+{
+  "title": "🐛 Fix: Student registration validation error",
+  "body": "## 🐛 Bug Report\n\n### Description\nStudent registration form is not properly validating email addresses, allowing invalid formats to be submitted.\n\n### Steps to Reproduce\n1. Navigate to student registration form\n2. Enter invalid email format (e.g., 'invalid-email')\n3. Submit form\n4. Form accepts invalid email\n\n### Expected Behavior\nForm should validate email format and show error message for invalid emails.\n\n### Actual Behavior\nForm accepts any text input as valid email.\n\n### Environment\n- Browser: Chrome 115+\n- OS: Windows 11\n- Application Version: 1.0.0\n\n### Priority\nHigh - Affects data integrity\n\n### Additional Context\nThis affects the student entity validation in the Domain layer.",
+  "labels": ["bug", "high-priority", "student-management", "validation"],
+  "assignees": ["mahedee"]
+}

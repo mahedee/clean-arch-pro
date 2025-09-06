@@ -1,0 +1,24 @@
+{
+  "template": "bug-report.json",
+  "variables": {
+    "bug_title": "Student Registration Form Validation Not Working",
+    "bug_description": "The student registration form accepts invalid email addresses and allows registration with duplicate student IDs. The form validation appears to be bypassed in certain scenarios.",
+    "step_1": "Navigate to Student Registration page (/students/register)",
+    "step_2": "Enter an invalid email format (e.g., 'invalid-email')",
+    "step_3": "Enter a student ID that already exists in the system",
+    "expected_behavior": "The form should display validation errors for invalid email format and prevent registration with duplicate student IDs. User should see clear error messages and form submission should be blocked.",
+    "actual_behavior": "The form accepts the invalid data and proceeds with registration, causing database errors and inconsistent data state.",
+    "os": "Windows 11",
+    "browser": "Chrome 118.0.5993.88",
+    "version": "EduTrack v1.0.0-dev",
+    "screenshots": "Screenshot attached showing form accepting invalid email without validation errors.",
+    "additional_info": "This issue affects data integrity and user experience. The problem appears to be related to client-side validation not being properly enforced before server-side processing.",
+    "severity": "high"
+  },
+  "additionalLabels": [
+    "validation",
+    "frontend",
+    "student-management",
+    "data-integrity"
+  ]
+}

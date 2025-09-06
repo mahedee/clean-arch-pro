@@ -97,10 +97,10 @@ See: docs/change-tracker.md for detailed implementation history
   - [x] ✅ **COMPLETE**: Enhance Student entity with proper domain logic
   - [x] ✅ **COMPLETE**: Standardize entity ID types (choose Guid OR int consistently)
   - [x] ✅ **COMPLETE**: Implement value objects (Email, FullName, GPA, PhoneNumber, Address)
-  - [ ] ⚠️ Define core domain entities (Course, Teacher with rich models)
-  - [ ] ⚠️ Create domain events and event handlers
-  - [ ] ⚠️ Implement domain services and specifications
-  - [ ] ⚠️ Add domain exceptions and validation rules
+  - [ ] 🔗 **GITHUB ISSUE #45**: Define core domain entities (Course, Teacher with rich models)
+  - [ ] 🔗 **GITHUB ISSUE #46**: Create domain events and event handlers
+  - [ ] 🔗 **GITHUB ISSUE #47**: Implement domain services and specifications
+  - [ ] 🔗 **GITHUB ISSUE #48**: Add domain exceptions and validation rules
 
 **🔥 DOMAIN LAYER PROGRESS:**
 ```
@@ -113,13 +113,15 @@ See: docs/change-tracker.md for detailed implementation history
 6. ✅ **NEW**: Student entity integration with Value Objects (primitive obsession eliminated)
 7. ✅ **NEW**: Comprehensive unit tests (162 tests passing, 100% Value Objects coverage)
 
-🔄 REMAINING:
-- ⚠️ Define core domain entities (Course, Teacher with rich models)
-- ⚠️ Create domain events and event handlers for new entities
-- ⚠️ Implement domain services and specifications
-- ⚠️ Add domain exceptions and validation rules
+🔄 REMAINING (TRACKED AS SEPARATE GITHUB ISSUES):
+- 🔗 Issue #45: Define core domain entities (Course, Teacher with rich models) [6-8 hours]
+- 🔗 Issue #46: Create domain events and event handlers for new entities [8-10 hours]
+- 🔗 Issue #47: Implement domain services and specifications [10-12 hours]
+- 🔗 Issue #48: Add domain exceptions and validation rules [4-6 hours]
 
-Progress: 80% complete (~2-3 hours remaining)
+📊 Progress: 60% complete (~28-36 hours remaining, now tracked individually)
+📋 Task Breakdown: 4 separate GitHub issues created for better tracking and assignment
+🎯 Benefit: Each subtask can be independently assigned, tracked, and completed
 ```
 
 #### **Task 3** - Application Layer Setup *(3-5 days)*

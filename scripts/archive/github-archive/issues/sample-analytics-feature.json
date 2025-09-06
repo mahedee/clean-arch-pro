@@ -1,0 +1,25 @@
+{
+  "template": "feature-request.json",
+  "variables": {
+    "feature_title": "Advanced Student Performance Analytics Dashboard",
+    "feature_description": "Implement a comprehensive analytics dashboard that provides insights into student performance, attendance patterns, and course completion rates with interactive charts and exportable reports.",
+    "problem_statement": "Currently, teachers and administrators lack visibility into student performance trends and patterns. They cannot easily identify students who need additional support or track overall class performance metrics over time.",
+    "proposed_solution": "Create an analytics dashboard with the following capabilities:\n\n- **Performance Metrics**: GPA trends, assignment completion rates, exam scores\n- **Attendance Analytics**: Attendance patterns, absence trends, punctuality metrics\n- **Course Progress**: Completion rates, time-to-completion, prerequisite tracking\n- **Comparative Analysis**: Class comparisons, historical data analysis\n- **Interactive Visualizations**: Charts, graphs, heatmaps with drill-down capabilities\n- **Export Functionality**: PDF reports, CSV data export, scheduled reports",
+    "alternative_solutions": "- Basic reporting with static charts\n- Integration with external analytics tools\n- Simple data export for manual analysis in Excel",
+    "technical_requirements": "- **Backend**: CQRS queries for analytics data aggregation\n- **Frontend**: Angular with Chart.js or D3.js for visualizations\n- **Database**: Optimized queries with proper indexing for performance\n- **Caching**: Redis for frequently accessed analytics data\n- **API**: RESTful endpoints for real-time data updates\n- **Security**: Role-based access control for sensitive student data",
+    "affected_components": "- EduTrack.Application (Analytics queries and handlers)\n- EduTrack.Infrastructure (Data aggregation repositories)\n- EduTrack.Api (Analytics controllers and endpoints)\n- Frontend Angular dashboard module\n- Database schema (analytics views and indexes)",
+    "criteria_1": "Dashboard displays accurate performance metrics with real-time updates",
+    "criteria_2": "Users can filter data by date ranges, courses, and student groups",
+    "criteria_3": "Reports can be exported in multiple formats (PDF, CSV, Excel)",
+    "additional_context": "This feature is requested by the academic administration team and will be crucial for the upcoming semester review process. Priority should be given to performance and scalability as the system will handle large datasets.",
+    "priority": "high"
+  },
+  "additionalLabels": [
+    "analytics",
+    "dashboard",
+    "reporting",
+    "performance",
+    "frontend",
+    "backend"
+  ]
+}

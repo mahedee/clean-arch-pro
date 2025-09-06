@@ -21,6 +21,11 @@ appsettings.Staging.json
 
 # GitHub Personal Access Tokens and other API keys
 scripts/token.txt
+scripts/github/config/github-token.json
+scripts/**/github-token.json
+scripts/**/*.token
+scripts/**/token.txt
+scripts/**/secrets.json
 token.txt
 *.token
 appsettings.Local.json
@@ -777,6 +782,29 @@ elastic-apm.json    # Elastic APM configuration
 private.key         # Private keys
 public.key          # Public keys (sometimes OK to commit)
 keyfile.json        # Service account keys
+
+# ===============================================
+# 🤖 GITHUB AUTOMATION SCRIPTS SECURITY
+# ===============================================
+# Security patterns specifically for GitHub automation scripts
+# These files contain sensitive tokens and should NEVER be committed
+
+# GitHub token files (various formats and locations)
+scripts/github/**/github-token.json
+scripts/github/**/token.txt
+scripts/github/**/*.token
+scripts/github/**/api-key.json
+scripts/github/**/credentials.json
+scripts/github/**/*token*.json
+
+# GitHub script logs (may contain sensitive data)
+scripts/github/**/*.log
+scripts/github/**/logs/
+
+# GitHub script temporary files
+scripts/github/**/temp/
+scripts/github/**/tmp/
+scripts/github/**/.temp
 
 # ===============================================
 # 📝 NOTES & COMMENTS SUMMARY
