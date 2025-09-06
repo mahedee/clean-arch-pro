@@ -12,3 +12,4 @@
   - Interfaces: prefix with `I` (e.g., `IStudentRepository`)
 - Logging should use **structured logging** via `ILogger<T>`.
 - Write unit tests with **xUnit** and **Moq**.
+- Update requirements and documentation as needed.

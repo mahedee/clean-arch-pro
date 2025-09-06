@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
-using EduTrack.Application.Features.Students.Dtos;
+using EduTrack.Application.Features.Students.DTOs;
 using EduTrack.Domain.Entities;
 
-namespace EduTrack.Application.Common
+namespace EduTrack.Application.Common;
+
+public class StudentMappingProfile : Profile
 {
-    public class MappingProfiles : Profile
+    public StudentMappingProfile()
     {
-        public MappingProfiles()
-        {
-            CreateMap<Student, StudentDto>();
-        }
+        CreateMap<Student, StudentDto>();
     }
 }

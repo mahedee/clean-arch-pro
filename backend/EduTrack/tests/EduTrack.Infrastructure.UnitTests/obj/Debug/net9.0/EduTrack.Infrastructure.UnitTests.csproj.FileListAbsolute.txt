@@ -9,6 +9,7 @@ D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\EduTrack.Infrastructure.UnitTests.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\EduTrack.Infrastructure.UnitTests.pdb
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\Castle.Core.dll
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\MediatR.Contracts.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Infrastructure.UnitTests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll

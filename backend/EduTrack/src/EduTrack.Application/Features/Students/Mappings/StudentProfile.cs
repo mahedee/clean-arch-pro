@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using EduTrack.Application.Features.Students.Dtos;
+using EduTrack.Application.Features.Students.DTOs;
 using EduTrack.Domain.Entities;
 using System;
 using System.Collections.Generic;

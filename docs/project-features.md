@@ -2,21 +2,125 @@
 
 ## 📋 Project Overview
 
-EduTrack is a comprehensive academic management system built using Clean Architecture principles. It covers the complete student lifecycle from admission to result processing, featuring role-based authentication, dynamic permissions, and modern web technologies.
+EduTrack is a comprehensive academic management system built using Clean Architecture principles with Domain-Driven Design. It covers the complete student lifecycle from admission to result processing, featuring rich domain models, role-based authentication, dynamic permissions, and modern web technologies.
+
+**Latest Updates (September 6, 2025)**:
+- ✅ **GitHub Issue #45 Complete**: Course and Teacher rich domain entities
+- ✅ **Domain Foundation**: 265 unit tests with >95% coverage
+- 🔄 **API Development**: Course, Teacher, and Attendance controllers (T011A-C)
 
 ## 🎯 Core Business Features
 
-### 1. **Student Admission Management**
+### 1. **Course Management System** *(NEW - GitHub Issue #45)*
+
+#### **Course Lifecycle Management**
+- **Course Creation and Configuration**
+  - Rich course metadata and descriptions
+  - Prerequisites and academic requirements
+  - Capacity limits and enrollment validation
+  - Course categorization and department assignment
+  - Academic credit and grading scale setup
+
+- **Course Scheduling and Sessions**
+  - Flexible scheduling with date/time management
+  - Session planning and resource allocation
+  - Instructor assignment and coordination
+  - Classroom and resource booking
+  - Schedule conflict detection and resolution
+
+- **Student Enrollment Workflows**
+  - Enrollment capacity management (up to 500 students)
+  - Prerequisite validation during enrollment
+  - Waitlist management for oversubscribed courses
+  - Enrollment period configuration
+  - Drop/add functionality with business rules
+
+- **Course Activation and Completion**
+  - Course activation workflows for enrollment periods
+  - Progress tracking and milestone management
+  - Course completion criteria and validation
+  - Grade integration and final processing
+  - Course evaluation and feedback collection
+
+#### **API Endpoints (T011A - Planned)**
+```http
+GET    /api/courses              # Paginated course catalog
+POST   /api/courses              # Create new course
+PUT    /api/courses/{id}         # Update course information
+POST   /api/courses/{id}/schedule # Schedule course sessions
+POST   /api/courses/{id}/activate # Activate for enrollment
+POST   /api/courses/{id}/students/{studentId} # Enroll student
+DELETE /api/courses/{id}/students/{studentId} # Remove student
+POST   /api/courses/{id}/complete # Mark course as completed
+```
+
+### 2. **Teacher Management System** *(NEW - GitHub Issue #45)*
+
+#### **Faculty Lifecycle Management**
+- **Teacher Profile and Career Tracking**
+  - Comprehensive faculty profiles with academic credentials
+  - Employment history and career progression
+  - Academic title management (Assistant, Associate, Full Professor)
+  - Specialization and qualification tracking
+  - Professional development record keeping
+
+- **Academic Workflow Integration**
+  - Teacher hiring process automation
+  - Course assignment validation and management
+  - Workload distribution and capacity planning
+  - Academic title promotion workflows
+  - Employment status tracking (Active, OnLeave, Terminated)
+
+- **Contact and Profile Management**
+  - Contact information with validation (Email, PhoneNumber integration)
+  - Emergency contact and address management
+  - Academic credential verification
+  - Professional bio and research interests
+  - Office hours and availability scheduling
+
+#### **API Endpoints (T011B - Planned)**
+```http
+GET    /api/teachers                      # Faculty directory
+POST   /api/teachers                      # Create teacher profile
+PUT    /api/teachers/{id}/contact         # Update contact info
+POST   /api/teachers/{id}/hire            # Process hiring workflow
+PUT    /api/teachers/{id}/academic-title  # Update academic rank
+POST   /api/teachers/{id}/courses/{courseId} # Assign to course
+GET    /api/teachers/{id}/courses         # Get teaching assignments
+```
+
+### 3. **Attendance Management System** *(NEW - T011C Planned)*
+
+#### **Real-time Attendance Tracking**
+- **Attendance Recording**
+  - Individual and bulk attendance marking
+  - Multiple attendance status (Present, Absent, Late, Excused)
+  - Time-window validation for attendance recording
+  - Attendance correction and update workflows
+  - Integration with course schedules and teacher assignments
+
+- **Analytics and Reporting**
+  - Daily, weekly, and semester attendance reports
+  - Individual student attendance tracking
+  - Course-level attendance analytics
+  - Low attendance alerts and notifications
+  - Trend analysis and predictive insights
+
+#### **API Endpoints (T011C - Planned)**
+```http
+POST   /api/attendance/mark              # Mark individual attendance
+POST   /api/attendance/bulk              # Bulk attendance for class
+GET    /api/attendance/student/{id}      # Student attendance history
+GET    /api/attendance/course/{id}       # Course attendance summary
+GET    /api/attendance/reports/daily     # Daily attendance reports
+GET    /api/attendance/analytics/trends  # Attendance trend analysis
+```
+
+### 4. **Student Admission Management**
 
 #### **Admission Process**
 - **Online Application Portal**
-  - Multi-#### **Database Configuration**
-- **Multi-Database Support**
-  - Runtime database provider selection
-  - Cross-database migration strategies
-  - Provider-specific optimization
-  - Database feature detection
-  - Connection string management per providerplication form with validation
+  - Multi-step application form with validation
   - Document upload (transcripts, certificates, photos)
   - Application fee payment integration
   - Application status tracking

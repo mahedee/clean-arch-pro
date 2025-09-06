@@ -1,16 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace EduTrack.Application.Features.Students.DTOs;
 
-namespace EduTrack.Application.Features.Students.Dtos
+/// <summary>
+/// Student data transfer object for API responses
+/// </summary>
+public class StudentDto
 {
-    public class StudentDto
-    {
-        public Guid Id { get; set; }
-        public string FullName { get; set; } = string.Empty;
-        public DateTime DateOfBirth { get; set; }
-        public string? Email { get; set; }
-    }
+    /// <summary>
+    /// Student unique identifier
+    /// </summary>
+    public Guid Id { get; set; }
+
+    /// <summary>
+    /// Student full name
+    /// </summary>
+    public string FullName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Student date of birth
+    /// </summary>
+    public DateTime DateOfBirth { get; set; }
+
+    /// <summary>
+    /// Student age (calculated)
+    /// </summary>
+    public int Age { get; set; }
+
+    /// <summary>
+    /// Student email address
+    /// </summary>
+    public string Email { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Student phone number
+    /// </summary>
+    public string? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// Student address
+    /// </summary>
+    public AddressDto? Address { get; set; }
+
+    /// <summary>
+    /// Student GPA
+    /// </summary>
+    public decimal? GPA { get; set; }
+
+    /// <summary>
+    /// Student enrollment status
+    /// </summary>
+    public string Status { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Student enrollment date
+    /// </summary>
+    public DateTime EnrollmentDate { get; set; }
+
+    /// <summary>
+    /// Record creation timestamp
+    /// </summary>
+    public DateTime CreatedAt { get; set; }
+
+    /// <summary>
+    /// Record last update timestamp
+    /// </summary>
+    public DateTime UpdatedAt { get; set; }
 }

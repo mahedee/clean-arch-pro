@@ -67,25 +67,45 @@ namespace EduTrack.Domain.ValueObjects
         /// <exception cref="ArgumentException">Thrown when name format is invalid</exception>
         public static FullName Create(string fullName)
         {
+            // Debug logging to identify problematic values
+            Console.WriteLine($"DEBUG: FullName.Create called with value: '{fullName ?? "NULL"}' (Length: {fullName?.Length ?? 0})");
+            
             if (string.IsNullOrWhiteSpace(fullName))
+            {
+                Console.WriteLine($"DEBUG: FullName.Create - value is null or whitespace");
                 throw new ArgumentException("Full name cannot be empty or whitespace", nameof(fullName));
+            }
 
             // Normalize the name
             fullName = NormalizeName(fullName);
+            Console.WriteLine($"DEBUG: FullName.Create - after normalization: '{fullName}'");
 
             if (!IsValidNameFormat(fullName))
+            {
+                Console.WriteLine($"DEBUG: FullName.Create - invalid format: '{fullName}'");
                 throw new ArgumentException("Invalid name format. Only letters, spaces, hyphens, periods, and apostrophes are allowed", nameof(fullName));
+            }
 
             if (fullName.Length < 2)
+            {
+                Console.WriteLine($"DEBUG: FullName.Create - too short: '{fullName}' (Length: {fullName.Length})");
                 throw new ArgumentException("Name must be at least 2 characters long", nameof(fullName));
+            }
 
             if (fullName.Length > 100)
+            {
+                Console.WriteLine($"DEBUG: FullName.Create - too long: '{fullName}' (Length: {fullName.Length})");
                 throw new ArgumentException("Name cannot exceed 100 characters", nameof(fullName));
+            }
 
             var parts = fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             if (parts.Length < 2)
+            {
+                Console.WriteLine($"DEBUG: FullName.Create - not enough parts: '{fullName}' (Parts: {parts.Length})");
                 throw new ArgumentException("Full name must contain at least first and last name", nameof(fullName));
+            }
 
+            Console.WriteLine($"DEBUG: FullName.Create - success: '{fullName}'");
             return new FullName(fullName);
         }
 

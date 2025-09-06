@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {}
+    "d:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {}
   },
   "projects": {
     "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
@@ -49,6 +49,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "MediatR.Contracts": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -372,14 +378,14 @@
         }
       }
     },
-    "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {
+    "d:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
+        "projectUniqueName": "d:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
         "projectName": "EduTrack.Infrastructure",
-        "projectPath": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
+        "projectPath": "d:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\mahedee\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\obj\\",
+        "outputPath": "d:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -429,6 +435,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.4, )"
             },

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <!-- Output formats: json, cobertura, lcov, opencover -->
+          <Format>json,cobertura,lcov,opencover</Format>
+          
+          <!-- Include assemblies (use wildcards) -->
+          <Include>[EduTrack.Application]*,[EduTrack.Domain]*,[EduTrack.Infrastructure]*,[EduTrack.Api]*</Include>
+          
+          <!-- Exclude test assemblies and generated code -->
+          <Exclude>[*Tests]*,[*Test]*,[*.Tests]*,[*.Test]*</Exclude>
+          
+          <!-- Exclude specific files -->
+          <ExcludeByFile>
+            **/Migrations/**,
+            **/Program.cs,
+            **/Startup.cs,
+            **/*Designer.cs,
+            **/AssemblyInfo.cs,
+            **/GlobalSuppressions.cs
+          </ExcludeByFile>
+          
+          <!-- Exclude by attributes -->
+          <ExcludeByAttribute>
+            Obsolete,
+            GeneratedCodeAttribute,
+            CompilerGeneratedAttribute,
+            ExcludeFromCodeCoverageAttribute,
+            DebuggerNonUserCodeAttribute
+          </ExcludeByAttribute>
+          
+          <!-- Coverage thresholds -->
+          <Threshold>80</Threshold>
+          <ThresholdType>line,branch,method</ThresholdType>
+          <ThresholdStat>minimum</ThresholdStat>
+          
+          <!-- Additional settings -->
+          <UseSourceLink>true</UseSourceLink>
+          <IncludeTestAssembly>false</IncludeTestAssembly>
+          <SkipAutoProps>true</SkipAutoProps>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+  
+  <!-- Test run configuration -->
+  <RunConfiguration>
+    <ResultsDirectory>./TestResults</ResultsDirectory>
+    <CollectSourceInformation>true</CollectSourceInformation>
+  </RunConfiguration>
+  
+  <!-- Logger configuration -->
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="console" enabled="True">
+        <Configuration>
+          <Verbosity>normal</Verbosity>
+        </Configuration>
+      </Logger>
+      <Logger friendlyName="trx" enabled="True">
+        <Configuration>
+          <LogFileName>testresults.trx</LogFileName>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
+</RunSettings>

@@ -12,10 +12,19 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Moq" Version="4.20.69" />
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EduTrack.Application\EduTrack.Application.csproj" />
+    <ProjectReference Include="..\..\src\EduTrack.Domain\EduTrack.Domain.csproj" />
+    <ProjectReference Include="..\..\src\EduTrack.Infrastructure\EduTrack.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

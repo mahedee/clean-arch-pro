@@ -1,0 +1,13 @@
+{
+  "fullName": "John Doe",
+  "dateOfBirth": "1990-01-15",
+  "email": "john.doe@university.edu",
+  "phoneNumber": "+1-555-123-4567",
+  "address": {
+    "street": "123 Main St",
+    "city": "Springfield",
+    "state": "IL",
+    "zipCode": "62701",
+    "country": "USA"
+  }
+}

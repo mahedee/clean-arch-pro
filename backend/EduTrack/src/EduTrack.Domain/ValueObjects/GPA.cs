@@ -8,7 +8,7 @@ namespace EduTrack.Domain.ValueObjects
         /// <summary>
         /// The GPA value (0.0 to 4.0 scale)
         /// </summary>
-        public decimal Value { get; }
+        public decimal Value { get; private set; }
 
         /// <summary>
         /// Minimum allowed GPA value
@@ -19,6 +19,14 @@ namespace EduTrack.Domain.ValueObjects
         /// Maximum allowed GPA value
         /// </summary>
         public static decimal MaxValue => 4.0m;
+
+        /// <summary>
+        /// Parameterless constructor for Entity Framework
+        /// </summary>
+        private GPA()
+        {
+            Value = 0.0m;
+        }
 
         /// <summary>
         /// Private constructor to enforce factory method usage

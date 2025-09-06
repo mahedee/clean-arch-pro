@@ -1,0 +1,13 @@
+{
+  "fullName": "Mahedee Hasan",
+  "dateOfBirth": "2001-09-06T20:00:17.125Z",
+  "email": "mh@gmail.com",
+  "phoneNumber": "+1-437-224-3287",
+  "address": {
+    "street": "ddd",
+    "city": "dd",
+    "state": "dd",
+    "zipCode": "12345",
+    "country": "Canada"
+  }
+}
