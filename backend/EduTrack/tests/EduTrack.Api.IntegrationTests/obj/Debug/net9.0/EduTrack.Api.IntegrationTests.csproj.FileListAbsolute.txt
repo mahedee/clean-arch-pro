@@ -446,7 +446,6 @@ D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.Integratio
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net9.0\EduTrack.Domain.pdb
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\scopedcss\bundle\EduTrack.Api.IntegrationTests.styles.css
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\staticwebassets.build.json
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\staticwebassets.development.json
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\staticwebassets.build.endpoints.json
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\EduTrack.F14BDD14.Up2Date
@@ -455,3 +454,4 @@ D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.Integratio
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\EduTrack.Api.IntegrationTests.pdb
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\EduTrack.Api.IntegrationTests.genruntimeconfig.cache
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\ref\EduTrack.Api.IntegrationTests.dll
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net9.0\staticwebassets.build.json.cache

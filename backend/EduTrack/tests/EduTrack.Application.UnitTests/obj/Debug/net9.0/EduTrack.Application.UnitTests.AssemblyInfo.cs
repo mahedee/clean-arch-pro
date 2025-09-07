@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EduTrack.Application.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08401e1cc7a7d54ebfb7e7b736132ed7df6ab91d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+731ee0553ccb1c23836059f20a3834147a2268c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("EduTrack.Application.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EduTrack.Application.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

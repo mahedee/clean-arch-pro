@@ -30,19 +30,10 @@ namespace EduTrack.Infrastructure.Repositories
 
         public async Task<Student?> GetByEmailAsync(string email, CancellationToken cancellationToken = default)
         {
-            try
-            {
-                // Use EF.Property to query the database column directly without triggering value object conversion
-                return await _context.Students
-                    .Where(s => EF.Property<string>(s, "Email") == email)
-                    .FirstOrDefaultAsync(cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"DEBUG: Error in GetByEmailAsync for email '{email}': {ex.Message}");
-                Console.WriteLine($"DEBUG: Stack trace: {ex.StackTrace}");
-                throw;
-            }
+            // Use EF.Property to query the database column directly without triggering value object conversion
+            return await _context.Students
+                .Where(s => s.Email == email)
+                .FirstOrDefaultAsync(cancellationToken);
         }
 
         public async Task<(IReadOnlyList<Student> Students, int TotalCount)> GetPagedAsync(

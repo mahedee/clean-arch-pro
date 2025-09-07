@@ -1,0 +1,2 @@
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\src\EduTrack.Api\obj\Debug\net9.0\staticwebassets.build.json
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\src\EduTrack.Api\obj\Debug\net9.0\staticwebassets.build.json
