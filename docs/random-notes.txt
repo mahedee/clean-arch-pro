@@ -1,6 +1,4 @@
-- Complete at least one GitHub issue/task.
-- Implement best practices and design patterns.
-- Understand, document, and comment code clearly.
+
 - Use GitHub Copilot for assistance.
 - Add unit testing for backend.
 - Integrate a front-end framework.
@@ -15,3 +13,19 @@
 - Use Copilot Instructions
 - Use copilot workspace 
 - Create dev and master branch - work on dev branch and merge to master branch as  PR
+- dev branch will be the working branch. work on dev branch or issue branch and merge to dev branch as PR
+- You can assign PR to github bot for review
+- Write tutorial - Validation pipeline using IPipelineBehavior, Fluent Validator - follow validation-flow-explanation.md
+- Complete at least one GitHub issue/task.
+- Implement best practices and design patterns-discover design patterns
+- Understand, document, and comment code clearly.
+- Implement proper pagination in the controller
+- Write scripts - to find list of software installed in the my computer
+- script to to start post gres sql if it is not running
+- Add some seed data 
+- Add proper logging mechanism
+- Connect backend student api with front end and perform CRUD InvalidOperationException
+- Follow industry best practices and professional architecture for frontend. 
+- Read the doc adn files you will get hints what to do
+- Run application and check each end point. Entry some where valid data if get problem fix it.
+

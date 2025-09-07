@@ -167,8 +167,15 @@ namespace EduTrack.Domain.Entities
             if (newFullName == null)
                 throw new ArgumentNullException(nameof(newFullName));
 
+            var previousFullName = _fullName;
             _fullName = newFullName;
             MarkAsUpdated();
+
+            // Raise domain event
+            AddDomainEvent(new StudentPersonalInfoUpdatedEvent(
+                Id, 
+                previousFullName?.Value, 
+                newFullName.Value));
         }
 
         /// <summary>
@@ -187,8 +194,17 @@ namespace EduTrack.Domain.Entities
         /// <param name="phoneNumber">New phone number</param>
         public void UpdatePhoneNumber(PhoneNumber? phoneNumber)
         {
+            var previousPhoneNumber = _phoneNumber;
             _phoneNumber = phoneNumber;
             MarkAsUpdated();
+
+            // Raise domain event
+            AddDomainEvent(new StudentPhoneNumberUpdatedEvent(
+                Id, 
+                FullName.Value, 
+                Email.Value, 
+                previousPhoneNumber?.Value, 
+                phoneNumber?.Value));
         }
 
         /// <summary>
@@ -209,8 +225,24 @@ namespace EduTrack.Domain.Entities
         /// <param name="address">New address</param>
         public void UpdateAddress(Address? address)
         {
+            var previousAddress = _address?.ToString();
             _address = address;
             MarkAsUpdated();
+
+            // Raise domain event if address is being set
+            if (address != null)
+            {
+                AddDomainEvent(new StudentAddressUpdatedEvent(
+                    Id,
+                    FullName.Value,
+                    Email.Value,
+                    previousAddress,
+                    address.Street,
+                    address.City,
+                    address.State,
+                    address.ZipCode,
+                    address.Country));
+            }
         }
 
         /// <summary>
@@ -219,8 +251,36 @@ namespace EduTrack.Domain.Entities
         /// <param name="gpa">New GPA</param>
         public void UpdateGPA(GPA? gpa)
         {
+            var previousGPA = _currentGPA;
             _currentGPA = gpa;
             MarkAsUpdated();
+
+            // Raise domain event if GPA is being set
+            if (gpa != null)
+            {
+                AddDomainEvent(new StudentGPAUpdatedEvent(
+                    Id,
+                    FullName.Value,
+                    Email.Value,
+                    previousGPA?.Value,
+                    gpa.Value));
+
+                // Check for academic standing changes
+                var previousStanding = previousGPA?.AcademicStanding ?? "No GPA Recorded";
+                var newStanding = gpa.AcademicStanding;
+
+                if (previousStanding != newStanding)
+                {
+                    AddDomainEvent(new StudentAcademicStandingChangedEvent(
+                        Id,
+                        FullName.Value,
+                        Email.Value,
+                        gpa.Value,
+                        previousStanding,
+                        newStanding,
+                        "GPA Update"));
+                }
+            }
         }
 
         /// <summary>
@@ -258,8 +318,24 @@ namespace EduTrack.Domain.Entities
         /// </summary>
         public void Deactivate()
         {
+            var previousStatus = Status;
             Status = StudentStatus.Inactive;
             MarkAsUpdated();
+
+            // Raise domain events
+            AddDomainEvent(new StudentStatusChangedEvent(
+                Id,
+                FullName.Value,
+                Email.Value,
+                previousStatus,
+                StudentStatus.Inactive,
+                "Student deactivated"));
+
+            AddDomainEvent(new StudentDeactivatedEvent(
+                Id,
+                FullName.Value,
+                Email.Value,
+                "Student deactivated"));
         }
 
         /// <summary>
@@ -267,8 +343,24 @@ namespace EduTrack.Domain.Entities
         /// </summary>
         public void Reactivate()
         {
+            var previousStatus = Status;
             Status = StudentStatus.Active;
             MarkAsUpdated();
+
+            // Raise domain events
+            AddDomainEvent(new StudentStatusChangedEvent(
+                Id,
+                FullName.Value,
+                Email.Value,
+                previousStatus,
+                StudentStatus.Active,
+                "Student reactivated"));
+
+            AddDomainEvent(new StudentReactivatedEvent(
+                Id,
+                FullName.Value,
+                Email.Value,
+                "Student reactivated"));
         }
 
         /// <summary>
@@ -276,8 +368,27 @@ namespace EduTrack.Domain.Entities
         /// </summary>
         public void Graduate()
         {
+            var previousStatus = Status;
             Status = StudentStatus.Graduated;
             MarkAsUpdated();
+
+            // Raise domain events
+            AddDomainEvent(new StudentStatusChangedEvent(
+                Id,
+                FullName.Value,
+                Email.Value,
+                previousStatus,
+                StudentStatus.Graduated,
+                "Student graduated"));
+
+            AddDomainEvent(new StudentGraduatedEvent(
+                Id,
+                FullName.Value,
+                Email.Value,
+                CurrentGPA?.Value,
+                null, // degree - could be passed as parameter
+                null, // major - could be passed as parameter
+                CurrentGPA?.IsHonorsLevel == true ? "Honors" : null));
         }
     }
 

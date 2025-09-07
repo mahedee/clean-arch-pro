@@ -9,6 +9,10 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
+      { 
+        path: 'students', 
+        loadChildren: () => import('./features/students/student.routes').then(m => m.STUDENT_ROUTES)
+      },
       // Add more routes here as features are developed
     ]
   }

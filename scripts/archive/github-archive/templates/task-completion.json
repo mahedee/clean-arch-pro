@@ -1,0 +1,28 @@
+{
+  "title": "✅ Task Completed: {{task_name}}",
+  "body": "## Task Completion Summary\n\n**Task**: {{task_name}}  \n**Task ID**: {{task_id}}  \n**Phase**: {{phase}}  \n**Completed By**: {{completed_by}}  \n**Completion Date**: {{completion_date}}\n\n## Work Performed\n\n{{work_performed}}\n\n## Deliverables\n\n{{deliverables}}\n\n## Files Created/Modified\n\n{{files_changed}}\n\n## Verification Steps\n\n{{verification_steps}}\n\n## Next Steps\n\n{{next_steps}}\n\n## Additional Notes\n\n{{additional_notes}}\n\n---\n\n**Status**: ✅ Completed  \n**Quality**: {{quality_level}}  \n**Time Spent**: {{time_spent}}",
+  "labels": [
+    "task-completion",
+    "{{phase}}",
+    "completed",
+    "{{priority}}"
+  ],
+  "assignees": [],
+  "milestone": null,
+  "variables": [
+    "task_name",
+    "task_id",
+    "phase",
+    "completed_by",
+    "completion_date",
+    "work_performed",
+    "deliverables",
+    "files_changed",
+    "verification_steps",
+    "next_steps",
+    "additional_notes",
+    "quality_level",
+    "time_spent",
+    "priority"
+  ]
+}

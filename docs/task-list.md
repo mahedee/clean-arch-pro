@@ -2,8 +2,8 @@
 
 ## 📋 Project Overview
 **Total Duration**: 30 weeks  
-**Total Tasks**: 66 tasks across 6 phases (added T001A - GitHub Workflow, T014A - Advanced CI/CD, T010B - Test Coverage, T037 - Workflow Verification)  
-**Estimated Effort**: ~240-300 working days  
+**Total Tasks**: 69 tasks across 6 phases (added T001A - GitHub Workflow, T014A - Advanced CI/CD, T010B - Test Coverage, T011A-T011C - Controller APIs, T037 - Workflow Verification)  
+**Estimated Effort**: ~250-320 working days  
 
 ### **🤖 NEW: GitHub Bot & Copilot Integration Requirements**
 - **GitHub Bot Reviews**: All PRs automatically assigned to @github-actions[bot] for intelligent code review
@@ -97,10 +97,10 @@ See: docs/change-tracker.md for detailed implementation history
   - [x] ✅ **COMPLETE**: Enhance Student entity with proper domain logic
   - [x] ✅ **COMPLETE**: Standardize entity ID types (choose Guid OR int consistently)
   - [x] ✅ **COMPLETE**: Implement value objects (Email, FullName, GPA, PhoneNumber, Address)
-  - [ ] ⚠️ Define core domain entities (Course, Teacher with rich models)
-  - [ ] ⚠️ Create domain events and event handlers
-  - [ ] ⚠️ Implement domain services and specifications
-  - [ ] ⚠️ Add domain exceptions and validation rules
+  - [x] ✅ **COMPLETE**: 🔗 **GITHUB ISSUE #45**: Define core domain entities (Course, Teacher with rich models)
+  - [ ] 🔗 **GITHUB ISSUE #46**: Create domain events and event handlers
+  - [ ] 🔗 **GITHUB ISSUE #47**: Implement domain services and specifications
+  - [ ] 🔗 **GITHUB ISSUE #48**: Add domain exceptions and validation rules
 
 **🔥 DOMAIN LAYER PROGRESS:**
 ```
@@ -112,14 +112,16 @@ See: docs/change-tracker.md for detailed implementation history
 5. ✅ **NEW**: Complete Value Objects implementation (Email, FullName, GPA, PhoneNumber, Address)
 6. ✅ **NEW**: Student entity integration with Value Objects (primitive obsession eliminated)
 7. ✅ **NEW**: Comprehensive unit tests (162 tests passing, 100% Value Objects coverage)
+8. ✅ **GITHUB ISSUE #45 COMPLETE**: Course and Teacher entities with rich domain models (103 new tests, all passing)
 
-🔄 REMAINING:
-- ⚠️ Define core domain entities (Course, Teacher with rich models)
-- ⚠️ Create domain events and event handlers for new entities
-- ⚠️ Implement domain services and specifications
-- ⚠️ Add domain exceptions and validation rules
+🔄 REMAINING (TRACKED AS SEPARATE GITHUB ISSUES):
+- 🔗 Issue #46: Create domain events and event handlers for new entities [6-8 hours]
+- 🔗 Issue #47: Implement domain services and specifications [10-12 hours]
+- 🔗 Issue #48: Add domain exceptions and validation rules [4-6 hours]
 
-Progress: 80% complete (~2-3 hours remaining)
+📊 Progress: 75% complete (~20-26 hours remaining, now tracked individually)
+📋 Task Breakdown: 3 remaining GitHub issues for better tracking and assignment
+🎯 Benefit: Each subtask can be independently assigned, tracked, and completed
 ```
 
 #### **Task 3** - Application Layer Setup *(3-5 days)*
@@ -295,11 +297,161 @@ SCOPE: Comprehensive test coverage reporting and quality metrics
   - [ ] Write unit tests for Student features
   - [ ] Add integration tests for Student API
 
+#### **Task 11A** - Course Management CRUD *(5-7 days)*
+- **ID**: T011A
+- **Dependencies**: T011, T002 (Course entity from GitHub Issue #45)
+- **Sprint**: 4
+- **Status**: 🆕 **NEW TASK - Course API implementation with rich domain integration**
+- **Checklist**:
+  - [ ] ⚠️ **COMMANDS**: Create Course commands (CreateCourse, UpdateCourse, ScheduleCourse, ActivateCourse, CompleteCourse)
+  - [ ] ⚠️ **QUERIES**: Create Course queries (GetCourse, GetCourseList, GetCoursesByDepartment, GetCoursesByInstructor)
+  - [ ] ⚠️ **HANDLERS**: Implement CQRS handlers with domain logic integration
+  - [ ] ⚠️ **CONTROLLER**: Add CourseController with REST endpoints (GET, POST, PUT, DELETE)
+  - [ ] ⚠️ **DTOS**: Create Course DTOs (CourseDto, CreateCourseDto, UpdateCourseDto, CourseListDto)
+  - [ ] ⚠️ **MAPPING**: Setup AutoMapper profiles for Course entity ↔ DTO mapping
+  - [ ] ⚠️ **VALIDATION**: Implement FluentValidation for Course commands
+  - [ ] ⚠️ **UNIT TESTS**: Write comprehensive unit tests for Course handlers and controller
+  - [ ] ⚠️ **INTEGRATION TESTS**: Add API integration tests for Course endpoints
+  - [ ] ⚠️ **DOMAIN EVENTS**: Integrate Course domain events with application layer
+
+**🎯 COURSE API IMPLEMENTATION:**
+```
+SCOPE: Complete Course management API with rich domain model integration
+✅ Current State: Course entity implemented with 45 passing unit tests
+🎯 Goal: Full CRUD API leveraging rich Course domain functionality
+
+🔧 COURSE ENDPOINTS TO IMPLEMENT:
+1. GET /api/courses - Get paginated course list with filtering
+2. GET /api/courses/{id} - Get course details with enrollment info
+3. POST /api/courses - Create new course with validation
+4. PUT /api/courses/{id} - Update course information
+5. POST /api/courses/{id}/schedule - Schedule course with date/time
+6. POST /api/courses/{id}/activate - Activate course for enrollment
+7. POST /api/courses/{id}/complete - Mark course as completed
+8. GET /api/courses/{id}/students - Get enrolled students
+9. POST /api/courses/{id}/students/{studentId} - Enroll student
+10. DELETE /api/courses/{id}/students/{studentId} - Remove student
+
+🏗️ ARCHITECTURE INTEGRATION:
+- Leverage existing Course entity rich domain model
+- Use Course domain events for audit trail and notifications
+- Implement proper error handling with domain exceptions
+- Follow Clean Architecture patterns with CQRS
+- Ensure full test coverage (unit + integration)
+
+📊 SUCCESS CRITERIA:
+- All Course business logic accessible via API
+- Domain events properly triggered on state changes
+- Comprehensive validation and error handling
+- >95% test coverage for Course API layer
+- API documentation with Swagger/OpenAPI
+```
+
+#### **Task 11B** - Teacher Management CRUD *(5-7 days)*
+- **ID**: T011B
+- **Dependencies**: T011A, T002 (Teacher entity from GitHub Issue #45)
+- **Sprint**: 4
+- **Status**: 🆕 **NEW TASK - Teacher API implementation with academic workflow integration**
+- **Checklist**:
+  - [ ] ⚠️ **COMMANDS**: Create Teacher commands (CreateTeacher, UpdateTeacher, HireTeacher, AssignCourse, UpdateContactInfo)
+  - [ ] ⚠️ **QUERIES**: Create Teacher queries (GetTeacher, GetTeacherList, GetTeachersByCourse, GetTeachersByDepartment)
+  - [ ] ⚠️ **HANDLERS**: Implement CQRS handlers with Teacher domain logic
+  - [ ] ⚠️ **CONTROLLER**: Add TeacherController with comprehensive REST endpoints
+  - [ ] ⚠️ **DTOS**: Create Teacher DTOs (TeacherDto, CreateTeacherDto, UpdateTeacherDto, TeacherProfileDto)
+  - [ ] ⚠️ **MAPPING**: Setup AutoMapper profiles for Teacher entity and value objects
+  - [ ] ⚠️ **VALIDATION**: Implement FluentValidation for Teacher commands with business rules
+  - [ ] ⚠️ **UNIT TESTS**: Write comprehensive unit tests for Teacher application layer
+  - [ ] ⚠️ **INTEGRATION TESTS**: Add API integration tests for Teacher workflows
+  - [ ] ⚠️ **ACADEMIC INTEGRATION**: Integrate Teacher-Course assignment workflows
+
+**🎓 TEACHER API IMPLEMENTATION:**
+```
+SCOPE: Complete Teacher management API with academic workflow integration
+✅ Current State: Teacher entity implemented with 58 passing unit tests
+🎯 Goal: Full teacher lifecycle management via comprehensive API
+
+🔧 TEACHER ENDPOINTS TO IMPLEMENT:
+1. GET /api/teachers - Get paginated teacher list with filtering
+2. GET /api/teachers/{id} - Get teacher profile with course assignments
+3. POST /api/teachers - Create new teacher profile
+4. PUT /api/teachers/{id} - Update teacher information
+5. POST /api/teachers/{id}/hire - Process teacher hiring workflow
+6. PUT /api/teachers/{id}/contact - Update contact information
+7. POST /api/teachers/{id}/courses/{courseId} - Assign teacher to course
+8. DELETE /api/teachers/{id}/courses/{courseId} - Remove course assignment
+9. GET /api/teachers/{id}/courses - Get teacher's course assignments
+10. PUT /api/teachers/{id}/academic-title - Update academic title/rank
+
+🏛️ ACADEMIC WORKFLOW INTEGRATION:
+- Leverage Teacher domain model with academic title management
+- Implement course assignment validation and capacity checks
+- Use Teacher domain events for HR and academic notifications
+- Handle employment status transitions with proper validation
+- Integrate with existing Course entity for assignment workflows
+
+📊 SUCCESS CRITERIA:
+- Complete teacher lifecycle management via API
+- Proper validation of academic credentials and titles
+- Course assignment workflows with conflict detection
+- Domain events for HR and academic process integration
+- >95% test coverage with comprehensive scenarios
+```
+
+#### **Task 11C** - Attendance Management CRUD *(4-6 days)*
+- **ID**: T011C
+- **Dependencies**: T011B, T002 (Student entity), Course and Teacher entities
+- **Sprint**: 4
+- **Status**: 🆕 **NEW TASK - Attendance tracking API with multi-entity integration**
+- **Checklist**:
+  - [ ] ⚠️ **ENTITY**: Create Attendance domain entity with business logic
+  - [ ] ⚠️ **COMMANDS**: Create Attendance commands (MarkAttendance, BulkAttendance, UpdateAttendance)
+  - [ ] ⚠️ **QUERIES**: Create Attendance queries (GetAttendance, GetAttendanceReport, GetStudentAttendance)
+  - [ ] ⚠️ **HANDLERS**: Implement CQRS handlers with attendance business rules
+  - [ ] ⚠️ **CONTROLLER**: Add AttendanceController with tracking and reporting endpoints
+  - [ ] ⚠️ **DTOS**: Create Attendance DTOs (AttendanceDto, MarkAttendanceDto, AttendanceReportDto)
+  - [ ] ⚠️ **VALIDATION**: Implement attendance validation rules and business constraints
+  - [ ] ⚠️ **UNIT TESTS**: Write unit tests for Attendance domain and application logic
+  - [ ] ⚠️ **INTEGRATION TESTS**: Add API integration tests for attendance workflows
+  - [ ] ⚠️ **REPORTING**: Implement attendance analytics and reporting features
+
+**📊 ATTENDANCE API IMPLEMENTATION:**
+```
+SCOPE: Comprehensive attendance tracking with analytics and reporting
+✅ Current State: Student, Course, Teacher entities ready for integration
+🎯 Goal: Real-time attendance tracking with automated reporting
+
+🔧 ATTENDANCE ENDPOINTS TO IMPLEMENT:
+1. POST /api/attendance/mark - Mark individual student attendance
+2. POST /api/attendance/bulk - Bulk attendance marking for class sessions
+3. GET /api/attendance/session/{sessionId} - Get attendance for specific session
+4. GET /api/attendance/student/{studentId} - Get student attendance history
+5. GET /api/attendance/course/{courseId} - Get course attendance summary
+6. GET /api/attendance/reports/daily - Daily attendance reports
+7. GET /api/attendance/reports/student/{studentId} - Individual student reports
+8. PUT /api/attendance/{id} - Update attendance record (corrections)
+9. GET /api/attendance/analytics/trends - Attendance trend analytics
+10. GET /api/attendance/alerts/low-attendance - Students with attendance issues
+
+📈 ATTENDANCE DOMAIN MODEL:
+- AttendanceRecord entity with Student, Course, Teacher references
+- Attendance status enumeration (Present, Absent, Late, Excused)
+- Business rules for minimum attendance requirements
+- Automated notifications for low attendance
+- Integration with Course scheduling and Teacher assignments
+
+📊 SUCCESS CRITERIA:
+- Real-time attendance marking with validation
+- Comprehensive reporting and analytics features
+- Integration with Student, Course, and Teacher entities
+- Automated alerts for attendance policy violations
+- >90% test coverage with realistic attendance scenarios
+```
+
 ### **Sprint 5: Angular Foundation & CI/CD** *(Weeks 9-10)*
 
 #### **Task 12** - Angular Project Setup *(4-5 days)*
 - **ID**: T012
-- **Dependencies**: T011
+- **Dependencies**: T011C (All CRUD operations complete)
 - **Sprint**: 5
 - **Checklist**:
   - [ ] Create Angular project with latest version
@@ -760,7 +912,7 @@ This task ensures that T001A implementation is fully functional and provides the
 | **Phase 5** | 15 | T033-T034 | 2 weeks | Performance & Security |
 | **Phase 6** | 16 | T035-T037 | 1 week | Testing, Deployment & Verification |
 
-**Total**: 39 tasks across 16 sprints over 30 weeks (added GitHub workflow tasks + verification)
+**Total**: 42 tasks across 16 sprints over 30 weeks (added GitHub workflow tasks + new controller tasks + verification)
 
 ---
 

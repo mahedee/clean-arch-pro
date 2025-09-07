@@ -1,0 +1,23 @@
+{
+  "title": "🛠️ {{general_title}}",
+  "body": "## Issue Description\n\n{{general_description}}\n\n## Discussion Points\n\n{{discussion_points}}\n\n## Background Context\n\n{{background_context}}\n\n## Proposed Next Steps\n\n{{next_steps}}\n\n## Stakeholders\n\n{{stakeholders}}\n\n## Additional Information\n\n{{additional_info}}\n\n---\n\n**Type**: {{issue_category}}  \n**Timeline**: {{timeline}}  \n**Impact**: {{impact_level}}",
+  "labels": [
+    "discussion",
+    "{{issue_category}}",
+    "{{impact_level}}"
+  ],
+  "assignees": [],
+  "milestone": null,
+  "variables": [
+    "general_title",
+    "general_description",
+    "discussion_points",
+    "background_context",
+    "next_steps",
+    "stakeholders",
+    "additional_info",
+    "issue_category",
+    "timeline",
+    "impact_level"
+  ]
+}

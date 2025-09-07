@@ -1,0 +1,25 @@
+{
+  "template": "bug-report.json",
+  "variables": {
+    "bug_title": "Memory Leak in Student Performance Analytics Dashboard",
+    "bug_description": "The Student Performance Analytics Dashboard exhibits a memory leak when displaying large datasets (>1000 students). Memory usage continuously increases over time and eventually causes browser crashes or severe performance degradation.",
+    "step_1": "Navigate to Analytics Dashboard (/analytics/student-performance)",
+    "step_2": "Load a large dataset with 1000+ students and multiple semesters",
+    "step_3": "Interact with filters and charts for 10-15 minutes",
+    "expected_behavior": "Memory usage should remain stable after initial data load. Chart interactions should not cause memory accumulation. Browser should maintain responsive performance throughout the session.",
+    "actual_behavior": "Memory usage continuously increases with each chart interaction. After 10-15 minutes, browser becomes unresponsive. Dev tools show memory usage growing from ~50MB to >500MB.",
+    "os": "Windows 11 / macOS Ventura",
+    "browser": "Chrome 118.0.5993.88 / Firefox 119.0",
+    "version": "EduTrack v1.2.0-beta",
+    "screenshots": "Browser dev tools memory profiler showing continuous memory growth. Performance timeline showing degradation over time.",
+    "additional_info": "The issue appears to be related to chart library event listeners not being properly cleaned up and possibly duplicate data subscriptions. Memory leak is most noticeable with Chart.js visualizations.",
+    "severity": "high"
+  },
+  "additionalLabels": [
+    "memory-leak",
+    "performance",
+    "analytics",
+    "frontend",
+    "charts"
+  ]
+}

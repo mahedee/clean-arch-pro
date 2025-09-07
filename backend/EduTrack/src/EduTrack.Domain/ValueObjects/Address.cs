@@ -18,32 +18,44 @@ namespace EduTrack.Domain.ValueObjects
         /// <summary>
         /// Street address line 1
         /// </summary>
-        public string Street { get; }
+        public string Street { get; private set; }
 
         /// <summary>
         /// Street address line 2 (optional)
         /// </summary>
-        public string? Street2 { get; }
+        public string? Street2 { get; private set; }
 
         /// <summary>
         /// City name
         /// </summary>
-        public string City { get; }
+        public string City { get; private set; }
 
         /// <summary>
         /// State abbreviation (2 letters)
         /// </summary>
-        public string State { get; }
+        public string State { get; private set; }
 
         /// <summary>
         /// ZIP code (5 or 9 digits)
         /// </summary>
-        public string ZipCode { get; }
+        public string ZipCode { get; private set; }
 
         /// <summary>
         /// Country (default to US)
         /// </summary>
-        public string Country { get; }
+        public string Country { get; private set; }
+
+        /// <summary>
+        /// Parameterless constructor for Entity Framework
+        /// </summary>
+        private Address()
+        {
+            Street = string.Empty;
+            City = string.Empty;
+            State = string.Empty;
+            ZipCode = string.Empty;
+            Country = string.Empty;
+        }
 
         /// <summary>
         /// Private constructor to enforce factory method usage

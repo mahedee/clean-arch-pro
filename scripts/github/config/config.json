@@ -1,0 +1,74 @@
+{
+  "github": {
+    "owner": "mahedee",
+    "repository": "clean-arch-pro",
+    "apiUrl": "https://api.github.com",
+    "apiVersion": "application/vnd.github.v3+json",
+    "tokenFile": "./config/github-token.json",
+    "tokenFormat": "json",
+    "tokenProperty": "github_token",
+    "defaultBranch": "main",
+    "defaultLabels": [
+      "enhancement",
+      "task",
+      "automated"
+    ]
+  },
+  "issue": {
+    "defaultPriority": "medium",
+    "defaultMilestone": null,
+    "defaultAssignees": [],
+    "autoLabeling": true,
+    "templateDirectory": "./templates",
+    "issueDirectory": "./simple-issues"
+  },
+  "api": {
+    "timeout": 30000,
+    "retries": 3,
+    "retryDelay": 2000,
+    "rateLimit": {
+      "maxRequests": 5000,
+      "perHour": true
+    }
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "logFile": "github-issues.log",
+    "includeTimestamp": true,
+    "colorOutput": true
+  },
+  "security": {
+    "validateToken": true,
+    "tokenMinLength": 40,
+    "allowedScopes": [
+      "repo",
+      "public_repo"
+    ]
+  },
+  "templates": {
+    "defaultTemplate": "default-issue.json",
+    "availableTemplates": [
+      "bug-report.json",
+      "feature-request.json",
+      "task-completion.json",
+      "architecture-issue.json",
+      "test-coverage.json"
+    ]
+  },
+  "validation": {
+    "requireTitle": true,
+    "requireBody": true,
+    "minTitleLength": 10,
+    "maxTitleLength": 100,
+    "minBodyLength": 50,
+    "allowEmptyLabels": false
+  },
+  "output": {
+    "verbose": true,
+    "showProgress": true,
+    "showApiResponses": false,
+    "exportResults": true,
+    "resultsFile": "issue-creation-results.json"
+  }
+}

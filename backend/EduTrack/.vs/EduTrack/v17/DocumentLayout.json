@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E61E3D5-062D-88C4-5FF1-C06E325AB980}|src\\EduTrack.Domain\\EduTrack.Domain.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.domain\\valueobjects\\fullname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E61E3D5-062D-88C4-5FF1-C06E325AB980}|src\\EduTrack.Domain\\EduTrack.Domain.csproj|solutionrelative:src\\edutrack.domain\\valueobjects\\fullname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E61E3D5-062D-88C4-5FF1-C06E325AB980}|src\\EduTrack.Domain\\EduTrack.Domain.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.domain\\valueobjects\\phonenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E61E3D5-062D-88C4-5FF1-C06E325AB980}|src\\EduTrack.Domain\\EduTrack.Domain.csproj|solutionrelative:src\\edutrack.domain\\valueobjects\\phonenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF23C505-D166-470C-BEC4-2F236729E5E8}|src\\EduTrack.Api\\EduTrack.Api.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.api\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF23C505-D166-470C-BEC4-2F236729E5E8}|src\\EduTrack.Api\\EduTrack.Api.csproj|solutionrelative:src\\edutrack.api\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB227EC-D3F5-4951-BC56-F2460BF8BE20}|src\\EduTrack.Application\\EduTrack.Application.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.application\\features\\students\\queries\\getstudent\\getstudentqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB227EC-D3F5-4951-BC56-F2460BF8BE20}|src\\EduTrack.Application\\EduTrack.Application.csproj|solutionrelative:src\\edutrack.application\\features\\students\\queries\\getstudent\\getstudentqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB227EC-D3F5-4951-BC56-F2460BF8BE20}|src\\EduTrack.Application\\EduTrack.Application.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.application\\features\\students\\queries\\getstudentlist\\getstudentlistqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB227EC-D3F5-4951-BC56-F2460BF8BE20}|src\\EduTrack.Application\\EduTrack.Application.csproj|solutionrelative:src\\edutrack.application\\features\\students\\queries\\getstudentlist\\getstudentlistqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2422AF5-F001-4ABE-9EB2-9C5C8070C946}|src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2422AF5-F001-4ABE-9EB2-9C5C8070C946}|src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj|solutionrelative:src\\edutrack.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E61E3D5-062D-88C4-5FF1-C06E325AB980}|src\\EduTrack.Domain\\EduTrack.Domain.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E61E3D5-062D-88C4-5FF1-C06E325AB980}|src\\EduTrack.Domain\\EduTrack.Domain.csproj|solutionrelative:src\\edutrack.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB227EC-D3F5-4951-BC56-F2460BF8BE20}|src\\EduTrack.Application\\EduTrack.Application.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.application\\features\\students\\commands\\createstudent\\createstudentcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB227EC-D3F5-4951-BC56-F2460BF8BE20}|src\\EduTrack.Application\\EduTrack.Application.csproj|solutionrelative:src\\edutrack.application\\features\\students\\commands\\createstudent\\createstudentcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2422AF5-F001-4ABE-9EB2-9C5C8070C946}|src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj|d:\\projects\\github\\clean-arch-pro\\backend\\edutrack\\src\\edutrack.infrastructure\\migrations\\20250907193054_change-student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2422AF5-F001-4ABE-9EB2-9C5C8070C946}|src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj|solutionrelative:src\\edutrack.infrastructure\\migrations\\20250907193054_change-student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetStudentListQueryHandler.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudentList\\GetStudentListQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudentList\\GetStudentListQueryHandler.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudentList\\GetStudentListQueryHandler.cs",
+              "RelativeToolTip": "src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudentList\\GetStudentListQueryHandler.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwDoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T20:53:02.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FullName.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\ValueObjects\\FullName.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Domain\\ValueObjects\\FullName.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\ValueObjects\\FullName.cs",
+              "RelativeToolTip": "src\\EduTrack.Domain\\ValueObjects\\FullName.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAlwEkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T19:20:50.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Api\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Api\\Controllers\\StudentsController.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Api\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "src\\EduTrack.Api\\Controllers\\StudentsController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwDwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T20:32:15.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StudentRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\Repositories\\StudentRepository.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Infrastructure\\Repositories\\StudentRepository.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\Repositories\\StudentRepository.cs",
+              "RelativeToolTip": "src\\EduTrack.Infrastructure\\Repositories\\StudentRepository.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAlwFgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T20:32:15.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Domain\\Common\\BaseEntity.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "src\\EduTrack.Domain\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAlwFAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T19:20:49.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PhoneNumber.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\ValueObjects\\PhoneNumber.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Domain\\ValueObjects\\PhoneNumber.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\ValueObjects\\PhoneNumber.cs",
+              "RelativeToolTip": "src\\EduTrack.Domain\\ValueObjects\\PhoneNumber.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAlwFgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T20:35:20.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetStudentQueryHandler.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudent\\GetStudentQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudent\\GetStudentQueryHandler.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudent\\GetStudentQueryHandler.cs",
+              "RelativeToolTip": "src\\EduTrack.Application\\Features\\Students\\Queries\\GetStudent\\GetStudentQueryHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAlwBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T20:19:43.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateStudentCommandHandler.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\Features\\Students\\Commands\\CreateStudent\\CreateStudentCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Application\\Features\\Students\\Commands\\CreateStudent\\CreateStudentCommandHandler.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\Features\\Students\\Commands\\CreateStudent\\CreateStudentCommandHandler.cs",
+              "RelativeToolTip": "src\\EduTrack.Application\\Features\\Students\\Commands\\CreateStudent\\CreateStudentCommandHandler.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAlwDIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T20:32:15.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250907193054_change-student.cs",
+              "DocumentMoniker": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\Migrations\\20250907193054_change-student.cs",
+              "RelativeDocumentMoniker": "src\\EduTrack.Infrastructure\\Migrations\\20250907193054_change-student.cs",
+              "ToolTip": "D:\\Projects\\Github\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\Migrations\\20250907193054_change-student.cs",
+              "RelativeToolTip": "src\\EduTrack.Infrastructure\\Migrations\\20250907193054_change-student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T19:30:54.931Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

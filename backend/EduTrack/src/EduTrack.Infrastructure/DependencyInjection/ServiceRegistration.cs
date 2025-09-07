@@ -12,7 +12,7 @@ namespace EduTrack.Infrastructure.DependencyInjection
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))); // Ensure Microsoft.EntityFrameworkCore is referenced
+                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))); // Use PostgreSQL
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();

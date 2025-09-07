@@ -1,10 +1,4 @@
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\CoverletSourceRootsMapping_EduTrack.Domain.UnitTests
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.csproj.AssemblyReference.cache
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.AssemblyInfoInputs.cache
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.AssemblyInfo.cs
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.csproj.CoreCompileInputs.cache
-D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.sourcelink.json
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\testhost.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\testhost.exe
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -14,6 +8,7 @@ D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTes
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\EduTrack.Domain.UnitTests.runtimeconfig.json
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\EduTrack.Domain.UnitTests.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\EduTrack.Domain.UnitTests.pdb
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\MediatR.Contracts.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\Microsoft.TestPlatform.CoreUtilities.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -95,6 +90,12 @@ D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTes
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\EduTrack.Domain.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\bin\Debug\net9.0\EduTrack.Domain.pdb
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.csproj.AssemblyReference.cache
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.AssemblyInfoInputs.cache
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.AssemblyInfo.cs
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.csproj.CoreCompileInputs.cache
+D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.sourcelink.json
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.56EEC0D6.Up2Date
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\EduTrack.Domain.UnitTests.dll
 D:\Projects\Github\clean-arch-pro\backend\EduTrack\tests\EduTrack.Domain.UnitTests\obj\Debug\net9.0\refint\EduTrack.Domain.UnitTests.dll

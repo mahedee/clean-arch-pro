@@ -1,0 +1,381 @@
+[2025-09-06 07:14:31] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\github-token.txt
+[2025-09-06 07:14:31] [INFO] Validating GitHub token...
+[2025-09-06 07:14:31] [ERROR] Script execution failed: Token length is below minimum required: 40
+[2025-09-06 07:14:45] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\github-token.txt
+[2025-09-06 07:14:45] [INFO] Validating GitHub token...
+[2025-09-06 07:14:45] [ERROR] Script execution failed: Token length is below minimum required: 40
+[2025-09-06 07:15:21] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\github-token.txt
+[2025-09-06 07:15:21] [INFO] Validating GitHub token...
+[2025-09-06 07:15:21] [ERROR] Token validation failed: Response status code does not indicate success: 401 (Unauthorized).
+[2025-09-06 07:15:21] [ERROR] Script execution failed: GitHub token validation failed
+[2025-09-06 07:31:25] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:31:25] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:31:25] [INFO] Validating GitHub token...
+[2025-09-06 07:31:25] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:31:25] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:31:25] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:31:25] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:31:25] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:31:26] [ERROR] Script execution failed: Cannot process argument transformation on parameter 'Variables'. Cannot convert value "@{bug_title=Student Registration Form Validation Not Working; bug_description=The student registration form accepts invalid email addresses and allows registration with duplicate student IDs. The form validation appears to be bypassed in certain scenarios.; step_1=Navigate to Student Registration page (/students/register); step_2=Enter an invalid email format (e.g., 'invalid-email'); step_3=Enter a student ID that already exists in the system; expected_behavior=The form should display validation errors for invalid email format and prevent registration with duplicate student IDs. User should see clear error messages and form submission should be blocked.; actual_behavior=The form accepts the invalid data and proceeds with registration, causing database errors and inconsistent data state.; os=Windows 11; browser=Chrome 118.0.5993.88; version=EduTrack v1.0.0-dev; screenshots=Screenshot attached showing form accepting invalid email without validation errors.; additional_info=This issue affects data integrity and user experience. The problem appears to be related to client-side validation not being properly enforced before server-side processing.; severity=high}" to type "System.Collections.Hashtable". Error: "Cannot convert the "@{bug_title=Student Registration Form Validation Not Working; bug_description=The student registration form accepts invalid email addresses and allows registration with duplicate student IDs. The form validation appears to be bypassed in certain scenarios.; step_1=Navigate to Student Registration page (/students/register); step_2=Enter an invalid email format (e.g., 'invalid-email'); step_3=Enter a student ID that already exists in the system; expected_behavior=The form should display validation errors for invalid email format and prevent registration with duplicate student IDs. User should see clear error messages and form submission should be blocked.; actual_behavior=The form accepts the invalid data and proceeds with registration, causing database errors and inconsistent data state.; os=Windows 11; browser=Chrome 118.0.5993.88; version=EduTrack v1.0.0-dev; screenshots=Screenshot attached showing form accepting invalid email without validation errors.; additional_info=This issue affects data integrity and user experience. The problem appears to be related to client-side validation not being properly enforced before server-side processing.; severity=high}" value of type "System.Management.Automation.PSCustomObject" to type "System.Collections.Hashtable"."
+[2025-09-06 07:31:53] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:31:53] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:31:53] [INFO] Validating GitHub token...
+[2025-09-06 07:31:53] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:31:53] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:31:53] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:31:53] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:31:53] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:31:53] [INFO] Expanding template with variables...
+[2025-09-06 07:31:53] [INFO] Template expansion completed
+[2025-09-06 07:31:53] [ERROR] Script execution failed: The property 'labels' cannot be found on this object. Verify that the property exists and can be set.
+[2025-09-06 07:32:16] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:32:16] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:32:16] [INFO] Validating GitHub token...
+[2025-09-06 07:32:17] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:32:17] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:32:17] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:32:17] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:32:17] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:32:17] [INFO] Expanding template with variables...
+[2025-09-06 07:32:17] [INFO] Template expansion completed
+[2025-09-06 07:32:17] [INFO] Validating issue data...
+[2025-09-06 07:32:17] [ERROR] Validation failed:
+[2025-09-06 07:32:17] [ERROR]   - Title is required
+[2025-09-06 07:32:17] [ERROR]   - Body is required
+[2025-09-06 07:32:17] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:32:29] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:32:29] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:32:29] [INFO] Validating GitHub token...
+[2025-09-06 07:32:29] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:32:29] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:32:29] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:32:29] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:32:29] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:32:29] [INFO] Expanding template with variables...
+[2025-09-06 07:32:29] [INFO] Template expansion completed
+[2025-09-06 07:32:29] [DEBUG] DEBUG: Expanded issue data type: String
+[2025-09-06 07:32:29] [DEBUG] DEBUG: Issue title: ''
+[2025-09-06 07:32:29] [DEBUG] DEBUG: Issue body length: 0
+[2025-09-06 07:32:29] [INFO] Validating issue data...
+[2025-09-06 07:32:29] [ERROR] Validation failed:
+[2025-09-06 07:32:29] [ERROR]   - Title is required
+[2025-09-06 07:32:29] [ERROR]   - Body is required
+[2025-09-06 07:32:29] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:32:58] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:32:58] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:32:58] [INFO] Validating GitHub token...
+[2025-09-06 07:32:58] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:32:58] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:32:58] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:32:58] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:32:58] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:32:58] [INFO] Expanding template with variables...
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Template JSON length: 514
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Variables count: 14
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{version}} with: EduTrack v1.0.0-dev
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{bug_title}} with: Student Registration Form Validation Not Working
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{additional_info}} with: This issue affects data integrity and user experie
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{timestamp}} with: 2025-09-06 07:32:58 UTC
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{bug_description}} with: The student registration form accepts invalid emai
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{step_1}} with: Navigate to Student Registration page (/students/r
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{severity}} with: high
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{step_3}} with: Enter a student ID that already exists in the syst
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{screenshots}} with: Screenshot attached showing form accepting invalid
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{step_2}} with: Enter an invalid email format (e.g., 'invalid-emai
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{actual_behavior}} with: The form accepts the invalid data and proceeds wit
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{os}} with: Windows 11
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{expected_behavior}} with: The form should display validation errors for inva
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Replacing {{browser}} with: Chrome 118.0.5993.88
+[2025-09-06 07:32:58] [DEBUG] DEBUG: Final JSON length: 1357
+[2025-09-06 07:32:58] [INFO] Template expansion completed
+[2025-09-06 07:32:59] [DEBUG] DEBUG: Expanded issue data type: String
+[2025-09-06 07:32:59] [DEBUG] DEBUG: Issue title: ''
+[2025-09-06 07:32:59] [DEBUG] DEBUG: Issue body length: 0
+[2025-09-06 07:32:59] [INFO] Validating issue data...
+[2025-09-06 07:32:59] [ERROR] Validation failed:
+[2025-09-06 07:32:59] [ERROR]   - Title is required
+[2025-09-06 07:32:59] [ERROR]   - Body is required
+[2025-09-06 07:32:59] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:33:32] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:33:32] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:33:32] [INFO] Validating GitHub token...
+[2025-09-06 07:33:33] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:33:33] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:33:33] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:33:33] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:33:33] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:33:33] [INFO] Expanding template with variables...
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Template JSON length: 514
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Variables count: 14
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{version}} with: EduTrack v1.0.0-dev
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{bug_title}} with: Student Registration Form Validation Not Working
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{additional_info}} with: This issue affects data integrity and user experie
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{timestamp}} with: 2025-09-06 07:33:33 UTC
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{bug_description}} with: The student registration form accepts invalid emai
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{step_1}} with: Navigate to Student Registration page (/students/r
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{severity}} with: high
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{step_3}} with: Enter a student ID that already exists in the syst
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{screenshots}} with: Screenshot attached showing form accepting invalid
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{step_2}} with: Enter an invalid email format (e.g., 'invalid-emai
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{actual_behavior}} with: The form accepts the invalid data and proceeds wit
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{os}} with: Windows 11
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{expected_behavior}} with: The form should display validation errors for inva
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Replacing {{browser}} with: Chrome 118.0.5993.88
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Final JSON length: 1357
+[2025-09-06 07:33:33] [DEBUG] DEBUG: About to convert JSON back to object
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Converted object type: String
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Object has title: False
+[2025-09-06 07:33:33] [INFO] Template expansion completed
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Expanded issue data type: String
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Issue title: ''
+[2025-09-06 07:33:33] [DEBUG] DEBUG: Issue body length: 0
+[2025-09-06 07:33:33] [INFO] Validating issue data...
+[2025-09-06 07:33:33] [ERROR] Validation failed:
+[2025-09-06 07:33:33] [ERROR]   - Title is required
+[2025-09-06 07:33:33] [ERROR]   - Body is required
+[2025-09-06 07:33:33] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:33:48] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:33:48] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:33:48] [INFO] Validating GitHub token...
+[2025-09-06 07:33:48] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:33:48] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:33:48] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:33:48] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:33:48] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:33:48] [INFO] Expanding template with variables...
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Template JSON length: 514
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Variables count: 14
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{version}} with: EduTrack v1.0.0-dev
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{bug_title}} with: Student Registration Form Validation Not Working
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{additional_info}} with: This issue affects data integrity and user experie
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{timestamp}} with: 2025-09-06 07:33:48 UTC
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{bug_description}} with: The student registration form accepts invalid emai
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{step_1}} with: Navigate to Student Registration page (/students/r
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{severity}} with: high
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{step_3}} with: Enter a student ID that already exists in the syst
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{screenshots}} with: Screenshot attached showing form accepting invalid
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{step_2}} with: Enter an invalid email format (e.g., 'invalid-emai
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{actual_behavior}} with: The form accepts the invalid data and proceeds wit
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{os}} with: Windows 11
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{expected_behavior}} with: The form should display validation errors for inva
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Replacing {{browser}} with: Chrome 118.0.5993.88
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Final JSON length: 1357
+[2025-09-06 07:33:48] [DEBUG] DEBUG: About to convert JSON back to object
+[2025-09-06 07:33:48] [DEBUG] DEBUG: Converted object type: String
+[2025-09-06 07:33:49] [DEBUG] DEBUG: Object has title: False
+[2025-09-06 07:33:49] [INFO] Template expansion completed
+[2025-09-06 07:33:49] [DEBUG] DEBUG: Expanded issue data type: String
+[2025-09-06 07:33:49] [DEBUG] DEBUG: Issue title: ''
+[2025-09-06 07:33:49] [DEBUG] DEBUG: Issue body length: 0
+[2025-09-06 07:33:49] [INFO] Validating issue data...
+[2025-09-06 07:33:49] [ERROR] Validation failed:
+[2025-09-06 07:33:49] [ERROR]   - Title is required
+[2025-09-06 07:33:49] [ERROR]   - Body is required
+[2025-09-06 07:33:49] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:34:10] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:34:10] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:34:10] [INFO] Validating GitHub token...
+[2025-09-06 07:34:11] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:34:11] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:34:11] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:34:11] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:34:11] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:34:11] [INFO] Expanding template with variables...
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Template JSON length: 514
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Variables count: 14
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{version}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{bug_title}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{additional_info}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{timestamp}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{bug_description}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{step_1}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{severity}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{step_3}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{screenshots}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{step_2}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{actual_behavior}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{os}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{expected_behavior}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Replacing {{browser}} with escaped value
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Final JSON length: 1357
+[2025-09-06 07:34:11] [DEBUG] DEBUG: About to convert JSON back to object
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Converted object type: String
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Object has title: False
+[2025-09-06 07:34:11] [INFO] Template expansion completed
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Expanded issue data type: String
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Issue title: ''
+[2025-09-06 07:34:11] [DEBUG] DEBUG: Issue body length: 0
+[2025-09-06 07:34:11] [INFO] Validating issue data...
+[2025-09-06 07:34:11] [ERROR] Validation failed:
+[2025-09-06 07:34:11] [ERROR]   - Title is required
+[2025-09-06 07:34:11] [ERROR]   - Body is required
+[2025-09-06 07:34:11] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:34:28] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:34:28] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:34:28] [INFO] Validating GitHub token...
+[2025-09-06 07:34:29] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:34:29] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:34:29] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:34:29] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:34:29] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:34:29] [INFO] Expanding template with variables...
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Template JSON length: 514
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Variables count: 14
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{version}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{bug_title}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{additional_info}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{timestamp}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{bug_description}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{step_1}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{severity}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{step_3}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{screenshots}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{step_2}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{actual_behavior}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{os}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{expected_behavior}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Replacing {{browser}} with escaped value
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Final JSON length: 1357
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Saved JSON to debug-template.json
+[2025-09-06 07:34:29] [DEBUG] DEBUG: About to convert JSON back to object
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Converted object type: String
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Object has title: False
+[2025-09-06 07:34:29] [INFO] Template expansion completed
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Expanded issue data type: String
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Issue title: ''
+[2025-09-06 07:34:29] [DEBUG] DEBUG: Issue body length: 0
+[2025-09-06 07:34:29] [INFO] Validating issue data...
+[2025-09-06 07:34:29] [ERROR] Validation failed:
+[2025-09-06 07:34:29] [ERROR]   - Title is required
+[2025-09-06 07:34:29] [ERROR]   - Body is required
+[2025-09-06 07:34:29] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:34:47] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:34:47] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:34:47] [INFO] Validating GitHub token...
+[2025-09-06 07:34:48] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:34:48] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-bug-report.json
+[2025-09-06 07:34:48] [INFO] Issue definition loaded successfully: sample-bug-report.json
+[2025-09-06 07:34:48] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\bug-report.json
+[2025-09-06 07:34:48] [INFO] Template loaded successfully: bug-report.json
+[2025-09-06 07:34:48] [INFO] Expanding template with variables...
+[2025-09-06 07:34:48] [DEBUG] DEBUG: Template type before JSON conversion: String
+[2025-09-06 07:34:48] [ERROR] Script execution failed: Conversion from JSON failed with error: Unexpected character encountered while parsing value: @. Path '', line 0, position 0.
+[2025-09-06 07:38:09] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:38:09] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:38:09] [INFO] Validating GitHub token...
+[2025-09-06 07:38:09] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:38:09] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-analytics-feature.json
+[2025-09-06 07:38:09] [INFO] Issue definition loaded successfully: sample-analytics-feature.json
+[2025-09-06 07:38:09] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\feature-request.json
+[2025-09-06 07:38:09] [INFO] Template loaded successfully: feature-request.json
+[2025-09-06 07:38:09] [INFO] Expanding template with variables...
+[2025-09-06 07:38:09] [INFO] Template expansion completed
+[2025-09-06 07:38:09] [INFO] Validating issue data...
+[2025-09-06 07:38:09] [ERROR] Validation failed:
+[2025-09-06 07:38:09] [ERROR]   - Title is required
+[2025-09-06 07:38:09] [ERROR]   - Body is required
+[2025-09-06 07:38:09] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:38:51] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:38:51] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:38:51] [INFO] Validating GitHub token...
+[2025-09-06 07:38:51] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:38:51] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-analytics-feature.json
+[2025-09-06 07:38:52] [INFO] Issue definition loaded successfully: sample-analytics-feature.json
+[2025-09-06 07:38:52] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\feature-request.json
+[2025-09-06 07:38:52] [INFO] Template loaded successfully: feature-request.json
+[2025-09-06 07:38:52] [INFO] Expanding template with variables...
+[2025-09-06 07:38:52] [INFO] Template expansion completed
+[2025-09-06 07:38:52] [DEBUG] DEBUG: Expanded title: ''
+[2025-09-06 07:38:52] [DEBUG] DEBUG: Expanded body length: 0
+[2025-09-06 07:38:52] [DEBUG] DEBUG: Expanded labels count: 1
+[2025-09-06 07:38:52] [INFO] Validating issue data...
+[2025-09-06 07:38:52] [ERROR] Validation failed:
+[2025-09-06 07:38:52] [ERROR]   - Title is required
+[2025-09-06 07:38:52] [ERROR]   - Body is required
+[2025-09-06 07:38:52] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:39:14] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:39:14] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:39:14] [INFO] Validating GitHub token...
+[2025-09-06 07:39:14] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:39:14] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-analytics-feature.json
+[2025-09-06 07:39:14] [INFO] Issue definition loaded successfully: sample-analytics-feature.json
+[2025-09-06 07:39:14] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\feature-request.json
+[2025-09-06 07:39:14] [INFO] Template loaded successfully: feature-request.json
+[2025-09-06 07:39:14] [INFO] Expanding template with variables...
+[2025-09-06 07:39:14] [DEBUG] DEBUG: Initial title: ''
+[2025-09-06 07:39:14] [DEBUG] DEBUG: Initial body length: 0
+[2025-09-06 07:39:14] [INFO] Template expansion completed
+[2025-09-06 07:39:14] [DEBUG] DEBUG: Expanded title: ''
+[2025-09-06 07:39:14] [DEBUG] DEBUG: Expanded body length: 0
+[2025-09-06 07:39:14] [DEBUG] DEBUG: Expanded labels count: 0
+[2025-09-06 07:39:14] [INFO] Validating issue data...
+[2025-09-06 07:39:14] [ERROR] Validation failed:
+[2025-09-06 07:39:14] [ERROR]   - Title is required
+[2025-09-06 07:39:14] [ERROR]   - Body is required
+[2025-09-06 07:39:14] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:39:34] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:39:34] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:39:34] [INFO] Validating GitHub token...
+[2025-09-06 07:39:35] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:39:35] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-analytics-feature.json
+[2025-09-06 07:39:35] [INFO] Issue definition loaded successfully: sample-analytics-feature.json
+[2025-09-06 07:39:35] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\feature-request.json
+[2025-09-06 07:39:35] [INFO] Template loaded successfully: feature-request.json
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Template title: '✨ {{feature_title}}'
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Template body length: 454
+[2025-09-06 07:39:35] [INFO] Expanding template with variables...
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Initial title: ''
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Initial body length: 0
+[2025-09-06 07:39:35] [INFO] Template expansion completed
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Expanded title: ''
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Expanded body length: 0
+[2025-09-06 07:39:35] [DEBUG] DEBUG: Expanded labels count: 0
+[2025-09-06 07:39:35] [INFO] Validating issue data...
+[2025-09-06 07:39:35] [ERROR] Validation failed:
+[2025-09-06 07:39:35] [ERROR]   - Title is required
+[2025-09-06 07:39:35] [ERROR]   - Body is required
+[2025-09-06 07:39:35] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:39:56] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:39:56] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:39:56] [INFO] Validating GitHub token...
+[2025-09-06 07:39:56] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:39:56] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-analytics-feature.json
+[2025-09-06 07:39:56] [INFO] Issue definition loaded successfully: sample-analytics-feature.json
+[2025-09-06 07:39:56] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\feature-request.json
+[2025-09-06 07:39:56] [INFO] Template loaded successfully: feature-request.json
+[2025-09-06 07:39:56] [DEBUG] DEBUG: Template title: '✨ {{feature_title}}'
+[2025-09-06 07:39:56] [DEBUG] DEBUG: Template body length: 454
+[2025-09-06 07:39:57] [INFO] Expanding template with variables...
+[2025-09-06 07:39:57] [DEBUG] DEBUG: Initial title: ''
+[2025-09-06 07:39:57] [DEBUG] DEBUG: Initial body length: 0
+[2025-09-06 07:39:57] [INFO] Template expansion completed
+[2025-09-06 07:39:57] [DEBUG] DEBUG: Expanded title: ''
+[2025-09-06 07:39:57] [DEBUG] DEBUG: Expanded body length: 0
+[2025-09-06 07:39:57] [DEBUG] DEBUG: Expanded labels count: 0
+[2025-09-06 07:39:57] [INFO] Validating issue data...
+[2025-09-06 07:39:57] [ERROR] Validation failed:
+[2025-09-06 07:39:57] [ERROR]   - Title is required
+[2025-09-06 07:39:57] [ERROR]   - Body is required
+[2025-09-06 07:39:57] [ERROR] Script execution failed: Issue data validation failed
+[2025-09-06 07:40:20] [INFO] Reading token from file: D:\Projects\Github\clean-arch-pro\scripts\github\.\config\github-token.json
+[2025-09-06 07:40:20] [INFO] Token loaded from JSON property: github_token
+[2025-09-06 07:40:20] [INFO] Validating GitHub token...
+[2025-09-06 07:40:21] [INFO] Token validation successful. Authenticated as: mahedee
+[2025-09-06 07:40:21] [INFO] Loading issue definition: D:\Projects\Github\clean-arch-pro\scripts\github\.\issues\sample-analytics-feature.json
+[2025-09-06 07:40:21] [INFO] Issue definition loaded successfully: sample-analytics-feature.json
+[2025-09-06 07:40:21] [INFO] Loading template: D:\Projects\Github\clean-arch-pro\scripts\github\.\templates\feature-request.json
+[2025-09-06 07:40:21] [INFO] Template loaded successfully: feature-request.json
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Template title: '✨ {{feature_title}}'
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Template body length: 454
+[2025-09-06 07:40:21] [INFO] Expanding template with variables...
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Initial title: ''
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Initial body length: 0
+[2025-09-06 07:40:21] [INFO] Template expansion completed
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Expanded title: ''
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Expanded body length: 0
+[2025-09-06 07:40:21] [DEBUG] DEBUG: Expanded labels count: 1
+[2025-09-06 07:40:21] [INFO] Validating issue data...
+[2025-09-06 07:40:21] [ERROR] Validation failed:
+[2025-09-06 07:40:21] [ERROR]   - Title is required
+[2025-09-06 07:40:21] [ERROR]   - Body is required
+[2025-09-06 07:40:21] [ERROR] Script execution failed: Issue data validation failed
