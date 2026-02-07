@@ -1,0 +1,1 @@
+// IDomainService.cs is an interface that defines a contract for domain services in the application.
