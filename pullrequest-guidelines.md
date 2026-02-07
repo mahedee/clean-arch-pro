@@ -1,8 +1,8 @@
-# EduTrack Pull Request Guidelines
+# StoreCenter Pull Request Guidelines
 
 ## 📥 How to Create a Pull Request
 
-We welcome contributions! Follow these steps to submit your pull request (PR) to the **EduTrack** project:
+We welcome contributions! Follow these steps to submit your pull request (PR) to the **StoreCenter** project:
 
 ---
 
@@ -18,15 +18,15 @@ We welcome contributions! Follow these steps to submit your pull request (PR) to
 
 #### 1. **Fork the Repository**
 
-Go to the [EduTrack GitHub repository](https://github.com/your-username/EduTrack) and click the **Fork** button in the top-right corner. This creates a copy of the repository under your GitHub account.
+Go to the [StoreCenter GitHub repository](https://github.com/your-username/store-center) and click the **Fork** button in the top-right corner. This creates a copy of the repository under your GitHub account.
 
 #### 2. **Clone the Forked Repository**
 
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/your-username/EduTrack.git
-cd EduTrack
+git clone https://github.com/your-username/store-center.git
+cd store-center
 ```
 
 > Replace `your-username` with your GitHub username.
@@ -115,6 +115,6 @@ Fixes # (issue)
 
 ### 🙌 Need Help?
 
-If you're stuck, open an [issue](https://github.com/your-username/EduTrack/issues) or ask in the Discussions tab.
+If you're stuck, open an [issue](https://github.com/your-username/store-center/issues) or ask in the Discussions tab.
 
 ---
