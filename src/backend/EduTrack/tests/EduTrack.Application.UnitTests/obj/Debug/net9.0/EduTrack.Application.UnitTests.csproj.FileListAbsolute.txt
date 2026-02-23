@@ -178,7 +178,6 @@ D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Applicatio
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Npgsql.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
-D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\xunit.abstractions.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\xunit.assert.dll
@@ -249,8 +248,6 @@ D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Applicatio
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
-D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\EduTrack.Application.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\EduTrack.Domain.dll
@@ -270,3 +267,20 @@ D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Applicatio
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\obj\Debug\net9.0\EduTrack.Application.UnitTests.pdb
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\obj\Debug\net9.0\EduTrack.Application.UnitTests.genruntimeconfig.cache
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\obj\Debug\net9.0\ref\EduTrack.Application.UnitTests.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.AspNetCore.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Exceptions.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Application.UnitTests\bin\Debug\net9.0\Serilog.Sinks.File.dll

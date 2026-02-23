@@ -1,0 +1,6 @@
+{
+  "EduTrack.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Api",
+  "EduTrack.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Application",
+  "EduTrack.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Domain",
+  "EduTrack.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Infrastructure"
+}
