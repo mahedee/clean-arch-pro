@@ -1,0 +1,16 @@
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\bin\Debug\net10.0\EduTrack.Application.deps.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\bin\Debug\net10.0\EduTrack.Application.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\bin\Debug\net10.0\EduTrack.Application.pdb
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\bin\Debug\net10.0\EduTrack.Domain.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\bin\Debug\net10.0\EduTrack.Domain.pdb
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.csproj.AssemblyReference.cache
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.AssemblyInfoInputs.cache
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.AssemblyInfo.cs
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.csproj.CoreCompileInputs.cache
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.sourcelink.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.49EFA750.Up2Date
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\refint\EduTrack.Application.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\EduTrack.Application.pdb
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Application\obj\Debug\net10.0\ref\EduTrack.Application.dll
