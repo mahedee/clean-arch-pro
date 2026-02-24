@@ -41,7 +41,7 @@ public static class TeacherSeedData
         );
         teacher1.UpdateContactInformation(
             Email.Create("james.thompson@university.edu"), 
-            PhoneNumber.Create("+1-555-111-2222")
+            PhoneNumber.Create("+1-555-211-2222")
         );
         teachers.Add(teacher1);
 

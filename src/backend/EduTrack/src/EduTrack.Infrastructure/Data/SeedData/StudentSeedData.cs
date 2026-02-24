@@ -35,7 +35,7 @@ public static class StudentSeedData
             new DateTime(1998, 5, 15),
             "john.smith@student.edu"
         );
-        student1.UpdatePhoneNumber("+1-555-123-4567");
+        student1.UpdatePhoneNumber("+1-555-223-4567");
         students.Add(student1);
 
         // Sarah Elizabeth Johnson - Active student  

@@ -83,9 +83,9 @@ namespace EduTrack.Api
                     logger.LogInformation("Database migrations completed successfully");
                     
                     // Seed the database with initial data
-                    logger.LogInformation("Starting database seeding...");
-                    await EduTrack.Infrastructure.Data.SeedData.DataSeeder.SeedAllDataAsync(context, logger);
-                    logger.LogInformation("Database seeding completed successfully");
+                    // logger.LogInformation("Starting database seeding...");
+                    // await EduTrack.Infrastructure.Data.SeedData.DataSeeder.SeedAllDataAsync(context, logger);
+                    // logger.LogInformation("Database seeding completed successfully");
                 }
                 catch (Exception ex)
                 {

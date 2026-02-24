@@ -148,3 +148,7 @@ D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\obj\Debu
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\obj\Debug\net10.0\EduTrack.Api.pdb
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\obj\Debug\net10.0\EduTrack.Api.genruntimeconfig.cache
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\obj\Debug\net10.0\ref\EduTrack.Api.dll
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\bin\Debug\net10.0\logs\edutrack-20260223_001.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\bin\Debug\net10.0\logs\edutrack-dev-20260223_001.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\bin\Debug\net10.0\logs\edutrack-20260224.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\src\EduTrack.Api\bin\Debug\net10.0\logs\edutrack-dev-20260224.json
