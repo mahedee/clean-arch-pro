@@ -39,7 +39,7 @@ public static class CourseSeedData
             "Computer Science",
             30
         );
-        course1.Schedule("Fall 2024", 2024, new DateTime(2024, 8, 26), new DateTime(2024, 12, 15));
+        course1.Schedule("Fall 2026", 2026, new DateTime(2026, 8, 24), new DateTime(2026, 12, 13));
         courses.Add(course1);
 
         // Calculus I
@@ -52,7 +52,7 @@ public static class CourseSeedData
             "Mathematics",
             35
         );
-        course2.Schedule("Fall 2024", 2024, new DateTime(2024, 8, 26), new DateTime(2024, 12, 15));
+        course2.Schedule("Fall 2026", 2026, new DateTime(2026, 8, 24), new DateTime(2026, 12, 13));
         courses.Add(course2);
 
         // Database Management Systems
@@ -65,7 +65,7 @@ public static class CourseSeedData
             "Computer Science",
             25
         );
-        course3.Schedule("Spring 2025", 2025, new DateTime(2025, 1, 20), new DateTime(2025, 5, 10));
+        course3.Schedule("Spring 2027", 2027, new DateTime(2027, 1, 18), new DateTime(2027, 5, 8));
         courses.Add(course3);
 
         // Software Engineering
@@ -78,7 +78,7 @@ public static class CourseSeedData
             "Computer Science",
             20
         );
-        course4.Schedule("Fall 2025", 2025, new DateTime(2025, 8, 25), new DateTime(2025, 12, 14));
+        course4.Schedule("Fall 2026", 2026, new DateTime(2026, 8, 24), new DateTime(2026, 12, 13));
         courses.Add(course4);
 
         // General Physics I
@@ -91,7 +91,7 @@ public static class CourseSeedData
             "Physics",
             40
         );
-        course5.Schedule("Fall 2024", 2024, new DateTime(2024, 8, 26), new DateTime(2024, 12, 15));
+        course5.Schedule("Fall 2026", 2026, new DateTime(2026, 8, 24), new DateTime(2026, 12, 13));
         courses.Add(course5);
 
         // Advanced Machine Learning
@@ -104,7 +104,7 @@ public static class CourseSeedData
             "Computer Science",
             15
         );
-        course6.Schedule("Spring 2025", 2025, new DateTime(2025, 1, 20), new DateTime(2025, 5, 10));
+        course6.Schedule("Spring 2027", 2027, new DateTime(2027, 1, 18), new DateTime(2027, 5, 8));
         courses.Add(course6);
 
         return courses;
