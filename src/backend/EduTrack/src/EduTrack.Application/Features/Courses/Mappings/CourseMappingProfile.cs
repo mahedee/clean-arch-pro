@@ -1,5 +1,6 @@
 using AutoMapper;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Application.Features.Courses.DTOs;
 using EduTrack.Application.Features.Courses.Commands.CreateCourse;
 using EduTrack.Application.Features.Courses.Commands.UpdateCourse;

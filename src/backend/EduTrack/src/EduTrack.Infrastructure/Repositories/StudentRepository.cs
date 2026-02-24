@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Contracts.Repositories;
 using EduTrack.Infrastructure.Data;
 

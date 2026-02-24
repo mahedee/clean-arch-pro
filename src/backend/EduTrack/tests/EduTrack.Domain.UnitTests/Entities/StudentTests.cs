@@ -1,5 +1,7 @@
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Events;
+using EduTrack.Domain.ValueObjects;
 using Xunit;
 
 namespace EduTrack.Domain.UnitTests.Entities

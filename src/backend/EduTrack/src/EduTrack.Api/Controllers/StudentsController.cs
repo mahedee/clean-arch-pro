@@ -9,6 +9,7 @@ using EduTrack.Application.Features.Students.Queries.GetStudentsByStatus;
 using EduTrack.Application.Features.Students.Queries.GetStudentsOnProbation;
 using EduTrack.Application.Features.Students.DTOs;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 
 [ApiController]
 [Route("api/[controller]")]

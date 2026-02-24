@@ -1,4 +1,5 @@
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.ValueObjects;
 using EduTrack.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;

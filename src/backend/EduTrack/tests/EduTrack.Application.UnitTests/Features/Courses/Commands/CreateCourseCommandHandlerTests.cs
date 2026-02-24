@@ -1,5 +1,6 @@
 using EduTrack.Application.Features.Courses.Commands.CreateCourse;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Contracts.Repositories;
 using Moq;
 using Xunit;

@@ -1,6 +1,7 @@
 using MediatR;
 using EduTrack.Application.Features.Students.DTOs;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 
 namespace EduTrack.Application.Features.Students.Queries.GetStudentList;
 
