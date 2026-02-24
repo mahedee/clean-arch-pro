@@ -1,3 +1,4 @@
+using EduTrack.Domain.Enums;
 using MediatR;
 using EduTrack.Domain.Entities;
 

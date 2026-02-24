@@ -4,6 +4,7 @@ using EduTrack.Application.Features.Courses.Queries.GetCourse;
 using EduTrack.Application.Features.Courses.Queries.GetCourseList;
 using EduTrack.Application.Features.Courses.Mappings;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Contracts.Repositories;
 using Moq;
 using Xunit;

@@ -1,4 +1,5 @@
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

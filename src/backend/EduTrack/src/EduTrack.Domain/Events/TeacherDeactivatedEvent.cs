@@ -1,4 +1,5 @@
 using EduTrack.Domain.Common;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Entities;
 
 namespace EduTrack.Domain.Events

@@ -1,5 +1,6 @@
 using MediatR;
 using EduTrack.Application.Features.Students.DTOs;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Entities;
 
 namespace EduTrack.Application.Features.Students.Queries.GetStudentsByStatus;

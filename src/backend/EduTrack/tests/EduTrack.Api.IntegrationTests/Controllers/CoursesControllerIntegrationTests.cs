@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using EduTrack.Infrastructure.Data;
 using EduTrack.Application.Features.Courses.DTOs;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using Newtonsoft.Json;
 using static EduTrack.Domain.Entities.Course;
 using static EduTrack.Domain.Entities.Teacher;

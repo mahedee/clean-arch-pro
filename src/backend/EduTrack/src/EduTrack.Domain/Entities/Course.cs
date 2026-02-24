@@ -1,4 +1,5 @@
 ﻿using EduTrack.Domain.Common;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Events;
 
 namespace EduTrack.Domain.Entities
@@ -431,29 +432,4 @@ namespace EduTrack.Domain.Entities
     }
 
     /// <summary>
-    /// Course level enumeration
-    /// </summary>
-    public enum CourseLevel
-    {
-        Undergraduate = 1,
-        Graduate = 2,
-        Postgraduate = 3,
-        Doctoral = 4,
-        Certificate = 5,
-        Continuing = 6
-    }
-
-    /// <summary>
-    /// Course status enumeration
-    /// </summary>
-    public enum CourseStatus
-    {
-        Draft = 1,
-        Scheduled = 2,
-        Active = 3,
-        Inactive = 4,
-        Completed = 5,
-        Cancelled = 6,
-        Archived = 7
-    }
 }

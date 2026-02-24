@@ -1,5 +1,6 @@
 using MediatR;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Contracts.Repositories;
 
 namespace EduTrack.Application.Features.Courses.Commands.CreateCourse;

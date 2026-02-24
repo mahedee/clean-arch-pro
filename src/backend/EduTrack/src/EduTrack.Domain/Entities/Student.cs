@@ -1,4 +1,5 @@
 ﻿using EduTrack.Domain.Common;
+using EduTrack.Domain.Enums;
 using EduTrack.Domain.Events;
 using EduTrack.Domain.ValueObjects;
 
@@ -395,12 +396,4 @@ namespace EduTrack.Domain.Entities
     /// <summary>
     /// Student status enumeration
     /// </summary>
-    public enum StudentStatus
-    {
-        Active = 1,
-        Inactive = 2,
-        Graduated = 3,
-        Suspended = 4,
-        Expelled = 5
-    }
 }

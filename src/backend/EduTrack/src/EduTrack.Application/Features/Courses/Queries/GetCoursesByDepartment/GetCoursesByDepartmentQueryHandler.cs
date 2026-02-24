@@ -3,6 +3,7 @@ using MediatR;
 using EduTrack.Application.Features.Courses.DTOs;
 using EduTrack.Domain.Contracts.Repositories;
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 
 namespace EduTrack.Application.Features.Courses.Queries.GetCoursesByDepartment;
 

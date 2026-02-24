@@ -1,4 +1,5 @@
 using EduTrack.Domain.Entities;
+using EduTrack.Domain.Enums;
 
 namespace EduTrack.Domain.Contracts.Repositories
 {
