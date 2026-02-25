@@ -122,8 +122,12 @@ namespace EduTrack.Infrastructure.Data
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.StudentId).IsRequired();
                 entity.Property(e => e.CourseId).IsRequired();
-                entity.Property(e => e.Date).IsRequired();
+                entity.Property(e => e.AttendanceDate).IsRequired();
                 entity.Property(e => e.IsPresent).IsRequired();
+                entity.Property(e => e.Notes).HasMaxLength(500);
+                entity.Property(e => e.RecordedBy).HasMaxLength(100);
+                entity.Property(e => e.RecordedAt).IsRequired();
+                entity.Property(e => e.IsVerified).IsRequired().HasDefaultValue(false);
             });
 
             // Seed data will be applied at runtime, not through migrations
