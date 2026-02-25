@@ -57,7 +57,6 @@ public static class AttendanceSeedData
         
         var random = new Random(42); // Fixed seed for consistent data
         var startDate = new DateTime(2024, 1, 15);
-        int recordId = 1;
         
         // Generate attendance records for the past 30 days
         for (int day = 0; day < 30; day++)
@@ -76,14 +75,16 @@ public static class AttendanceSeedData
                     // 85% chance of being present
                     var isPresent = random.NextDouble() > 0.15;
                     
-                    attendanceRecords.Add(new Attendance
-                    {
-                        Id = recordId++,
-                        StudentId = (int)student.Id.GetHashCode(), // Convert Guid to int (not ideal but necessary for current schema)
-                        CourseId = (int)course.Id.GetHashCode(), // Convert Guid to int (not ideal but necessary for current schema)
-                        Date = currentDate,
-                        IsPresent = isPresent
-                    });
+                    var attendance = Attendance.RecordAttendance(
+                        studentId: student.Id,
+                        courseId: course.Id,
+                        attendanceDate: currentDate,
+                        isPresent: isPresent,
+                        recordedBy: "System",
+                        notes: isPresent ? null : "Generated absence"
+                    );
+                    
+                    attendanceRecords.Add(attendance);
                 }
             }
         }

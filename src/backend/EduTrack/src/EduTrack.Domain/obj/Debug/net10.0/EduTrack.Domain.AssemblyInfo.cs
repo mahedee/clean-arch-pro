@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EduTrack.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdc16014f7ee8e1bc1179f0c9f9703b865d0ff60")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30ea61305a0cf9150dd934d39be5b5ff30ccbb03")]
 [assembly: System.Reflection.AssemblyProductAttribute("EduTrack.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EduTrack.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
