@@ -13,6 +13,10 @@ export const routes: Routes = [
         path: 'students', 
         loadChildren: () => import('./features/students/student.routes').then(m => m.STUDENT_ROUTES)
       },
+      { 
+        path: 'courses', 
+        loadChildren: () => import('./features/courses/course.routes').then(m => m.COURSE_ROUTES)
+      },
       // Add more routes here as features are developed
     ]
   }

@@ -74,7 +74,12 @@ public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand,
         }
         catch (Exception ex)
         {
-            throw new InvalidOperationException($"Error creating student with email: {request.Email}", ex);
+            Console.WriteLine($"DETAILED ERROR: {ex.Message}");
+            Console.WriteLine($"STACK TRACE: {ex.StackTrace}");
+            Console.WriteLine($"INNER EXCEPTION: {ex.InnerException?.Message}");
+            Console.WriteLine($"INNER STACK TRACE: {ex.InnerException?.StackTrace}");
+            
+            throw new InvalidOperationException($"Error creating student with email: {request.Email}. Details: {ex.Message}", ex);
         }
     }
 }

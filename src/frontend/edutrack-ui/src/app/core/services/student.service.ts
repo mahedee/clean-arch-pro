@@ -3,42 +3,42 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { 
   Student, 
+  StudentDto,
   CreateStudentDto, 
   UpdateStudentDto, 
-  PaginatedStudentList, 
-  GetStudentListQuery 
-} from '../../shared/models/student.model';
+  UpdateStudentContactDto,
+  UpdateGPADto,
+  ChangeStatusDto,
+  PaginatedStudentListDto, 
+  GetStudentListQuery,
+  StudentStatus
+} from '../../models';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
-  private apiUrl = `http://localhost:5152/api/Students`;
+  private apiUrl = `${environment.apiUrl}/Students`;
 
   constructor(private http: HttpClient) {}
 
-  getStudents(query?: GetStudentListQuery): Observable<PaginatedStudentList> {
+  getStudents(query?: GetStudentListQuery): Observable<PaginatedStudentListDto> {
     let params = new HttpParams();
     
     if (query) {
       if (query.pageNumber) params = params.set('pageNumber', query.pageNumber.toString());
       if (query.pageSize) params = params.set('pageSize', query.pageSize.toString());
       if (query.searchTerm) params = params.set('searchTerm', query.searchTerm);
-      if (query.status) params = params.set('status', query.status);
       if (query.sortBy) params = params.set('sortBy', query.sortBy);
       if (query.sortDirection) params = params.set('sortDirection', query.sortDirection);
-      if (query.minGPA) params = params.set('minGPA', query.minGPA.toString());
-      if (query.maxGPA) params = params.set('maxGPA', query.maxGPA.toString());
-      if (query.minAge) params = params.set('minAge', query.minAge.toString());
-      if (query.maxAge) params = params.set('maxAge', query.maxAge.toString());
     }
 
-    return this.http.get<PaginatedStudentList>(this.apiUrl, { params });
+    return this.http.get<PaginatedStudentListDto>(this.apiUrl, { params });
   }
 
-  getStudent(id: string): Observable<Student> {
-    return this.http.get<Student>(`${this.apiUrl}/${id}`);
+  getStudent(id: string): Observable<StudentDto> {
+    return this.http.get<StudentDto>(`${this.apiUrl}/${id}`);
   }
 
   createStudent(student: CreateStudentDto): Observable<string> {
@@ -53,15 +53,31 @@ export class StudentService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  updateStudentContact(id: string, email: string, phoneNumber?: string): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}/contact`, { email, phoneNumber });
+  updateStudentContact(id: string, contactDto: UpdateStudentContactDto): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}/contact`, contactDto);
   }
 
-  updateStudentGPA(id: string, gpaValue: number): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}/gpa`, { gpaValue });
+  updateStudentGPA(id: string, gpaDto: UpdateGPADto): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}/gpa`, gpaDto);
   }
 
-  changeStudentStatus(id: string, newStatus: string): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}/status`, { newStatus });
+  changeStudentStatus(id: string, statusDto: ChangeStatusDto): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}/status`, statusDto);
+  }
+
+  getStudentsByStatus(status: StudentStatus, pageNumber: number = 1, pageSize: number = 10): Observable<PaginatedStudentListDto> {
+    let params = new HttpParams()
+      .set('pageNumber', pageNumber.toString())
+      .set('pageSize', pageSize.toString());
+
+    return this.http.get<PaginatedStudentListDto>(`${this.apiUrl}/status/${status}`, { params });
+  }
+
+  getStudentsOnProbation(pageNumber: number = 1, pageSize: number = 10): Observable<PaginatedStudentListDto> {
+    let params = new HttpParams()
+      .set('pageNumber', pageNumber.toString())
+      .set('pageSize', pageSize.toString());
+
+    return this.http.get<PaginatedStudentListDto>(`${this.apiUrl}/probation`, { params });
   }
 }

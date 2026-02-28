@@ -1,23 +1,28 @@
 import { Routes } from '@angular/router';
-import { StudentListComponent } from './components/student-list.component';
-import { StudentFormComponent } from './components/student-form.component';
-import { StudentDetailComponent } from './components/student-detail.component';
 
 export const STUDENT_ROUTES: Routes = [
   {
     path: '',
-    component: StudentListComponent
+    loadComponent: () => import('./pages/student-list-page.component')
+      .then(m => m.StudentListPageComponent),
+    title: 'Students | EduTrack'
   },
   {
     path: 'create',
-    component: StudentFormComponent
+    loadComponent: () => import('./pages/student-create-page.component')
+      .then(m => m.StudentCreatePageComponent),
+    title: 'Create Student | EduTrack'
   },
   {
     path: ':id',
-    component: StudentDetailComponent
+    loadComponent: () => import('./pages/student-detail-page.component')
+      .then(m => m.StudentDetailPageComponent),
+    title: 'Student Details | EduTrack'
   },
   {
     path: ':id/edit',
-    component: StudentFormComponent
+    loadComponent: () => import('./pages/student-create-page.component')
+      .then(m => m.StudentCreatePageComponent),
+    title: 'Edit Student | EduTrack'
   }
 ];

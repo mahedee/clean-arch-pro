@@ -1,5 +1,6 @@
 using EduTrack.Application.Features.Courses.Commands.CreateCourse;
 using EduTrack.Application.Features.Courses.Commands.UpdateCourse;
+using EduTrack.Application.Features.Courses.Commands.DeleteCourse;
 using EduTrack.Application.Features.Courses.Commands.ScheduleCourse;
 using EduTrack.Application.Features.Courses.Commands.ActivateCourse;
 using EduTrack.Application.Features.Courses.Commands.CompleteCourse;
@@ -304,6 +305,34 @@ public class CoursesController : ControllerBase
             });
 
             return BadRequest(new { Message = "Validation failed", Errors = errors });
+        }
+    }
+
+    /// <summary>
+    /// Delete an existing course
+    /// </summary>
+    /// <param name="id">Course ID</param>
+    /// <returns>Success status</returns>
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteCourse(Guid id)
+    {
+        try
+        {
+            var command = new DeleteCourseCommand { CourseId = id };
+            var result = await _mediator.Send(command);
+            
+            if (!result)
+                return NotFound(new { Message = "Course not found" });
+                
+            return NoContent();
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { Message = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { Message = ex.Message });
         }
     }
 }
