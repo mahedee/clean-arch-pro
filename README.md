@@ -4,7 +4,9 @@
 
 ---
 
-**EduTrack** is a comprehensive **enterprise-grade education management system** built with **Clean Architecture** principles, **Domain-Driven Design (DDD)**, and **modern .NET 8** technologies. Designed for educational institutions of all sizes, from small schools to large universities.
+**EduTrack** is a comprehensive **enterprise-grade education management system** built with **Clean Architecture** principles, **Domain-Driven Design (DDD)**, and **modern .NET 10** technologies with an **Angular frontend**. Designed for educational institutions of all sizes, from small schools to large universities.
+
+![](/docs/images/edutrack-dashboard.png)
 
 ## 🎯 **Project Vision**
 
@@ -58,96 +60,6 @@
 
 ---
 
-## 🏛️ **System Architecture**
-
-### **Clean Architecture Layers**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    🎯 Presentation Layer                    │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │   EduTrack.Api  │  │  Angular App    │  │  Mobile App │  │
-│  │   (Controllers) │  │  (Components)   │  │   (Future)  │  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-                                ↓
-┌─────────────────────────────────────────────────────────────┐
-│                   💼 Application Layer                      │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │    Commands     │  │     Queries     │  │   Handlers  │  │
-│  │   (CQRS Write)  │  │   (CQRS Read)   │  │  (MediatR)  │  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-                                ↓
-┌─────────────────────────────────────────────────────────────┐
-│                     🏢 Domain Layer                         │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │    Entities     │  │  Value Objects  │  │   Services  │  │
-│  │   (Aggregate    │  │  (Domain Logic) │  │ (Domain     │  │
-│  │     Roots)      │  │                 │  │  Services)  │  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-                                ↓
-┌─────────────────────────────────────────────────────────────┐
-│                  ⚙️ Infrastructure Layer                    │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │   EF Core DbContext │  External APIs  │  │   Services  │  │
-│  │  (Repositories) │  │   (Email, SMS)  │  │  (Caching,  │  │
-│  │                 │  │                 │  │   Logging)  │  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### **Project Structure**
-
-```bash
-📁 clean-arch-pro/
-├── 📁 backend/EduTrack/                    # Backend Solution
-│   ├── 📄 EduTrack.sln                     # Solution file
-│   ├── 📁 src/                             # Source code
-│   │   ├── 📁 EduTrack.Api/                # 🎯 API/Presentation Layer
-│   │   │   ├── 📁 Controllers/             # REST API Controllers
-│   │   │   ├── 📁 Middleware/              # Custom middleware
-│   │   │   ├── 📄 Program.cs               # Application entry point
-│   │   │   └── 📄 appsettings.json         # Configuration
-│   │   ├── 📁 EduTrack.Application/        # 💼 Application Layer
-│   │   │   ├── 📁 Features/                # Feature-based organization
-│   │   │   │   └── 📁 Students/            # Student management features
-│   │   │   ├── 📁 Common/                  # Shared application logic
-│   │   │   └── 📁 DependencyInjection/     # Service registration
-│   │   ├── 📁 EduTrack.Domain/             # 🏢 Domain Layer
-│   │   │   ├── 📁 Entities/                # Domain entities
-│   │   │   │   ├── 📄 Student.cs           # Student aggregate root
-│   │   │   │   ├── 📄 Course.cs            # Course entity
-│   │   │   │   └── 📄 Teacher.cs           # Teacher entity
-│   │   │   ├── 📁 Repositories/            # Repository interfaces
-│   │   │   ├── 📁 ValueObjects/            # Value objects
-│   │   │   └── 📁 Events/                  # Domain events
-│   │   └── 📁 EduTrack.Infrastructure/     # ⚙️ Infrastructure Layer
-│   │       ├── 📁 Data/                    # Database context & migrations
-│   │       ├── 📁 Repositories/            # Repository implementations
-│   │       ├── 📁 Services/                # External service implementations
-│   │       └── 📁 DependencyInjection/     # Infrastructure service registration
-│   └── 📁 tests/                           # Test projects
-│       ├── 📁 EduTrack.Domain.UnitTests/           # Domain unit tests
-│       ├── 📁 EduTrack.Application.UnitTests/      # Application unit tests
-│       ├── 📁 EduTrack.Infrastructure.UnitTests/   # Infrastructure unit tests
-│       └── 📁 EduTrack.Api.IntegrationTests/       # API integration tests
-├── 📁 frontend/                            # Frontend Application (Future)
-├── 📁 docs/                                # 📚 Documentation
-│   ├── 📁 architecture/                    # Architecture documentation
-│   ├── 📁 setup/                           # Setup and configuration guides
-│   ├── 📁 api/                             # API documentation
-│   └── 📄 task-list.md                     # Project task tracking
-├── 📁 scripts/                             # 🛠️ Automation scripts
-│   ├── 📄 create-github-issues.ps1         # GitHub issue creation
-│   └── 📄 setup-and-run.ps1               # Setup automation
-├── 📄 README.md                            # This file
-├── 📄 CONTRIBUTING.md                      # Contribution guidelines
-└── 📄 LICENSE                              # MIT License
-```
-
----
 
 ## 🚀 **Quick Start Guide**
 
@@ -155,15 +67,12 @@
 
 Before you begin, ensure you have the following installed:
 
-- ✅ **[.NET 8 SDK](https://dotnet.microsoft.com/download)** (8.0 or later)
+- ✅ **[.NET 10 SDK](https://dotnet.microsoft.com/download)** (10.0 or later)
 - ✅ **Database Server** (choose one):
   - [PostgreSQL 14+](https://www.postgresql.org/download/) *(Recommended)*
-  - [SQL Server 2019+](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-  - [Oracle 19c+](https://www.oracle.com/database/) *(Enterprise)*
 - ✅ **Development IDE**:
-  - [Visual Studio 2022+](https://visualstudio.microsoft.com/) *(Recommended)*
+  - [Visual Studio 2026+](https://visualstudio.microsoft.com/) *(Recommended)*
   - [VS Code](https://code.visualstudio.com/) with C# extension
-  - [JetBrains Rider](https://www.jetbrains.com/rider/)
 - ✅ **[Git](https://git-scm.com/)** for version control
 - ✅ **[Node.js 18+](https://nodejs.org/)** (for frontend development)
 
@@ -227,14 +136,30 @@ dotnet ef database update
 # Run the application
 dotnet run
 
-# 🎉 API will be available at: https://localhost:7050
+# 🎉 API will be available at: http://localhost:6100
 ```
 
-#### **4. Verify Installation**
-- 🌐 **Swagger UI**: https://localhost:7050/swagger
-- 🔍 **Health Check**: https://localhost:7050/health
-- 📊 **API Endpoints**: https://localhost:7050/api/students
+#### **4. Verify Backend**
+- 🌐 **Swagger UI**: http://localhost:6100/swagger
+---
 
+#### **5. Frontend setup**
+```bash
+# Navigate to frontend directory
+cd src/frontend/edutrack-ui
+
+# Install dependencies
+npm install
+
+# Run the Angular application
+npm start
+
+# 🎉 Frontend will be available at: http://localhost:4200
+
+```
+
+#### **6. Verify Frontend**
+- 🌐 **Frontend UI**: http://localhost:4200
 ---
 
 ## 🛠️ **Development Workflow**
@@ -275,16 +200,6 @@ dotnet ef database update --project src/EduTrack.Api
 # Drop database (development only)
 dotnet ef database drop --project src/EduTrack.Api --force
 ```
-
-### **📊 Project Status & Metrics**
-- **Current Phase**: Foundation & Core Infrastructure (Phase 1)
-- **Completion**: T001 Complete (100%) - ✅ All tasks including documentation complete
-- **Total Tasks**: 36 tasks across 6 phases
-- **Estimated Duration**: 30 weeks
-- **Test Coverage**: Target >90%
-
-For detailed progress tracking, see: [📋 Task List](docs/task-list.md)
-
 ---
 
 ## 🧰 **Technology Stack**
@@ -292,9 +207,9 @@ For detailed progress tracking, see: [📋 Task List](docs/task-list.md)
 ### **Backend Technologies**
 | Technology | Version | Purpose | Documentation |
 |------------|---------|---------|---------------|
-| **.NET** | 8.0 | Core framework | [📖 .NET Docs](https://docs.microsoft.com/en-us/dotnet/) |
-| **ASP.NET Core** | 8.0 | Web API framework | [📖 ASP.NET Docs](https://docs.microsoft.com/en-us/aspnet/core/) |
-| **Entity Framework Core** | 8.0 | ORM & Data Access | [📖 EF Core Docs](https://docs.microsoft.com/en-us/ef/core/) |
+| **.NET** | 10.0 | Core framework | [📖 .NET Docs](https://docs.microsoft.com/en-us/dotnet/) |
+| **ASP.NET Core** | 10.0 | Web API framework | [📖 ASP.NET Docs](https://docs.microsoft.com/en-us/aspnet/core/) |
+| **Entity Framework Core** | 10.0 | ORM & Data Access | [📖 EF Core Docs](https://docs.microsoft.com/en-us/ef/core/) |
 | **MediatR** | 12.x | CQRS & Mediator pattern | [📖 MediatR](https://github.com/jbogard/MediatR) |
 | **AutoMapper** | 12.x | Object mapping | [📖 AutoMapper](https://automapper.org/) |
 | **FluentValidation** | 11.x | Input validation | [📖 FluentValidation](https://fluentvalidation.net/) |
@@ -316,33 +231,6 @@ For detailed progress tracking, see: [📋 Task List](docs/task-list.md)
 | **Angular Material** | 17.x | UI components | 🔄 Planned |
 | **TypeScript** | 5.x | Type safety | 🔄 Planned |
 | **RxJS** | 7.x | Reactive programming | 🔄 Planned |
-
----
-
-## 📚 **Documentation**
-
-### **📖 Core Documentation**
-- **[🏗️ Architecture Overview](docs/architecture/clean-architecture-overview.md)** - Clean Architecture principles and implementation
-- **[🗄️ Database Setup Guide](docs/setup/database-setup.md)** - Multi-database configuration
-- **[🔧 Development Environment](docs/setup/development-environment.md)** - IDE and tooling setup
-- **[🧪 Testing Strategy](docs/testing/testing-strategy.md)** - Unit, integration, and E2E testing
-- **[🚀 Deployment Guide](docs/deployment/deployment-guide.md)** - Production deployment instructions
-
-### **📋 Project Management**
-- **[📅 Task List & Progress](docs/task-list.md)** - Complete project roadmap and current status
-- **[📈 Change Tracker](docs/change-tracker.md)** - Architecture fixes and implementation history
-- **[🐛 GitHub Issues Setup](docs/setup/github-issues-setup-guide.md)** - Issue creation and management
-
-### **🔧 Technical Guides**
-- **[🏛️ Domain Design Patterns](docs/architecture/domain-patterns.md)** - DDD implementation patterns
-- **[🔄 CQRS Implementation](docs/architecture/cqrs-patterns.md)** - Command/Query separation
-- **[🔐 Security Guidelines](docs/security/security-guidelines.md)** - Authentication and authorization
-- **[⚡ Performance Optimization](docs/performance/optimization-guide.md)** - Scaling and performance tips
-
-### **📊 API Documentation**
-- **[🌐 REST API Reference](docs/api/api-reference.md)** - Complete API documentation
-- **[📝 OpenAPI/Swagger](https://localhost:7050/swagger)** - Interactive API documentation
-- **[🔗 Postman Collection](docs/api/postman-collection.json)** - API testing collection
 
 ---
 
@@ -389,63 +277,6 @@ We believe in recognizing contributors:
 
 ---
 
-## 🚀 **Roadmap & Future Plans**
-
-### **🎯 Phase 1: Foundation (Current - ✅ COMPLETE)**
-- ✅ Clean Architecture setup
-- ✅ Multi-database support
-- ✅ Documentation structure
-- ⏳ Domain layer enhancement (Next: T002)
-- ⏳ Authentication system
-
-### **🎓 Phase 2: Core Features (Next)**
-- 📚 Student lifecycle management
-- 🏫 Academic structure (departments, programs)
-- 📅 Advanced scheduling system
-- 📊 Grade and assessment management
-- 👨‍🏫 Faculty management
-
-### **⚡ Phase 3: Advanced Features**
-- 💰 Financial management
-- 📈 Analytics and reporting
-- 🔐 Dynamic permissions
-- 🌐 Multi-tenant support
-- 📱 Mobile applications
-
-### **🎪 Future Enhancements**
-- 🤖 AI-powered student insights
-- 🔄 Real-time collaboration tools
-- 🌍 Multi-language support
-- 📊 Advanced analytics dashboard
-- 🔗 Third-party integrations
-
----
-
-## 💼 **Production Readiness**
-
-### **🏢 Enterprise Features**
-- **Multi-Database Support**: PostgreSQL, SQL Server, Oracle
-- **Scalable Architecture**: Microservices-ready design
-- **Security**: JWT, RBAC, OWASP compliance
-- **Performance**: Caching, query optimization
-- **Monitoring**: Health checks, logging, metrics
-- **Testing**: 90%+ code coverage
-
-### **☁️ Deployment Options**
-- **Docker**: Production-ready containers
-- **Kubernetes**: Orchestration support
-- **Cloud Providers**: Azure, AWS, Google Cloud
-- **On-Premises**: Traditional server deployment
-
-### **📊 Performance Benchmarks**
-- **Response Time**: <200ms average
-- **Throughput**: 1000+ requests/second
-- **Database**: Optimized queries and indexing
-- **Caching**: Redis integration
-- **CDN**: Static asset optimization
-
----
-
 ## 📜 **License**
 
 This project is licensed under the **[MIT License](LICENSE)** - see the LICENSE file for details.
@@ -485,10 +316,9 @@ If this project helps you build better applications:
 
 ## 👨‍💻 **About the Maintainer**
 
-**[Mahedee Hasan](https://github.com/mahedee)** - *Lead Software Architect*
+**[Mahedee Hasan](https://github.com/mahedee)** - *Software Architect*
 
-- 🏢 **Experience**: 15+ years in enterprise software development
-- 🎯 **Specialization**: Clean Architecture, Domain-Driven Design, .NET
+- 🏢 **Experience**: 17+ years in enterprise software development
 - 🌐 **Website**: [mahedee.net](https://mahedee.net)
 - 💼 **LinkedIn**: [linkedin.com/in/mahedee](https://linkedin.com/in/mahedee)
 - 🐦 **Twitter**: [@mahedee_hasan](https://twitter.com/mahedee_hasan)

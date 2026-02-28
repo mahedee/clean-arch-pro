@@ -2,277 +2,296 @@
 
 ## Introduction
 
-This document provides a comprehensive overview of how Clean Architecture is implemented in the EduTrack project, following Uncle Bob's Clean Architecture principles.
+This document describes how Clean Architecture is implemented in the EduTrack project, based on the actual application structure. EduTrack follows Uncle Bob's Clean Architecture principles combined with Domain-Driven Design (DDD) and CQRS, built on **.NET 10** (backend) and **Angular 18 + Angular Material 18** (frontend).
+
+---
+
+## Technology Stack
+
+| Layer | Technology | Version |
+|---|---|---|
+| Backend Framework | .NET / ASP.NET Core | 10.0 |
+| ORM | Entity Framework Core | 9.x |
+| Mediator | MediatR | 12.5 |
+| API Documentation | Swashbuckle (Swagger) | 8.x |
+| Frontend Framework | Angular | 18.x |
+| UI Components | Angular Material | 18.x |
+| State Management | NgRx (Store, Effects) | 18.x |
+| Frontend Rendering | Angular SSR | 18.x |
+
+---
 
 ## Architecture Layers
 
-### 1. Domain Layer (Core)
-**Location**: `src/EduTrack.Domain/`
-**Purpose**: Contains the business logic and rules that are independent of any external concerns.
-
-#### Components:
-- **Entities**: Core business objects with identity
-- **Value Objects**: Objects without identity that represent descriptive aspects
-- **Domain Services**: Domain logic that doesn't naturally fit into entities
-- **Repository Interfaces**: Contracts for data access
-- **Domain Events**: Events that represent something important that happened in the domain
-
-#### Dependencies:
-- **None** - This layer has no dependencies on other layers
-
-### 2. Application Layer
-**Location**: `src/EduTrack.Application/`
-**Purpose**: Orchestrates the flow of data to and from the entities, and directs those entities to use their business rules.
-
-#### Components:
-- **Use Cases**: Application-specific business rules
-- **Commands & Queries**: CQRS implementation using MediatR
-- **Command/Query Handlers**: Process commands and queries
-- **DTOs**: Data transfer objects for external communication
-- **Mapping Profiles**: AutoMapper configurations
-- **Validators**: Input validation using FluentValidation
-
-#### Dependencies:
-- **Domain Layer** ✅
-
-### 3. Infrastructure Layer
-**Location**: `src/EduTrack.Infrastructure/`
-**Purpose**: Provides implementations for external concerns like databases, file systems, web services, etc.
-
-#### Components:
-- **Repository Implementations**: Concrete implementations of domain repository interfaces
-- **Database Context**: Entity Framework DbContext
-- **External Services**: Email, SMS, file storage implementations
-- **Configurations**: Entity type configurations
-- **Migrations**: Database schema migrations
-
-#### Dependencies:
-- **Domain Layer** ✅
-- **Application Layer** ❌ (Violates Clean Architecture)
-
-### 4. Presentation Layer (API)
-**Location**: `src/EduTrack.Api/`
-**Purpose**: Handles HTTP requests and responses, user input validation, and presentation logic.
-
-#### Components:
-- **Controllers**: HTTP request handlers
-- **Middleware**: Custom middleware components
-- **Filters**: Action filters for cross-cutting concerns
-- **DTOs**: Request/Response models
-- **Configuration**: Application startup and dependency injection
-
-#### Dependencies:
-- **Application Layer** ✅
-- **Infrastructure Layer** ✅ (For dependency injection only)
-
-## Dependency Flow
-
 ```
-┌─────────────────┐
-│   Presentation  │
-│     (API)       │
-└─────────┬───────┘
-          │
-          ▼
-┌─────────────────┐
-│   Application   │
-│     Layer       │
-└─────────┬───────┘
-          │
-          ▼
-┌─────────────────┐
-│     Domain      │
-│      Layer      │
-└─────────────────┘
-          ▲
-          │
-┌─────────┴───────┐
-│ Infrastructure  │
-│     Layer       │
-└─────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│               🎨 Frontend (Angular 18 + SSR)                 │
+│         Features: Dashboard · Students · Courses             │
+│         State: NgRx Store + Effects                          │
+│         Core: Services · Auth Interceptor                    │
+└──────────────────────────────┬───────────────────────────────┘
+                               │ HTTP / REST
+┌──────────────────────────────▼───────────────────────────────┐
+│              🎯 API Layer  (EduTrack.Api)                     │
+│         Controllers · Middleware · Models                    │
+└──────────────────────────────┬───────────────────────────────┘
+                               │
+┌──────────────────────────────▼───────────────────────────────┐
+│           💼 Application Layer  (EduTrack.Application)       │
+│    Features (CQRS) · Pipeline Behaviors · Event Handlers     │
+└──────────────────────────────┬───────────────────────────────┘
+                               │
+┌──────────────────────────────▼───────────────────────────────┐
+│              🏢 Domain Layer  (EduTrack.Domain)              │
+│   Entities · Value Objects · Domain Events · Contracts       │
+└──────────────────────────────┬───────────────────────────────┘
+                               │ implements
+┌──────────────────────────────▼───────────────────────────────┐
+│         ⚙️ Infrastructure Layer  (EduTrack.Infrastructure)   │
+│    EF Core DbContext · Repositories · Migrations · Identity  │
+└──────────────────────────────────────────────────────────────┘
 ```
 
-## Benefits of This Architecture
+---
 
-### 1. **Independence of Frameworks**
-The architecture doesn't depend on the existence of some library of feature laden software.
+## Layer Details
 
-### 2. **Testability**
-The business rules can be tested without the UI, Database, Web Server, or any other external element.
+### 1. Domain Layer — `EduTrack.Domain`
 
-### 3. **Independence of UI**
-The UI can change easily, without changing the rest of the system.
+The innermost layer. No dependencies on any other project layer or external framework.
 
-### 4. **Independence of Database**
-You can swap out Oracle or SQL Server, for Mongo, BigTable, CouchDB, or something else.
+#### Entities
+| Entity | Description |
+|---|---|
+| `Student` | Aggregate root — student lifecycle, GPA, enrollment |
+| `Course` | Aggregate root — course status, scheduling, teacher assignment |
+| `Teacher` | Faculty member with academic title and employment status |
+| `Department` | Organizational unit; head assignment and status |
+| `Attendance` | Attendance records linked to students and courses |
 
-### 5. **Independence of External Agency**
-Your business rules simply don't know anything at all about the outside world.
+#### Value Objects
+`Address` · `Email` · `FullName` · `GPA` · `PhoneNumber` · `StudentId`
 
-## CQRS Implementation
+#### Enums
+`StudentStatus` · `CourseStatus` · `CourseLevel` · `DepartmentStatus` · `AcademicTitle` · `EmploymentStatus`
 
-The project implements Command Query Responsibility Segregation (CQRS) using MediatR:
+#### Domain Events (34 events)
+Every meaningful state change raises a domain event, grouped by aggregate:
 
-### Commands (Write Operations)
-```csharp
-public class CreateStudentCommand : IRequest<StudentDto>
-{
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Email { get; set; }
-}
+- **Student**: `StudentCreatedEvent`, `StudentStatusChangedEvent`, `StudentGPAUpdatedEvent`, `StudentEnrolledInCourseEvent`, `StudentWithdrewFromCourseEvent`, `StudentGraduatedEvent`, `StudentDeactivatedEvent`, `StudentReactivatedEvent`, `StudentContactUpdatedEvent`, `StudentPersonalInfoUpdatedEvent`, `StudentAddressUpdatedEvent`, `StudentPhoneNumberUpdatedEvent`, `StudentAcademicStandingChangedEvent`
+- **Course**: `CourseCreatedEvent`, `CourseUpdatedEvent`, `CourseActivatedEvent`, `CourseScheduledEvent`, `CourseCompletedEvent`, `CourseCancelledEvent`
+- **Teacher**: `TeacherCreatedEvent`, `TeacherContactUpdatedEvent`, `TeacherTitleUpdatedEvent`, `TeacherAssignedToCourseEvent`, `TeacherRemovedFromCourseEvent`, `TeacherDeactivatedEvent`, `TeacherReactivatedEvent`
+- **Department**: `DepartmentCreatedEvent`, `DepartmentNameUpdatedEvent`, `DepartmentContactUpdatedEvent`, `DepartmentHeadAssignedEvent`, `DepartmentHeadRemovedEvent`, `DepartmentStatusChangedEvent`
+- **Attendance**: `AttendanceRecordedEvent`, `AttendanceUpdatedEvent`
 
-public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, StudentDto>
-{
-    // Implementation
-}
+#### Common Primitives
+| Type | Purpose |
+|---|---|
+| `BaseEntity` | Base class with `Id`, `CreatedAt`, `UpdatedAt` |
+| `AggregateRoot` | Extends `BaseEntity`; owns the domain event collection |
+| `DomainEvent` | Base record for all domain events |
+| `IHasDomainEvents` | Interface enforced on aggregate roots |
+| `Result<T>` | Functional result type for explicit error handling |
+
+#### Contracts
+- `IStudentRepository` — student-specific data access contract
+- `ICourseRepository` — course-specific data access contract
+- `IUnitOfWork` — transaction boundary contract
+- `IDomainService` — marker interface for domain services
+
+#### Dependencies
+> **None** — zero references to external projects or frameworks.
+
+---
+
+### 2. Application Layer — `EduTrack.Application`
+
+Orchestrates use cases using CQRS via MediatR. Depends only on the Domain layer.
+
+#### Features — Students
+
+| Type | Operations |
+|---|---|
+| Commands | `CreateStudent`, `UpdateStudent`, `DeleteStudent`, `ChangeStudentStatus`, `UpdateStudentContact`, `UpdateStudentGPA` |
+| Queries | `GetStudent`, `GetStudentList`, `GetStudentsByStatus`, `GetStudentsOnProbation` |
+
+Each feature folder contains: `Command/Query` · `Handler` · `Validator` (FluentValidation) · `Dto` · `MappingProfile`
+
+#### Features — Courses
+
+| Type | Operations |
+|---|---|
+| Commands | `CreateCourse`, `UpdateCourse`, `DeleteCourse`, `ActivateCourse`, `ScheduleCourse`, `CompleteCourse` |
+| Queries | `GetCourse`, `GetCourseList` (and variants) |
+
+#### Pipeline Behaviors (MediatR)
+| Behavior | Responsibility |
+|---|---|
+| `ValidationBehavior` | Runs FluentValidation before handler; throws on failure |
+| `LoggingBehavior` | Structured request/response logging via `ILogger<T>` |
+| `PerformanceBehavior` | Logs a warning when a request exceeds the performance threshold |
+
+#### Event Handlers
+- `EventHandlers/Students/` — handles domain events raised by the `Student` aggregate
+
+#### Common
+- `MappingProfiles.cs` — central AutoMapper profile registration
+- `Common/Exceptions/` — application-level exceptions
+
+#### Dependencies
+> Domain Layer ✅
+
+---
+
+### 3. Infrastructure Layer — `EduTrack.Infrastructure`
+
+Implements contracts defined in the Domain layer. Depends on Domain only.
+
+#### Data
+| Component | Description |
+|---|---|
+| `ApplicationDbContext` | EF Core DbContext; registers all entity sets |
+| `ApplicationDbContextFactory` | Design-time factory for EF migrations |
+| `Configurations/` | Fluent entity type configurations (IEntityTypeConfiguration) |
+| `Migrations/` | EF Core migration history |
+| `SeedData/` | Initial/reference data seeding |
+
+#### Repositories
+| Class | Contract |
+|---|---|
+| `StudentRepository` | `IStudentRepository` |
+| `CourseRepository` | `ICourseRepository` |
+| `UnitOfWork` | `IUnitOfWork` |
+
+#### Identity
+Placeholder for JWT-based authentication and role management (planned).
+
+#### Services
+Placeholder for external service implementations — email, notifications (planned).
+
+#### Dependencies
+> Domain Layer ✅
+
+---
+
+### 4. API Layer — `EduTrack.Api`
+
+Presentation layer. Handles HTTP concerns only; all business logic lives in lower layers.
+
+#### Controllers
+| Controller | Responsibilities |
+|---|---|
+| `StudentsController` | REST endpoints: create, read, update, delete, status change, GPA update |
+| `CoursesController` | REST endpoints: create, read, update, activate, schedule, complete, delete |
+
+Controllers dispatch requests directly to MediatR — no business logic in controllers.
+
+#### Middleware
+| Middleware | Responsibility |
+|---|---|
+| `GlobalExceptionHandlerMiddleware` | Catches all unhandled exceptions; returns structured ProblemDetails responses |
+
+#### Configuration
+- `Program.cs` — service registration (DI composition root), middleware pipeline
+- `appsettings.json` / `appsettings.Development.json` — environment-specific configuration
+
+#### Dependencies
+> Application Layer ✅ · Infrastructure Layer ✅ (DI registration only)
+
+---
+
+### 5. Frontend — `edutrack-ui` (Angular 18)
+
+A standalone Angular 18 application with Server-Side Rendering (SSR).
+
+#### Directory Structure
+```
+src/app/
+├── core/
+│   ├── services/          # auth.service, student.service, course.service
+│   ├── interceptors/      # auth.interceptor (JWT token attachment)
+│   └── core.module.ts
+├── features/
+│   ├── students/          # Student list, detail, create/edit pages
+│   ├── courses/           # Course list, detail, create/edit pages
+│   └── dashboard/         # Overview and metrics dashboard
+├── layout/                # Shell layout (nav, sidebar, header)
+├── models/                # TypeScript interfaces matching backend DTOs
+├── shared/                # Reusable components, pipes, directives
+├── app.routes.ts          # Lazy-loaded route definitions
+├── app.config.ts          # Standalone app configuration (provideRouter, etc.)
+└── app.config.server.ts   # SSR-specific providers
 ```
 
-### Queries (Read Operations)
-```csharp
-public class GetStudentByIdQuery : IRequest<StudentDto>
-{
-    public Guid StudentId { get; set; }
-}
+#### State Management (NgRx)
+- `@ngrx/store` — centralized state
+- `@ngrx/effects` — side effects (API calls)
+- `@ngrx/store-devtools` — Redux DevTools integration
 
-public class GetStudentByIdQueryHandler : IRequestHandler<GetStudentByIdQuery, StudentDto>
-{
-    // Implementation
-}
+---
+
+## Dependency Rule (summary)
+
+```
+Frontend  →  Api  →  Application  →  Domain  ←  Infrastructure
 ```
 
-## Domain-Driven Design (DDD) Patterns
+- Dependencies point **inward only**
+- Domain has **no outward dependencies**
+- Infrastructure and API reference Domain (or Application), never the reverse
 
-### Aggregate Roots
-```csharp
-public class Student : AggregateRoot<Guid>
-{
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public Email Email { get; private set; }
-    
-    // Domain methods
-    public void UpdateContactInformation(Email newEmail)
-    {
-        if (newEmail == null)
-            throw new ArgumentNullException(nameof(newEmail));
-            
-        Email = newEmail;
-        AddDomainEvent(new StudentContactUpdatedEvent(Id, newEmail));
-    }
-}
+---
+
+## CQRS Flow (end-to-end example)
+
+```
+POST /api/students
+      │
+      ▼
+StudentsController
+  sends CreateStudentCommand via MediatR
+      │
+      ▼  Pipeline behaviors run in order:
+      │    1. ValidationBehavior  (FluentValidation)
+      │    2. LoggingBehavior     (structured log)
+      │    3. PerformanceBehavior (timing)
+      ▼
+CreateStudentCommandHandler
+  → calls IStudentRepository.AddAsync()
+  → calls IUnitOfWork.CommitAsync()
+  → Student aggregate raises StudentCreatedEvent
+      │
+      ▼
+Domain event dispatched → StudentCreatedEventHandler
+  → performs side effects (e.g., notifications)
+      │
+      ▼
+Returns StudentDto  →  201 Created response
 ```
 
-### Value Objects
-```csharp
-public class Email : ValueObject
-{
-    public string Value { get; }
-    
-    public Email(string value)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentException("Email cannot be empty");
-            
-        if (!IsValidEmail(value))
-            throw new ArgumentException("Invalid email format");
-            
-        Value = value;
-    }
-    
-    protected override IEnumerable<object> GetEqualityComponents()
-    {
-        yield return Value;
-    }
-}
-```
+---
 
-### Repository Pattern
-```csharp
-// Domain Layer - Interface
-public interface IStudentRepository : IRepository<Student>
-{
-    Task<Student> GetByEmailAsync(Email email);
-    Task<IEnumerable<Student>> GetByProgramAsync(Guid programId);
-}
+## Testing Structure
 
-// Infrastructure Layer - Implementation
-public class StudentRepository : Repository<Student>, IStudentRepository
-{
-    public async Task<Student> GetByEmailAsync(Email email)
-    {
-        return await _context.Students
-            .FirstOrDefaultAsync(s => s.Email.Value == email.Value);
-    }
-}
-```
+| Project | Scope |
+|---|---|
+| `EduTrack.Domain.UnitTests` | Entity behavior, value object validation, domain event raising |
+| `EduTrack.Application.UnitTests` | Command/query handlers with mocked repositories (Moq) |
+| `EduTrack.Infrastructure.UnitTests` | Repository implementations with in-memory EF Core |
+| `EduTrack.Api.UnitTests` | Controller logic, middleware behavior |
+| `EduTrack.Api.IntegrationTests` | Full HTTP pipeline with real database |
 
-## Testing Strategy
+All tests use **xUnit** and **Moq**.
 
-### Unit Testing
-- **Domain Layer**: Test business logic in isolation
-- **Application Layer**: Test use cases with mocked dependencies
-- **Infrastructure Layer**: Test data access with in-memory database
+---
 
-### Integration Testing
-- **API Layer**: Test HTTP endpoints end-to-end
-- **Database Integration**: Test with real database providers
+## Key Design Decisions
 
-### Example Unit Test
-```csharp
-[Fact]
-public void UpdateContactInformation_ValidEmail_ShouldUpdateAndRaiseDomainEvent()
-{
-    // Arrange
-    var student = Student.Create("John", "Doe", new Email("john@example.com"));
-    var newEmail = new Email("john.doe@example.com");
-    
-    // Act
-    student.UpdateContactInformation(newEmail);
-    
-    // Assert
-    Assert.Equal(newEmail, student.Email);
-    Assert.Single(student.DomainEvents);
-    Assert.IsType<StudentContactUpdatedEvent>(student.DomainEvents.First());
-}
-```
-
-## Best Practices
-
-### 1. **Keep Domain Pure**
-- No dependencies on external frameworks
-- Business logic stays in the domain
-- Use domain events for side effects
-
-### 2. **Use Dependency Injection**
-- Register services at the composition root
-- Follow SOLID principles
-- Use interfaces for abstraction
-
-### 3. **Validate at Boundaries**
-- Validate input at the API layer
-- Use FluentValidation for complex rules
-- Domain objects should always be in valid state
-
-### 4. **Handle Errors Properly**
-- Use domain exceptions for business rule violations
-- Application exceptions for application concerns
-- Global exception handling at API layer
-
-### 5. **Maintain Consistency**
-- Use Unit of Work pattern for transactions
-- Domain events for eventual consistency
-- Repository pattern for data access
-
-## Next Steps
-
-1. **Complete Domain Layer**: Implement remaining entities and value objects
-2. **Add Authentication**: JWT-based authentication system
-3. **Implement CQRS**: Complete command and query handlers
-4. **Add Validation**: FluentValidation rules
-5. **Testing**: Comprehensive test coverage
-
-For more detailed information about specific patterns, see:
-- [Domain Design Patterns](domain-patterns.md)
-- [CQRS Implementation](cqrs-patterns.md)
-- [Testing Strategy](../testing/testing-strategy.md)
+| Decision | Rationale |
+|---|---|
+| MediatR pipeline behaviors | Cross-cutting concerns (logging, validation, performance) stay out of handlers |
+| Domain events (not application events) | Side effects are triggered by the domain, not by application orchestration |
+| `Result<T>` return type | Explicit, exception-free error handling in domain operations |
+| Contracts in Domain (not Application) | Repository interfaces belong to the domain — the domain defines what it needs |
+| SSR on Angular frontend | Better SEO and initial page load performance |
+| NgRx for state management | Predictable state in a complex, data-driven UI |

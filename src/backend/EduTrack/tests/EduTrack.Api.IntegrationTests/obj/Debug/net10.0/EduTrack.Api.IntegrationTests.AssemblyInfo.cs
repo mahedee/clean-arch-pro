@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EduTrack.Api.IntegrationTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4259617890761cb250dd38a6c9f14d08707af956")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f80d0ef9ef1c357880de4e8cc1ba2f0c64008f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("EduTrack.Api.IntegrationTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EduTrack.Api.IntegrationTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
