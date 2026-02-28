@@ -6,9 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 
 import { StudentService } from '../../../core/services/student.service';
-import { Student } from '../../../shared/models/student.model';
+import { StudentDto } from '../../../models';
 
 @Component({
   selector: 'app-student-detail',
@@ -20,7 +21,8 @@ import { Student } from '../../../shared/models/student.model';
     MatButtonModule,
     MatIconModule,
     MatChipsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule
   ],
   template: `
     <mat-card *ngIf="student">
@@ -59,7 +61,7 @@ import { Student } from '../../../shared/models/student.model';
               </div>
               <div class="info-item">
                 <label>Age:</label>
-                <span>{{ student.age }} years old</span>
+                <span>{{ calculateAge() }} years old</span>
               </div>
               <div class="info-item">
                 <label>Enrollment Date:</label>
@@ -231,13 +233,14 @@ import { Student } from '../../../shared/models/student.model';
   `]
 })
 export class StudentDetailComponent implements OnInit {
-  student?: Student;
+  student?: StudentDto;
   loading = true;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -250,12 +253,13 @@ export class StudentDetailComponent implements OnInit {
   loadStudent(id: string): void {
     this.loading = true;
     this.studentService.getStudent(id).subscribe({
-      next: (student: Student) => {
+      next: (student: StudentDto) => {
         this.student = student;
         this.loading = false;
       },
       error: (error) => {
         console.error('Error loading student:', error);
+        this.snackBar.open('Error loading student', 'Close', { duration: 3000 });
         this.loading = false;
       }
     });
@@ -266,16 +270,33 @@ export class StudentDetailComponent implements OnInit {
     return !!(address && (address.street || address.city || address.state || address.zipCode || address.country));
   }
 
+  calculateAge(): number {
+    if (!this.student?.dateOfBirth) return 0;
+    
+    const birthDate = new Date(this.student.dateOfBirth);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  }
+
   deleteStudent(): void {
     if (!this.student) return;
 
     if (confirm(`Are you sure you want to delete ${this.student.fullName}?`)) {
       this.studentService.deleteStudent(this.student.id).subscribe({
         next: () => {
+          this.snackBar.open('Student deleted successfully', 'Close', { duration: 3000 });
           this.router.navigate(['/students']);
         },
         error: (error) => {
           console.error('Error deleting student:', error);
+          this.snackBar.open('Error deleting student', 'Close', { duration: 3000 });
         }
       });
     }

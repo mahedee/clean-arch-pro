@@ -3,13 +3,13 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi, withFetch } from '@angular/common/http';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), 
-    provideClientHydration(), 
+    provideClientHydration(withEventReplay()), // Re-enable hydration with event replay
     provideAnimationsAsync(),
     provideHttpClient(withInterceptorsFromDi(), withFetch())
   ]

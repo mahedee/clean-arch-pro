@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using EduTrack.Application.Features.Students.Commands.CreateStudent;
 using EduTrack.Application.Features.Students.Commands.UpdateStudent;
+using EduTrack.Application.Features.Students.Commands.DeleteStudent;
 using EduTrack.Application.Features.Students.Commands.ChangeStudentStatus;
 using EduTrack.Application.Features.Students.Queries.GetStudent;
 using EduTrack.Application.Features.Students.Queries.GetStudentList;
@@ -92,6 +93,14 @@ public class StudentsController : ControllerBase
         }
         
         var command = new ChangeStudentStatusCommand(id, newStatus);
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<ActionResult> DeleteStudent(Guid id)
+    {
+        var command = new DeleteStudentCommand(id);
         await _mediator.Send(command);
         return NoContent();
     }
