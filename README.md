@@ -99,6 +99,9 @@ choco install postgresql
 # Create database
 createdb EduTrackDb
 
+Create appsettings.Development.json in src/EduTrack.Api. Since appsettings.Development is in gitignore, you need to copy appsettings.Production.json and rename it to appsettings.Development.json and update the connection string.
+
+
 # Update connection string in appsettings.Development.json
 {
   "ConnectionStrings": {
@@ -137,6 +140,14 @@ dotnet ef database update
 dotnet run
 
 # 🎉 API will be available at: http://localhost:6100
+```
+
+#### Run the application for specific environment (e.g., Development):
+
+```bash
+dotnet run --launch-profile Staging
+dotnet run --launch-profile Production
+dotnet run --launch-profile Testing
 ```
 
 #### **4. Verify Backend**
