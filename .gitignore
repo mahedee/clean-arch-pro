@@ -16,8 +16,6 @@
 
 # ASP.NET Core environment-specific settings (contains sensitive data like connection strings)
 appsettings.Development.json
-appsettings.Production.json
-appsettings.Staging.json
 
 # GitHub Personal Access Tokens and other API keys
 scripts/token.txt
@@ -723,9 +721,12 @@ FodyWeavers.xsd     # Auto-generated XML schema
 
 # EduTrack application-specific ignores
 **/appsettings.Local.json           # Local development overrides
+**/appsettings.Development.json     # Dev settings (contains local DB password) - DO NOT COMMIT
 **/EduTrack.*/appsettings.*.json    # Layer-specific configurations
 !**/appsettings.json                # Keep base configuration
-!**/appsettings.Development.json    # Keep development template
+!**/appsettings.Staging.json        # Keep staging template (tokenized, no secrets)
+!**/appsettings.Production.json     # Keep production template (tokenized, no secrets)
+!**/appsettings.Testing.json        # Keep testing config (in-memory, no secrets)
 
 # Database and migration artifacts
 **/Migrations/      # Keep in source control for team synchronization

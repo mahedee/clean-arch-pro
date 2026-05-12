@@ -1,0 +1,58 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Port=5432;Database=EduTrackDb;Username=postgres;Password=YOUR_PASSWORD_HERE"
+  },
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "Microsoft.EntityFrameworkCore": "Warning",
+        "Microsoft.EntityFrameworkCore.Database.Command": "Warning",
+        "System": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level:u3}] {CorrelationId} {Message:lj} {Properties:j}{NewLine}{Exception}",
+          "theme": "Serilog.Sinks.SystemConsole.Themes.AnsiConsoleTheme::Code, Serilog.Sinks.Console"
+        }
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "logs/edutrack-dev-.json",
+          "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+          "rollingInterval": "Day",
+          "retainedFileCountLimit": 7
+        }
+      }
+    ]
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Information",
+      "Microsoft.EntityFrameworkCore": "Warning"
+    }
+  },
+  "ErrorHandling": {
+    "IncludeExceptionDetails": true,
+    "IncludeStackTrace": true
+  },
+  "Resilience": {
+    "Database": {
+      "MaxRetryCount": 2,
+      "MaxRetryDelay": "00:00:10",
+      "CommandTimeout": "00:00:15"
+    },
+    "Http": {
+      "Timeout": "00:00:15",
+      "MaxRetryCount": 2,
+      "CircuitBreakerThreshold": 3,
+      "CircuitBreakerDuration": "00:00:30"
+    }
+  }
+}
