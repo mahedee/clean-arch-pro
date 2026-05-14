@@ -1,4 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #f0f2f5; }
+
+// Override Material sidenav panel background
+.mat-drawer {
+  background-color: #1c2b4a !important;
+}
+
+.mat-sidenav-content {
+  background-color: #f0f2f5 !important;
+}
+
+// Force white text in sidenav — overrides MDC list item defaults
+.mat-drawer {
+  .mdc-list-item__primary-text,
+  .mat-mdc-list-item .mdc-list-item__primary-text,
+  .mat-mdc-nav-list .mat-mdc-list-item,
+  .mat-mdc-nav-list a,
+  .mat-mdc-nav-list span,
+  mat-icon {
+    color: #cfd8dc !important;
+  }
+
+  .mat-mdc-nav-list .mat-mdc-list-item:hover {
+    .mdc-list-item__primary-text,
+    mat-icon {
+      color: #ffffff !important;
+    }
+  }
+
+  .mat-mdc-nav-list .mat-mdc-list-item.active {
+    .mdc-list-item__primary-text,
+    mat-icon {
+      color: #ffffff !important;
+    }
+  }
+}

@@ -1,6 +1,4 @@
 
-- Use GitHub Copilot for assistance.
-- Add unit testing for backend.
 - Integrate a front-end framework.
 - Add unit testing for front-end.
 - Create TASKLIST.md for task tracking.
