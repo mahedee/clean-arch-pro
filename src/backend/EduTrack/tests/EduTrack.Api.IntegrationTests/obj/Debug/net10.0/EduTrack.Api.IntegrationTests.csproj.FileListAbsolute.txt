@@ -486,3 +486,8 @@ D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.Integr
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\obj\Debug\net10.0\ref\EduTrack.Api.IntegrationTests.dll
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\logs\edutrack-20260228_002.json
 D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\logs\edutrack-dev-20260228_002.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\appsettings.Production.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\appsettings.Staging.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\appsettings.Testing.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\logs\edutrack-20260513.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.IntegrationTests\bin\Debug\net10.0\logs\edutrack-dev-20260513.json

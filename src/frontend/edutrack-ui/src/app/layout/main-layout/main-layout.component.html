@@ -14,30 +14,44 @@
 
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="side" opened="true">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
-        <mat-icon>dashboard</mat-icon>
-        Dashboard
+    <mat-nav-list class="nav-list">
+
+      <!-- Dashboard -->
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <span matListItemTitle>Dashboard</span>
       </a>
-      <a mat-list-item routerLink="/students" routerLinkActive="active">
-        <mat-icon>people</mat-icon>
-        Students
-      </a>
-      <a mat-list-item routerLink="/courses" routerLinkActive="active">
-        <mat-icon>book</mat-icon>
-        Courses
-      </a>
-      <a mat-list-item routerLink="/attendance" routerLinkActive="active">
-        <mat-icon>how_to_reg</mat-icon>
-        Attendance
-      </a>
-      <a mat-list-item routerLink="/grades" routerLinkActive="active">
-        <mat-icon>grade</mat-icon>
-        Grades
-      </a>
+
+      <mat-divider class="nav-divider"></mat-divider>
+
+      <!-- Collapsible Groups -->
+      <ng-container *ngFor="let group of navGroups">
+
+        <div class="nav-group-header" (click)="toggleGroup(group.id)"
+             [class.open]="isGroupOpen(group.id)">
+          <mat-icon class="group-icon">{{ group.icon }}</mat-icon>
+          <span class="group-label">{{ group.label }}</span>
+          <mat-icon class="chevron">
+            {{ isGroupOpen(group.id) ? 'expand_less' : 'expand_more' }}
+          </mat-icon>
+        </div>
+
+        <div class="nav-children" [class.expanded]="isGroupOpen(group.id)">
+          <a *ngFor="let item of group.children"
+             mat-list-item
+             [routerLink]="item.route"
+             routerLinkActive="active"
+             class="nav-item nav-child-item">
+            <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+            <span matListItemTitle>{{ item.label }}</span>
+          </a>
+        </div>
+
+      </ng-container>
+
     </mat-nav-list>
   </mat-sidenav>
-  
+
   <mat-sidenav-content>
     <div class="content">
       <router-outlet></router-outlet>

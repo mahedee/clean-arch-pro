@@ -1,55 +1,120 @@
-.spacer {
-  flex: 1 1 auto;
-}
+.spacer { flex: 1 1 auto; }
 
 .sidenav-container {
   height: calc(100vh - 64px);
 }
 
-// Dark navy sidebar
 .sidenav {
-  width: 250px;
+  width: 260px;
   background-color: #1c2b4a;
   color: #e8eaf0;
+}
 
-  mat-nav-list a {
-    display: flex;
-    align-items: center;
-    color: #b0bec5;
-    border-left: 3px solid transparent;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    border-radius: 0 4px 4px 0;
-    margin: 2px 8px 2px 0;
+.nav-list {
+  padding: 8px 0;
+}
 
-    mat-icon {
-      margin-right: 16px;
-      color: #78909c;
-      transition: color 0.2s;
-    }
+.nav-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+}
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.07);
-      color: #ffffff;
+// Top-level item (e.g. Dashboard)
+.nav-item {
+  color: #b0bec5 !important;
+  border-left: 3px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  border-radius: 0 4px 4px 0;
+  margin: 2px 8px 2px 0;
 
-      mat-icon {
-        color: #90caf9;
-      }
-    }
+  mat-icon {
+    color: #78909c;
+    transition: color 0.2s;
+  }
 
-    &.active {
-      background-color: rgba(63, 81, 181, 0.35);
-      color: #ffffff;
-      border-left-color: #5c8ee8;
-      font-weight: 600;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    color: #ffffff !important;
+    mat-icon { color: #90caf9; }
+  }
 
-      mat-icon {
-        color: #90caf9;
-      }
-    }
+  &.active {
+    background-color: rgba(63, 81, 181, 0.35) !important;
+    color: #ffffff !important;
+    border-left-color: #5c8ee8;
+    font-weight: 600;
+    mat-icon { color: #90caf9; }
   }
 }
 
-// Light grey main content area
+// Collapsible group header
+.nav-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #90a4ae;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 0 4px 4px 0;
+  margin: 4px 8px 0 0;
+  user-select: none;
+
+  .group-icon {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+    color: #546e8a;
+  }
+
+  .group-label { flex: 1; }
+
+  .chevron {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+    color: #546e8a;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #cfd8dc;
+    .group-icon, .chevron { color: #78909c; }
+  }
+
+  &.open {
+    color: #b0bec5;
+  }
+}
+
+// Sliding children container
+.nav-children {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+
+  &.expanded {
+    max-height: 400px;
+    transition: max-height 0.3s ease-in;
+  }
+}
+
+// Child items — indented
+.nav-child-item {
+  padding-left: 20px !important;
+
+  mat-icon {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
 .content {
   padding: 20px;
   min-height: 100%;
