@@ -14,7 +14,6 @@
 
 ### **🎪 Live Demo & Portfolio**
 - 🌐 **Live Demo**: *Coming Soon*
-- 📊 **Project Metrics**: [View Current Progress](docs/task-list.md)
 - 🏗️ **Architecture Documentation**: [Clean Architecture Guide](docs/architecture/clean-architecture-overview.md)
 
 > 🔥 **If this project helps you, please give it a star ⭐ - It means a lot to the team!**
@@ -60,7 +59,6 @@
 
 ---
 
-
 ## 🚀 **Quick Start Guide**
 
 ### **Prerequisites**
@@ -99,9 +97,14 @@ choco install postgresql
 # Create database
 createdb EduTrackDb
 
+```
+
+[Configure PostgreSQL with pgAdmin 4](docs/how-to-configure-postgressql-in-pgadmin.md)
+
+
 Create appsettings.Development.json in src/EduTrack.Api. Since appsettings.Development is in gitignore, you need to copy appsettings.Production.json and rename it to appsettings.Development.json and update the connection string.
 
-
+```bash
 # Update connection string in appsettings.Development.json
 {
   "ConnectionStrings": {
@@ -124,37 +127,38 @@ Create appsettings.Development.json in src/EduTrack.Api. Since appsettings.Devel
 ```
 </details>
 
-#### **3. Backend Setup**
-```bash
-# Navigate to backend solution
-cd backend/EduTrack
+#### **3. Run the Backend Application**
 
-# Restore packages
+```bash
+# Navigate to the backend solution
+cd src/backend/EduTrack
+
+# Restore NuGet packages
 dotnet restore
 
-# Apply database migrations
+# Navigate to the API project and apply database migrations
 cd src/EduTrack.Api
 dotnet ef database update
 
-# Run the application
+# Run the application (default: Development profile)
 dotnet run
-
-# 🎉 API will be available at: http://localhost:6100
 ```
 
-#### Run the application for specific environment (e.g., Development):
+> 🎉 API will be available at: http://localhost:6100
+
+To run with a specific environment profile:
 
 ```bash
+dotnet run --launch-profile Development
 dotnet run --launch-profile Staging
 dotnet run --launch-profile Production
-dotnet run --launch-profile Testing
 ```
 
 #### **4. Verify Backend**
 - 🌐 **Swagger UI**: http://localhost:6100/swagger
 ---
 
-#### **5. Frontend setup**
+#### **5. Run the Frontend Application**
 ```bash
 # Navigate to frontend directory
 cd src/frontend/edutrack-ui

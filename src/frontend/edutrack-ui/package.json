@@ -26,7 +26,9 @@
     "@ngrx/effects": "^18.0.0",
     "@ngrx/store": "^18.0.0",
     "@ngrx/store-devtools": "^18.0.0",
+    "chart.js": "^4.5.1",
     "express": "^4.21.2",
+    "ng2-charts": "^5.0.4",
     "rxjs": "~7.8.1",
     "tslib": "^2.8.1",
     "zone.js": "~0.14.10"
