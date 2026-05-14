@@ -15,6 +15,7 @@ namespace EduTrack.Infrastructure.Data
         public DbSet<Student> Students => Set<Student>();
         public DbSet<Course> Courses => Set<Course>();
         public DbSet<Teacher> Teachers => Set<Teacher>();
+        public DbSet<Department> Departments => Set<Department>();
         public DbSet<Attendance> Attendances => Set<Attendance>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -128,6 +129,30 @@ namespace EduTrack.Infrastructure.Data
                 entity.Property(e => e.RecordedBy).HasMaxLength(100);
                 entity.Property(e => e.RecordedAt).IsRequired();
                 entity.Property(e => e.IsVerified).IsRequired().HasDefaultValue(false);
+            });
+
+            modelBuilder.Entity<Department>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Code).IsRequired().HasMaxLength(20);
+                entity.HasIndex(e => e.Code).IsUnique();
+                entity.Property(e => e.Description).HasMaxLength(500);
+                entity.Property(e => e.Location).HasMaxLength(200);
+                entity.Property(e => e.Status).HasConversion<int>();
+                entity.Property(e => e.Budget).HasPrecision(18, 2);
+
+                entity.Property(e => e.ContactEmail)
+                    .HasMaxLength(100)
+                    .HasConversion(
+                        v => v != null ? v.Value : null,
+                        v => v != null ? EduTrack.Domain.ValueObjects.Email.Create(v) : null);
+
+                entity.Property(e => e.ContactPhone)
+                    .HasMaxLength(20)
+                    .HasConversion(
+                        v => v != null ? v.Value : null,
+                        v => v != null ? EduTrack.Domain.ValueObjects.PhoneNumber.Create(v) : null);
             });
 
             // Seed data will be applied at runtime, not through migrations

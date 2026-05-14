@@ -18,6 +18,12 @@ namespace EduTrack.Infrastructure.Repositories
         private ICourseRepository? _courseRepository;
         public ICourseRepository Courses => _courseRepository ??= new CourseRepository(_context);
 
+        private ITeacherRepository? _teacherRepository;
+        public ITeacherRepository Teachers => _teacherRepository ??= new TeacherRepository(_context);
+
+        private IDepartmentRepository? _departmentRepository;
+        public IDepartmentRepository Departments => _departmentRepository ??= new DepartmentRepository(_context);
+
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             return await _context.SaveChangesAsync(cancellationToken);
