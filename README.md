@@ -6,7 +6,7 @@
 
 **EduTrack** is a comprehensive **enterprise-grade education management system** built with **Clean Architecture** principles, **Domain-Driven Design (DDD)**, and **modern .NET 10** technologies with an **Angular frontend**. Designed for educational institutions of all sizes, from small schools to large universities.
 
-![](/docs/images/edutrack-dashboard.png)
+![](/docs/images/edutrack-dashboard_v02.png)
 
 ## 🎯 **Project Vision**
 
