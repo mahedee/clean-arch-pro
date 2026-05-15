@@ -1,0 +1,9 @@
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\bin\Debug\net10.0\.msCoverageSourceRootsMapping_EduTrack.Api.UnitTests
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\bin\Debug\net10.0\CoverletSourceRootsMapping_EduTrack.Api.UnitTests
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\EduTrack.Api.UnitTests.csproj.AssemblyReference.cache
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\MvcTestingAppManifest.json
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\EduTrack.Api.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\EduTrack.Api.UnitTests.AssemblyInfoInputs.cache
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\EduTrack.Api.UnitTests.AssemblyInfo.cs
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\EduTrack.Api.UnitTests.csproj.CoreCompileInputs.cache
+D:\Projects\GitHub\clean-arch-pro\src\backend\EduTrack\tests\EduTrack.Api.UnitTests\obj\Debug\net10.0\EduTrack.Api.UnitTests.sourcelink.json
