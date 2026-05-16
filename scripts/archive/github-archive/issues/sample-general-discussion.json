@@ -1,0 +1,22 @@
+{
+  "template": "general-issue.json",
+  "variables": {
+    "general_title": "Database Performance Optimization Strategy Discussion",
+    "general_description": "Initiate a technical discussion about optimizing database performance for the EduTrack application as we scale to support larger educational institutions with thousands of students and hundreds of teachers.",
+    "discussion_points": "1. **Current Performance Bottlenecks**\n   - Slow query execution during peak enrollment periods\n   - Large data retrieval for analytics and reporting\n   - Concurrent user access during class scheduling\n\n2. **Optimization Strategies to Consider**\n   - Database indexing strategy review\n   - Query optimization and stored procedures\n   - Read replicas for reporting workloads\n   - Caching strategy implementation\n   - Database partitioning for historical data\n\n3. **Technology Considerations**\n   - PostgreSQL advanced features utilization\n   - Redis caching implementation\n   - Database connection pooling optimization\n   - Monitoring and alerting setup",
+    "background_context": "The EduTrack application is approaching a scale where database performance becomes critical. Initial performance testing shows potential bottlenecks during peak usage periods, particularly during enrollment seasons and grade submission deadlines. We need to proactively address these concerns before they impact user experience.",
+    "next_steps": "1. **Performance Audit**: Conduct comprehensive database performance analysis\n2. **Benchmarking**: Establish baseline performance metrics\n3. **Strategy Development**: Create detailed optimization roadmap\n4. **Implementation Planning**: Break down optimization tasks into manageable chunks\n5. **Testing Strategy**: Plan performance testing for optimization validation",
+    "stakeholders": "- Database Administrator (DBA)\n- Backend Development Team\n- DevOps/Infrastructure Team\n- Product Owner\n- System Architects\n- QA Performance Testing Team",
+    "additional_info": "This discussion is time-sensitive as we're planning the next major release and need to incorporate performance improvements. Consider scheduling a technical meeting with all stakeholders to align on optimization priorities and timeline.",
+    "issue_category": "performance",
+    "timeline": "2-3 weeks for strategy, 4-6 weeks for implementation",
+    "impact_level": "high"
+  },
+  "additionalLabels": [
+    "database",
+    "performance",
+    "scalability",
+    "architecture",
+    "planning"
+  ]
+}

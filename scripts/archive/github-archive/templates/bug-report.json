@@ -1,0 +1,26 @@
+{
+  "title": "🐛 {{bug_title}}",
+  "body": "## Bug Description\n\n{{bug_description}}\n\n## Steps to Reproduce\n\n1. {{step_1}}\n2. {{step_2}}\n3. {{step_3}}\n\n## Expected Behavior\n\n{{expected_behavior}}\n\n## Actual Behavior\n\n{{actual_behavior}}\n\n## Environment\n\n- **OS**: {{os}}\n- **Browser**: {{browser}}\n- **Version**: {{version}}\n\n## Screenshots\n\n{{screenshots}}\n\n## Additional Information\n\n{{additional_info}}",
+  "labels": [
+    "bug",
+    "needs-triage",
+    "{{severity}}"
+  ],
+  "assignees": [],
+  "milestone": null,
+  "variables": [
+    "bug_title",
+    "bug_description",
+    "step_1",
+    "step_2", 
+    "step_3",
+    "expected_behavior",
+    "actual_behavior",
+    "os",
+    "browser",
+    "version",
+    "screenshots",
+    "additional_info",
+    "severity"
+  ]
+}

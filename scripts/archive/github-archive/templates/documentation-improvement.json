@@ -1,0 +1,26 @@
+{
+  "title": "📚 {{documentation_title}}",
+  "body": "## Documentation Issue\n\n{{documentation_description}}\n\n## Current State\n\n{{current_state}}\n\n## Proposed Improvements\n\n{{proposed_improvements}}\n\n## Content Areas to Address\n\n{{content_areas}}\n\n## Target Audience\n\n{{target_audience}}\n\n## Success Criteria\n\n- [ ] {{criteria_1}}\n- [ ] {{criteria_2}}\n- [ ] {{criteria_3}}\n\n## Additional Resources\n\n{{additional_resources}}\n\n---\n\n**Priority**: {{priority}}  \n**Estimated Effort**: {{effort}}  \n**Documentation Type**: {{doc_type}}",
+  "labels": [
+    "documentation",
+    "{{priority}}",
+    "{{doc_type}}"
+  ],
+  "assignees": [],
+  "milestone": null,
+  "variables": [
+    "documentation_title",
+    "documentation_description",
+    "current_state",
+    "proposed_improvements",
+    "content_areas",
+    "target_audience",
+    "criteria_1",
+    "criteria_2",
+    "criteria_3",
+    "additional_resources",
+    "priority",
+    "effort",
+    "doc_type"
+  ]
+}

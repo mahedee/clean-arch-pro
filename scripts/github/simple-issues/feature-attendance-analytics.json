@@ -1,0 +1,6 @@
+{
+  "title": "✨ Feature: Add attendance analytics dashboard",
+  "body": "## ✨ Feature Request\n\n### Summary\nAdd a comprehensive analytics dashboard for tracking student attendance patterns and trends.\n\n### User Story\nAs a **Teacher/Administrator**, I want to view attendance analytics so that I can identify attendance patterns and take appropriate actions for students with poor attendance.\n\n### Acceptance Criteria\n- [ ] Display overall attendance statistics (percentage, trends)\n- [ ] Show individual student attendance records\n- [ ] Generate attendance reports by date range\n- [ ] Visualize attendance data with charts and graphs\n- [ ] Export attendance data to CSV/Excel\n- [ ] Filter attendance by course, student, or time period\n\n### Technical Requirements\n- Use Chart.js or similar library for data visualization\n- Implement CQRS pattern for attendance queries\n- Add new analytics controllers in API layer\n- Create responsive UI components for dashboard\n\n### Mockups/Design\n- Dashboard should display key metrics prominently\n- Use card-based layout for different analytics sections\n- Include date range picker for filtering\n\n### Priority\nMedium\n\n### Labels\nfeature, analytics, attendance, dashboard, medium-priority",
+  "labels": ["feature", "analytics", "attendance", "dashboard", "medium-priority"],
+  "assignees": ["mahedee"]
+}

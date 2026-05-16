@@ -1,0 +1,24 @@
+{
+  "template": "documentation-improvement.json",
+  "variables": {
+    "documentation_title": "API Documentation Enhancement for EduTrack REST Endpoints",
+    "documentation_description": "The current API documentation lacks comprehensive examples, proper error response documentation, and interactive testing capabilities. This needs improvement to support frontend developers and third-party integrations.",
+    "current_state": "- Basic API endpoint documentation exists\n- Missing request/response examples\n- No interactive testing interface\n- Error responses not properly documented\n- Authentication flows need clarification\n- Rate limiting policies not documented",
+    "proposed_improvements": "- **Swagger/OpenAPI Integration**: Implement comprehensive Swagger documentation with interactive UI\n- **Code Examples**: Add request/response examples in multiple languages (C#, JavaScript, cURL)\n- **Error Documentation**: Document all possible error responses with codes and messages\n- **Authentication Guide**: Step-by-step authentication and authorization examples\n- **Rate Limiting**: Document API limits and best practices\n- **Postman Collection**: Provide ready-to-use Postman collection for testing",
+    "content_areas": "1. **Student Management APIs** - CRUD operations, enrollment, performance\n2. **Teacher Management APIs** - Profile management, course assignments\n3. **Course Management APIs** - Course creation, prerequisites, scheduling\n4. **Attendance APIs** - Tracking, reporting, analytics\n5. **Authentication APIs** - Login, token refresh, permissions\n6. **Reporting APIs** - Data export, analytics, dashboard data",
+    "target_audience": "- Frontend developers working on EduTrack UI\n- Mobile app developers\n- Third-party integration developers\n- QA engineers for API testing\n- DevOps teams for monitoring and troubleshooting",
+    "criteria_1": "Complete Swagger documentation with interactive testing interface",
+    "criteria_2": "All endpoints have comprehensive request/response examples",
+    "criteria_3": "Error handling and authentication flows are clearly documented",
+    "additional_resources": "- Current API codebase in `src/EduTrack.Api/Controllers/`\n- Existing Swagger configuration in `Program.cs`\n- Postman collection template\n- API testing guidelines document",
+    "priority": "medium",
+    "effort": "2-3 days",
+    "doc_type": "api-documentation"
+  },
+  "additionalLabels": [
+    "api",
+    "swagger",
+    "developer-experience",
+    "integration"
+  ]
+}

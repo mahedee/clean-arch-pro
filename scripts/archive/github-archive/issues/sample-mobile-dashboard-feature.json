@@ -1,0 +1,24 @@
+{
+  "template": "feature-request.json",
+  "variables": {
+    "feature_title": "Mobile-First Responsive Design for Teacher Dashboard",
+    "feature_description": "Redesign the Teacher Dashboard with a mobile-first approach to support teachers who frequently access the system from tablets and smartphones during classes and while moving between classrooms.",
+    "problem_statement": "The current Teacher Dashboard is primarily designed for desktop use and provides a poor user experience on mobile devices. Teachers report difficulty accessing student information, taking attendance, and updating grades while using mobile devices in classrooms.",
+    "proposed_solution": "Implement a comprehensive mobile-first redesign of the Teacher Dashboard including:\n\n**Mobile-Optimized Interface:**\n- Touch-friendly controls with appropriate sizing (44px minimum touch targets)\n- Simplified navigation with collapsible menus\n- Swipe gestures for common actions\n- Progressive disclosure of information\n\n**Responsive Layout System:**\n- CSS Grid and Flexbox for flexible layouts\n- Breakpoint-based design (mobile, tablet, desktop)\n- Adaptive typography and spacing\n- Context-aware content prioritization\n\n**Enhanced Mobile Features:**\n- Offline capability for critical functions\n- Camera integration for quick photo uploads\n- Voice-to-text for notes and comments\n- Biometric authentication support\n- Push notifications for important updates",
+    "alternative_solutions": "- Progressive Web App (PWA) implementation\n- Native mobile app development\n- Tablet-specific optimization only\n- Third-party mobile framework integration",
+    "technical_requirements": "- **Frontend Framework**: Angular with Angular Material CDK\n- **CSS Framework**: Custom responsive design system with Sass\n- **Testing**: Responsive design testing across multiple devices\n- **Performance**: Mobile performance optimization (lazy loading, code splitting)\n- **PWA Features**: Service workers, offline storage, push notifications\n- **Cross-browser**: iOS Safari, Android Chrome compatibility\n- **Accessibility**: WCAG 2.1 AA compliance for mobile screens",
+    "affected_components": "- Teacher Dashboard Angular module\n- Shared UI component library\n- Authentication and session management\n- CSS/Sass styling system\n- API response optimization for mobile\n- Image and file upload components",
+    "criteria_1": "Dashboard is fully functional on devices with screen width ≥320px",
+    "criteria_2": "All touch interactions meet 44px minimum target size requirements",
+    "criteria_3": "Page load time on mobile networks is under 3 seconds",
+    "additional_context": "This feature request comes from teacher feedback surveys where 78% of teachers indicated they would use mobile access if available. The mobile-first approach will also improve the overall user experience for all device types.",
+    "priority": "high"
+  },
+  "additionalLabels": [
+    "mobile",
+    "responsive-design",
+    "teacher-dashboard",
+    "ux-improvement",
+    "accessibility"
+  ]
+}

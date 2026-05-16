@@ -1,0 +1,19 @@
+{
+  "template": "default-issue.json",
+  "variables": {
+    "issue_title": "Implement Real-time Notification System for Student Activities",
+    "issue_description": "Design and implement a real-time notification system that alerts teachers and administrators about important student activities such as attendance updates, grade submissions, enrollment changes, and system announcements.",
+    "acceptance_criteria": "- [ ] Real-time notifications for attendance changes\n- [ ] Grade submission alerts for teachers\n- [ ] Enrollment status updates for administrators\n- [ ] System-wide announcements capability\n- [ ] User preference settings for notification types\n- [ ] Email and in-app notification support\n- [ ] Notification history and read/unread status\n- [ ] Mobile-responsive notification UI\n- [ ] Performance optimization for high-volume notifications\n- [ ] Proper error handling and retry mechanisms",
+    "additional_context": "This notification system is essential for keeping stakeholders informed about critical student activities. The system should be scalable to handle notifications for thousands of students and support both real-time updates and batch notifications.\n\n**Technical Considerations:**\n- Use SignalR for real-time web notifications\n- Implement message queuing for reliable delivery\n- Consider notification throttling to prevent spam\n- Ensure GDPR compliance for notification data\n- Support multiple notification channels (email, SMS, push)\n\n**Priority Scenarios:**\n1. Emergency attendance alerts\n2. Critical grade updates\n3. Enrollment deadline reminders\n4. System maintenance notifications",
+    "priority": "medium",
+    "issue_type": "enhancement",
+    "timestamp": "2025-09-06 14:30:00 UTC"
+  },
+  "additionalLabels": [
+    "notifications",
+    "real-time",
+    "signalr",
+    "communication",
+    "scalability"
+  ]
+}
