@@ -1,8 +1,11 @@
-# 🎓 EduTrack — Education Management System
+# EduTrack — Education Management System
 
-[![.NET 10](https://img.shields.io/badge/.NET-10.0-blue)](https://dotnet.microsoft.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-green)](docs/architecture/clean-architecture-overview.md) [![CQRS](https://img.shields.io/badge/Pattern-CQRS-blueviolet)](https://martinfowler.com/bliki/CQRS.html) [![DDD](https://img.shields.io/badge/Design-Domain%20Driven-red)](https://martinfowler.com/tags/domain%20driven%20design.html) [![GitHub Issues](https://img.shields.io/github/issues/mahedee/clean-arch-pro)](https://github.com/mahedee/clean-arch-pro/issues) [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)](https://github.com/mahedee/clean-arch-pro/actions)
 
-EduTrack is an enterprise-grade education management system built with **Clean Architecture**, **Domain-Driven Design (DDD)**, **.NET 10**, and an **Angular** frontend.
+[![.NET 8](https://img.shields.io/badge/.NET-8.0-blue)](https://dotnet.microsoft.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-green)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) [![Multi Database](https://img.shields.io/badge/Database-Multi--Provider-orange)](docs/setup/database-setup.md) [![CQRS](https://img.shields.io/badge/Pattern-CQRS-blueviolet)](https://martinfowler.com/bliki/CQRS.html) [![DDD](https://img.shields.io/badge/Design-Domain%20Driven-red)](https://martinfowler.com/tags/domain%20driven%20design.html) [![GitHub Issues](https://img.shields.io/github/issues/mahedee/clean-arch-pro)](https://github.com/mahedee/clean-arch-pro/issues) [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)](https://github.com/mahedee/clean-arch-pro/actions)
+
+---
+
+**EduTrack** is a comprehensive **enterprise-grade education management system** built with **Clean Architecture** principles, **Domain-Driven Design (DDD)**, and **modern .NET 10** technologies with an **Angular frontend**. Designed for educational institutions of all sizes, from small schools to large universities.
 
 ![EduTrack Dashboard](docs/images/edutrack-dashboard_v02.png)
 
@@ -10,27 +13,151 @@ EduTrack is an enterprise-grade education management system built with **Clean A
 
 ## 📋 Table of Contents
 
+- [🎯 Project Vision](#-project-vision)
+- [🎓 Key Business Features](#-key-business-features)
+- [⚙️ Key Technical Features](#️-key-technical-features)
+- [🚀 Quick Start Guide](#-quick-start-guide)
 - [⚙️ Prerequisites](#prerequisites)
-- [🚀 Running the Backend](#running-the-backend)
+- [🗄️ Database Setup](#️-database-setup)
+- [🚀 Running the Backend](#-running-the-backend)
 - [🅰️ Running the Frontend](#running-the-frontend)
 - [🧪 Running Tests](#running-tests)
-- [🛠️ Developer Guide](#developer-guide)
-- [🧰 Technology Stack](#technology-stack)
-- [🤝 Contributing](#contributing)
-- [📜 License](#license)
-- [👨‍💻 About the Maintainer](#about-the-maintainer)
+- [🛠️ Developer Guide](#️-developer-guide)
+- [🧰 Technology Stack](#-technology-stack)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [📞 Support & Community](#-support--community)
+- [👨‍💻 About the Maintainer](#-about-the-maintainer)
 
 ---
 
-## ⚙️ Prerequisites
+## 🎯 **Project Vision**
 
-| Tool | Version | Download |
-|------|---------|----------|
-| .NET SDK | 10.0+ | [dotnet.microsoft.com](https://dotnet.microsoft.com/download) |
-| Node.js | 18+ | [nodejs.org](https://nodejs.org/) |
-| Angular CLI | 18+ | `npm install -g @angular/cli` |
-| PostgreSQL | 14+ | [postgresql.org](https://www.postgresql.org/download/) |
-| Git | latest | [git-scm.com](https://git-scm.com/) |
+> *Building the next generation of education management software with enterprise-grade architecture, multi-database support, and scalable design patterns.*
+
+### **🎪 Live Demo & Portfolio**
+- 🌐 **Live Demo**: *Coming Soon*
+- 🏗️ **Architecture Documentation**: Full guide coming soon. For an immediate overview, please refer to the [Developer's Guide](DEVELOPER-GUIDE.md) and the [Clean Architecture Guide](docs/architecture/clean-architecture-overview.md)
+
+> 🔥 **If this project helps you, please give it a star ⭐ - It means a lot to the team!**
+
+---
+
+## 🎓 Key Business Features
+
+- 📚 **Student Lifecycle Management** — Admission, enrollment, progression, and graduation
+- 🏫 **Academic Structure** — Departments, programs, courses, and scheduling with conflict detection
+- 👨‍🏫 **Faculty Management** — Profiles, academic titles, workload tracking, and employment workflows
+- 📊 **Grades & Assessments** — Flexible grading schemes, assessment weightings, and transcript generation
+- 🔐 **Access Control** — Role-based and permission-based authorization per user or role
+- 📈 **Reporting & Analytics** — Dashboards, custom reports, and PDF/Excel/CSV exports
+
+📄 [See full business features →](docs/key-business-features.md)
+
+---
+
+## ⚙️ Key Technical Features
+
+- 🏗️ **Clean Architecture** with Domain-Driven Design and strict layer separation
+- ⚡ **CQRS** via MediatR — all commands and queries handled through a pipeline
+- 🗄️ **Multi-Database Support** — PostgreSQL (primary), SQL Server, Oracle, SQLite
+- 🔐 **JWT Authentication** with role-based and permission-based authorization
+- 🧪 **Comprehensive Testing** — Domain (≥95%), Application (≥80%), and integration tests
+- 🚀 **CI/CD Ready** — GitHub Actions, Docker multi-stage builds, OpenAPI/Swagger
+
+📄 [See full technical features →](docs/key-technical-features.md)
+
+---
+
+##  Quick Start Guide
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- ✅ **[.NET 10 SDK](https://dotnet.microsoft.com/download)** (10.0 or later)
+- ✅ **Database Server** (choose one):
+  - [PostgreSQL 14+](https://www.postgresql.org/download/) *(Recommended)*
+- ✅ **Development IDE**:
+  - [Visual Studio 2026+](https://visualstudio.microsoft.com/) *(Recommended)*
+  - [VS Code](https://code.visualstudio.com/) with C# extension
+- ✅ **[Git](https://git-scm.com/)** for version control
+- ✅ **[Node.js 18+](https://nodejs.org/)** (for frontend development)
+
+---
+
+## 🗄️ Database Setup
+
+### PostgreSQL (Recommended)
+
+**1. Install PostgreSQL**
+
+- **Windows:** Download the installer from [postgresql.org/download](https://www.postgresql.org/download/) or use Chocolatey:
+  ```bash
+  choco install postgresql
+  ```
+- **macOS:**
+  ```bash
+  brew install postgresql
+  ```
+- **Linux (Ubuntu/Debian):**
+  ```bash
+  sudo apt install postgresql postgresql-contrib
+  ```
+
+**2. Create the database**
+
+```bash
+creatdb EduTrackDb
+```
+
+Or using `psql`:
+
+```sql
+CREATE DATABASE "EduTrackDb";
+```
+
+**3. Configure the connection string**
+
+Create `appsettings.Development.json` inside `backend/EduTrack/src/EduTrack.Api/` with your credentials:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Port=5432;Database=EduTrackDb;Username=postgres;Password=yourpassword;"
+  }
+}
+```
+
+> 📖 [Configure PostgreSQL with pgAdmin 4](docs/how-to-configure-postgressql-in-pgadmin.md) — step-by-step guide for setting up the database using the pgAdmin UI.
+
+### Other Supported Databases
+
+<details>
+<summary><strong>SQL Server</strong></summary>
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=EduTrackDb;Trusted_Connection=true;MultipleActiveResultSets=true"
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Oracle</strong></summary>
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "User Id=youruser;Password=yourpassword;Data Source=localhost:1521/XEPDB1"
+  }
+}
+```
+
+</details>
 
 ---
 
@@ -45,17 +172,9 @@ cd clean-arch-pro
 
 ### 2. Configure the database connection
 
-Create `appsettings.Development.json` inside `backend/EduTrack/src/EduTrack.Api/` (this file is git-ignored). Use `appsettings.Production.json` as a template:
+Create `appsettings.Development.json` inside `backend/EduTrack/src/EduTrack.Api/` (this file is git-ignored). See the [Database Setup](#database-setup) section above for connection string examples.
 
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=EduTrackDb;Username=postgres;Password=yourpassword;"
-  }
-}
-```
-
-> 📖 See [how to configure PostgreSQL with pgAdmin](docs/how-to-configure-postgressql-in-pgadmin.md) if you need help setting up the database.
+> 💡 Use `appsettings.Production.json` as a template.
 
 ### 3. Restore packages
 
@@ -71,7 +190,7 @@ cd backend/EduTrack/src/EduTrack.Api
 dotnet ef database update
 ```
 
-> 💡 If `dotnet ef` is not found, install it: `dotnet tool install --global dotnet-ef`
+> If `dotnet ef` is not found, install it: `dotnet tool install --global dotnet-ef`
 
 ### 5. Run the API
 
@@ -96,10 +215,10 @@ dotnet run --launch-profile Production  # Production environment
 
 **Using Visual Studio or VS Code:**
 
-- 🖥️ **Visual Studio:** Open `backend/EduTrack/EduTrack.sln`, select `EduTrack.Api`, and press **F5**.
-- 💻 **VS Code:** Open the `backend/EduTrack` folder and use the **Run and Debug** panel (a launch configuration is included in `.vscode/`).
+- **Visual Studio:** Open `backend/EduTrack/EduTrack.sln`, select `EduTrack.Api`, and press **F5**.
+- **VS Code:** Open the `backend/EduTrack` folder and use the **Run and Debug** panel (a launch configuration is included in `.vscode/`).
 
-### 🔧 Troubleshooting
+### Troubleshooting
 
 | Problem | Fix |
 |---------|-----|
@@ -110,7 +229,7 @@ dotnet run --launch-profile Production  # Production environment
 
 ---
 
-## 🅰️ Running the Frontend
+## Running the Frontend
 
 ### 1. Install dependencies
 
@@ -151,7 +270,7 @@ npm run build
 node dist/edutrack-ui/server/server.mjs
 ```
 
-### 🔧 Troubleshooting
+### Troubleshooting
 
 | Problem | Fix |
 |---------|-----|
@@ -178,7 +297,7 @@ dotnet test tests/EduTrack.Domain.UnitTests/
 dotnet test --collect:"XPlat Code Coverage"
 ```
 
-📄 See [backend unit tests](docs/backend-unit-tests.md) and [backend test coverage](docs/backend-test-coverage.md) for details.
+See [backend unit tests](docs/backend-unit-tests.md) and [backend test coverage](docs/backend-test-coverage.md) for details.
 
 ### Frontend tests
 
@@ -192,58 +311,25 @@ npm test
 npm run test:ci
 ```
 
-📄 See [frontend unit tests](docs/frontend-unit-tests.md) and [frontend test coverage](docs/frontend-test-coverage.md) for details.
+See [frontend unit tests](docs/frontend-unit-tests.md) and [frontend test coverage](docs/frontend-test-coverage.md) for details.
 
 ---
 
 ## 🛠️ Developer Guide
 
-### 📁 Project structure
+For a full developer reference — including project structure, architecture deep-dive, coding conventions, logging, and configuration — see the **[Developer's Guide](DEVELOPER-GUIDE.md)**.
 
-```
-clean-arch-pro/
-├── backend/EduTrack/
-│   ├── src/
-│   │   ├── EduTrack.Domain/          # Entities, value objects, domain events
-│   │   ├── EduTrack.Application/     # CQRS commands/queries, interfaces
-│   │   ├── EduTrack.Infrastructure/  # EF Core, repositories, external services
-│   │   └── EduTrack.Api/             # ASP.NET Core Web API
-│   └── tests/
-│       ├── EduTrack.Domain.UnitTests/
-│       ├── EduTrack.Application.UnitTests/
-│       └── EduTrack.Api.IntegrationTests/
-├── frontend/edutrack-ui/             # Angular application
-└── docs/                             # Documentation
-```
+### 📁 Project Structure
+
+The solution follows a four-layer Clean Architecture layout. See **[Developer's Guide → Project Structure](DEVELOPER-GUIDE.md)** for the full breakdown.
 
 ### 🏗️ Architecture
 
-EduTrack follows **Clean Architecture** with strict dependency inversion — outer layers depend on inner layers, never the reverse.
+EduTrack is built on Clean Architecture, DDD, and CQRS. See the **[Clean Architecture Overview](docs/architecture/clean-architecture-overview.md)** for layer dependencies, design decisions, and key patterns.
 
-```
-Api  →  Application  →  Domain
-Infrastructure  →  Application  →  Domain
-```
+### ✨ Adding a New Feature
 
-Key patterns:
-
-- ⚡ **CQRS** with [MediatR](https://github.com/jbogard/MediatR) for all commands and queries
-- 🗄️ **Repository + Unit of Work** for data access (no direct DbContext in handlers)
-- 📣 **Domain Events** for decoupled side effects
-- 🔄 **AutoMapper** for DTO ↔ Entity mapping
-- ✅ **FluentValidation** for request validation
-
-📖 See [architecture overview](docs/architecture/clean-architecture-overview.md) for full details.
-
-### ✨ Adding a new feature
-
-Follow these steps to add a new feature using the CQRS pattern:
-
-1. 🧩 **Domain** — Add entity/value objects in `EduTrack.Domain`
-2. 📨 **Application** — Create a command or query + handler in `EduTrack.Application`
-3. 🗄️ **Infrastructure** — Add repository implementation and EF Core configuration in `EduTrack.Infrastructure`
-4. 🌐 **API** — Add controller endpoint in `EduTrack.Api`
-5. 🧪 **Tests** — Write unit tests with xUnit + Moq
+Adding a new feature follows a consistent CQRS workflow across Domain → Application → Infrastructure → API → Tests. See the **[API Implementation Guide](docs/api-implementation-guide.md)** for a worked example.
 
 ### 🗄️ Database migrations
 
@@ -260,7 +346,7 @@ dotnet ef database update --project src/EduTrack.Api
 dotnet ef database drop --project src/EduTrack.Api --force
 ```
 
-### 🔀 Git workflow
+### 🔄 Git Workflow
 
 ```bash
 # Create a feature branch
@@ -273,9 +359,9 @@ git commit -m "Add student CRUD operations - Fixes #18"
 git push origin feature/your-feature-name
 ```
 
-📋 See [CONTRIBUTING.md](CONTRIBUTING.md) and [pull request guidelines](pullrequest-guidelines.md) for the full process.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [pull request guidelines](pullrequest-guidelines.md) for the full process.
 
-### 📐 Coding conventions
+### 📝 Coding Conventions
 
 - **Entities:** singular noun — `Student`, `Course`
 - **DTOs:** suffix with `Dto` — `StudentDto`
@@ -284,30 +370,29 @@ git push origin feature/your-feature-name
 
 ---
 
-## 🧰 Technology Stack
+## 🧰 **Technology Stack**
 
-### ⚙️ Backend
+### **Backend Technologies**
+| Technology | Version | Purpose | Documentation |
+|------------|---------|---------|---------------|
+| **.NET** | 10.0 | Core framework | [📖 .NET Docs](https://docs.microsoft.com/en-us/dotnet/) |
+| **ASP.NET Core** | 10.0 | Web API framework | [📖 ASP.NET Docs](https://docs.microsoft.com/en-us/aspnet/core/) |
+| **Entity Framework Core** | 10.0 | ORM & Data Access | [📖 EF Core Docs](https://docs.microsoft.com/en-us/ef/core/) |
+| **MediatR** | 12.x | CQRS & Mediator pattern | [📖 MediatR](https://github.com/jbogard/MediatR) |
+| **AutoMapper** | 12.x | Object mapping | [📖 AutoMapper](https://automapper.org/) |
+| **FluentValidation** | 11.x | Input validation | [📖 FluentValidation](https://fluentvalidation.net/) |
+| **Serilog** | 3.x | Structured logging | [📖 Serilog](https://serilog.net/) |
+| **xUnit** | 2.x | Unit testing framework | [📖 xUnit](https://xunit.net/) |
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| .NET / ASP.NET Core | 10.0 | Web API framework |
-| Entity Framework Core | 10.0 | ORM & data access |
-| MediatR | 12.x | CQRS & mediator pattern |
-| AutoMapper | 12.x | Object mapping |
-| FluentValidation | 11.x | Input validation |
-| Serilog | 3.x | Structured logging |
-| xUnit + Moq | 2.x | Unit testing |
+### **Database Support**
+| Database | Status | Performance | Use Case |
+|----------|--------|-------------|----------|
+| **PostgreSQL** | ✅ Primary | Excellent | General purpose, JSONB support |
+| **SQL Server** | ✅ Supported | Excellent | Enterprise environments |
+| **Oracle** | ✅ Enterprise | Good | Large enterprise systems |
+| **SQLite** | 🔄 Testing Only | Good | Development & testing |
 
-### 🗄️ Database Support
-
-| Database | Status | Use Case |
-|----------|--------|----------|
-| PostgreSQL | ✅ Primary | General purpose, JSONB support |
-| SQL Server | ✅ Supported | Enterprise environments |
-| Oracle | ✅ Enterprise | Large enterprise systems |
-| SQLite | 🔄 Testing Only | Development & testing |
-
-### 🅰️ Frontend
+### **Frontend Technologies**
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
@@ -318,36 +403,33 @@ git push origin feature/your-feature-name
 
 ---
 
-## 🤝 Contributing
+## 🤝 **Contributing**
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+We welcome contributions from developers of all skill levels! Whether you're fixing bugs, adding features, improving documentation, or sharing ideas, your contribution matters. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
 
-### 🎯 How to Contribute
+### **🎯 How to Contribute**
 
-#### 🐛 Report Issues
-
+#### **🐛 Report Issues**
 Found a bug or have a suggestion? Please check existing issues first, then:
-
 - **[🐞 Report a Bug](https://github.com/mahedee/clean-arch-pro/issues/new?template=bug_report.md)**
 - **[💡 Request a Feature](https://github.com/mahedee/clean-arch-pro/issues/new?template=feature_request.md)**
 - **[📝 Improve Documentation](https://github.com/mahedee/clean-arch-pro/issues/new?template=documentation_improvement.md)**
 - **[❓ Ask a Question](https://github.com/mahedee/clean-arch-pro/issues/new?template=general_issue.md)**
 
-#### 🔧 Code Contributions
 
+#### **🔧 Code Contributions**
 1. **Fork the repository** and create your feature branch
 2. **Follow our coding standards** (see [CONTRIBUTING.md](CONTRIBUTING.md))
 3. **Write tests** for your changes
 4. **Submit a pull request** following our [PR Guidelines](pullrequest-guidelines.md)
 
-#### 📖 Documentation Contributions
-
+#### **📖 Documentation Contributions**
 - Improve existing documentation
 - Add code examples and tutorials
 - Translate documentation to other languages
 - Create video tutorials or blog posts
 
-### 🏆 Contributors
+### **🏆 Contributors**
 
 Thanks to all the amazing people who have contributed to this project!
 
@@ -358,15 +440,42 @@ Thanks to all the amazing people who have contributed to this project!
 
 ---
 
-## 📜 License
 
-Licensed under the **[MIT License](LICENSE)**.
+## 📜 **License**
 
-- ✅ **Commercial use** — Use in commercial projects
-- ✅ **Modification** — Modify the code as needed
-- ✅ **Distribution** — Distribute your modifications
-- ✅ **Private use** — Use privately without restrictions
-- ⚠️ **Attribution** — Include original license and copyright notice
+This project is licensed under the **[MIT License](LICENSE)** - see the LICENSE file for details.
+
+### **What this means:**
+- ✅ **Commercial use** - Use in commercial projects
+- ✅ **Modification** - Modify the code as needed
+- ✅ **Distribution** - Distribute your modifications
+- ✅ **Private use** - Use privately without restrictions
+- ⚠️ **Attribution** - Include original license and copyright notice
+
+
+---
+
+## 📞 **Support & Community**
+
+### **🆘 Getting Help**
+- **📖 Documentation**: Check our comprehensive docs first
+- **🐛 Issues**: [GitHub Issues](https://github.com/mahedee/clean-arch-pro/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/mahedee/clean-arch-pro/discussions)
+- **📧 Email**: [mahedee.hasan@gmail.com](mailto:mahedee.hasan@gmail.com)
+
+### **🌟 Show Your Support**
+If this project helps you build better applications:
+- ⭐ **Star the repository** on GitHub
+- 🐦 **Share on social media** (Twitter, LinkedIn)
+- 📝 **Write a blog post** about your experience
+- 🗣️ **Tell your colleagues** about EduTrack
+
+### **📊 Project Stats**
+- 📈 **GitHub Stars**: ![GitHub Repo stars](https://img.shields.io/github/stars/mahedee/clean-arch-pro?style=social)
+- 🍴 **Forks**: ![GitHub forks](https://img.shields.io/github/forks/mahedee/clean-arch-pro?style=social)
+- 👀 **Watchers**: ![GitHub watchers](https://img.shields.io/github/watchers/mahedee/clean-arch-pro?style=social)
+- 📝 **Issues**: ![GitHub issues](https://img.shields.io/github/issues/mahedee/clean-arch-pro)
+- 🔄 **Pull Requests**: ![GitHub pull requests](https://img.shields.io/github/issues-pr/mahedee/clean-arch-pro)
 
 ---
 
@@ -383,13 +492,11 @@ Licensed under the **[MIT License](LICENSE)**.
 
 <div align="center">
 
-### 🎉 Thank you for choosing EduTrack!
+### **🎉 Thank you for choosing EduTrack!**
 
 *Building the future of education management, one commit at a time.*
 
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/mahedee/clean-arch-pro)
-[![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-blue.svg)](CONTRIBUTING.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](pullrequest-guidelines.md)
+[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/mahedee/clean-arch-pro) [![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-blue.svg)](CONTRIBUTING.md) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](pullrequest-guidelines.md)
 
 ---
 
