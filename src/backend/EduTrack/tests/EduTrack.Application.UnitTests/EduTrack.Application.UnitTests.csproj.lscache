@@ -55,31 +55,10 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 
 [sourceFiles]
 <NUGET>/microsoft.net.test.sdk/17.12.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs
-Features/Courses/
- Commands/CreateCourseCommandHandlerTests.cs
- Queries/CourseQueryHandlerTests.cs
- Validators/CourseValidatorTests.cs
-Features/Departments/Commands/
- CreateDepartmentCommandHandlerTests.cs
- DeleteDepartmentCommandHandlerTests.cs
- UpdateDepartmentCommandHandlerTests.cs
-Features/
- Departments/Queries/DepartmentQueryHandlerTests.cs
- Students/Commands/
-  CreateStudentCommandHandlerTests.cs
-  DeleteStudentCommandHandlerTests.cs
-  UpdateStudentCommandHandlerTests.cs
- Students/Queries/StudentQueryHandlerTests.cs
- Teachers/Commands/
-  CreateTeacherCommandHandlerTests.cs
-  DeleteTeacherCommandHandlerTests.cs
-  UpdateTeacherCommandHandlerTests.cs
- Teachers/Queries/TeacherQueryHandlerTests.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  EduTrack.Application.UnitTests.AssemblyInfo.cs
  EduTrack.Application.UnitTests.GlobalUsings.g.cs
-UnitTest1.cs
 
 [metadataReferences]
 ../../src/

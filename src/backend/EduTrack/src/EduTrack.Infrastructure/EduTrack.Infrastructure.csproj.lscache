@@ -54,41 +54,10 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
-Common/Logging/LoggingConfiguration.cs
-Data/
- ApplicationDbContext.cs
- ApplicationDbContextFactory.cs
- SeedData/
-  AttendanceSeedData.cs
-  CourseSeedData.cs
-  DataSeeder.cs
-  StudentSeedData.cs
-  TeacherSeedData.cs
-DependencyInjection/ServiceRegistration.cs
-Migrations/
- 20250413024536_initial-mig.cs
- 20250413024536_initial-mig.Designer.cs
- 20250906143022_UpdateValueObjectConfigurations.cs
- 20250906143022_UpdateValueObjectConfigurations.Designer.cs
- 20250907193054_change-student.cs
- 20250907193054_change-student.Designer.cs
- 20260223225237_SeedDataImplementation.cs
- 20260223225237_SeedDataImplementation.Designer.cs
- 20260225000006_RecreateAttendanceForRichDomainModel.cs
- 20260225000006_RecreateAttendanceForRichDomainModel.Designer.cs
- 20260514202524_add-teacher-department.cs
- 20260514202524_add-teacher-department.Designer.cs
- ApplicationDbContextModelSnapshot.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  EduTrack.Infrastructure.AssemblyInfo.cs
  EduTrack.Infrastructure.GlobalUsings.g.cs
-Repositories/
- CourseRepository.cs
- DepartmentRepository.cs
- StudentRepository.cs
- TeacherRepository.cs
- UnitOfWork.cs
 
 [metadataReferences]
 ../EduTrack.Domain/obj/Debug/net10.0/ref/EduTrack.Domain.dll

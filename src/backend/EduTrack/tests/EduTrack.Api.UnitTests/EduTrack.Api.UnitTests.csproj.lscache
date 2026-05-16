@@ -55,12 +55,6 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 
 [sourceFiles]
 <NUGET>/microsoft.net.test.sdk/17.11.1/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs
-Controllers/
- CoursesControllerTests.cs
- DepartmentsControllerTests.cs
- StudentsControllerTests.cs
- TeachersControllerTests.cs
-Middleware/GlobalExceptionHandlerMiddlewareTests.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  EduTrack.Api.UnitTests.AssemblyInfo.cs

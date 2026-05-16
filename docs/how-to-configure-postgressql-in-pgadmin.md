@@ -81,7 +81,7 @@ Run via **Tools → Query Tool** while connected to `EduTrackDb`.
 
 ## 6. Update the Application Connection String
 
-Edit `src/backend/EduTrack/src/EduTrack.Api/appsettings.Development.json`:
+Edit `backend/EduTrack/src/EduTrack.Api/appsettings.Development.json`:
 
 ```json
 {
@@ -100,7 +100,7 @@ Edit `src/backend/EduTrack/src/EduTrack.Api/appsettings.Development.json`:
 From the repo root:
 
 ```bash
-cd src/backend/EduTrack/src/EduTrack.Api
+cd backend/EduTrack/src/EduTrack.Api
 dotnet ef database update
 ```
 
