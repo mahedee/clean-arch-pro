@@ -23,7 +23,7 @@
 From the solution root:
 
 ```bash
-cd src/backend/EduTrack
+cd backend/EduTrack
 dotnet test
 ```
 
@@ -32,7 +32,7 @@ dotnet test
 ## Run a Specific Test Project
 
 ```bash
-cd src/backend/EduTrack
+cd backend/EduTrack
 dotnet test tests/EduTrack.Domain.UnitTests
 dotnet test tests/EduTrack.Application.UnitTests
 dotnet test tests/EduTrack.Infrastructure.UnitTests

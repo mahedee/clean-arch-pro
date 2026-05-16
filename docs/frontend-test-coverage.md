@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - [Node.js 18+](https://nodejs.org/) installed
-- Dependencies installed: `npm install` inside `src/frontend/edutrack-ui`
+- Dependencies installed: `npm install` inside `frontend/edutrack-ui`
 - [Google Chrome](https://www.google.com/chrome/) installed
 
 ---
@@ -11,7 +11,7 @@
 ## Run Tests with Coverage
 
 ```bash
-cd src/frontend/edutrack-ui
+cd frontend/edutrack-ui
 ng test --watch=false --code-coverage
 ```
 
@@ -51,7 +51,7 @@ The report shows:
 ## Report Location
 
 ```
-src/frontend/edutrack-ui/
+frontend/edutrack-ui/
 └── coverage/
     └── edutrack-ui/
         ├── index.html        ← open this in a browser

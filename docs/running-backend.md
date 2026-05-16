@@ -10,7 +10,7 @@
 
 ## 1. Configure the Database Connection
 
-Create `appsettings.Development.json` inside `src/backend/EduTrack/src/EduTrack.Api/` (this file is git-ignored):
+Create `appsettings.Development.json` inside `backend/EduTrack/src/EduTrack.Api/` (this file is git-ignored):
 
 ```json
 {
@@ -27,7 +27,7 @@ Copy `appsettings.Production.json` as a template and update the connection strin
 ## 2. Restore Packages
 
 ```bash
-cd src/backend/EduTrack
+cd backend/EduTrack
 dotnet restore
 ```
 
@@ -36,7 +36,7 @@ dotnet restore
 ## 3. Apply Database Migrations
 
 ```bash
-cd src/backend/EduTrack/src/EduTrack.Api
+cd backend/EduTrack/src/EduTrack.Api
 dotnet ef database update
 ```
 
@@ -45,7 +45,7 @@ dotnet ef database update
 ## 4. Run the Application
 
 ```bash
-cd src/backend/EduTrack/src/EduTrack.Api
+cd backend/EduTrack/src/EduTrack.Api
 dotnet run
 ```
 
@@ -69,9 +69,9 @@ dotnet run --launch-profile Production  # Production environment
 
 ## 5. Run with Visual Studio / VS Code
 
-**Visual Studio:** Open `src/backend/EduTrack/EduTrack.sln`, select the `EduTrack.Api` project, and press **F5**.
+**Visual Studio:** Open `backend/EduTrack/EduTrack.sln`, select the `EduTrack.Api` project, and press **F5**.
 
-**VS Code:** Open the `src/backend/EduTrack` folder, then use the **Run and Debug** panel. A launch configuration is included in `.vscode/`.
+**VS Code:** Open the `backend/EduTrack` folder, then use the **Run and Debug** panel. A launch configuration is included in `.vscode/`.
 
 ---
 

@@ -1,6 +1,6 @@
 # Rich vs Anemic Domain Model
 
-A practical guide using EduTrack's [Attendance.cs](../../src/backend/EduTrack/src/EduTrack.Domain/Entities/Attendance.cs) entity as the reference example.
+A practical guide using EduTrack's [Attendance.cs](../../backend/EduTrack/src/EduTrack.Domain/Entities/Attendance.cs) entity as the reference example.
 
 ---
 
@@ -89,7 +89,7 @@ A **rich domain model** places **both data and behavior** inside the entity/aggr
 
 ### Example (Rich) — EduTrack's actual `Attendance`
 
-See [Attendance.cs](../../src/backend/EduTrack/src/EduTrack.Domain/Entities/Attendance.cs):
+See [Attendance.cs](../../backend/EduTrack/src/EduTrack.Domain/Entities/Attendance.cs):
 
 ```csharp
 public class Attendance : AggregateRoot<Guid>
@@ -172,7 +172,7 @@ public class Attendance : AggregateRoot<Guid>
 
 ## 5. Verdict for EduTrack
 
-The project follows **Clean Architecture + DDD**, and entities like [Attendance.cs](../../src/backend/EduTrack/src/EduTrack.Domain/Entities/Attendance.cs) are correctly implemented as **rich domain models** — with private setters, factory methods, invariants, and domain events. Continue this pattern for new entities (`Student`, `Course`, etc.).
+The project follows **Clean Architecture + DDD**, and entities like [Attendance.cs](../../backend/EduTrack/src/EduTrack.Domain/Entities/Attendance.cs) are correctly implemented as **rich domain models** — with private setters, factory methods, invariants, and domain events. Continue this pattern for new entities (`Student`, `Course`, etc.).
 
 ---
 

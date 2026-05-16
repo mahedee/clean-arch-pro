@@ -131,7 +131,7 @@ Create appsettings.Development.json in src/EduTrack.Api. Since appsettings.Devel
 
 ```bash
 # Navigate to the backend solution
-cd src/backend/EduTrack
+cd backend/EduTrack
 
 # Restore NuGet packages
 dotnet restore
@@ -161,7 +161,7 @@ dotnet run --launch-profile Production
 #### **5. Run the Frontend Application**
 ```bash
 # Navigate to frontend directory
-cd src/frontend/edutrack-ui
+cd frontend/edutrack-ui
 
 # Install dependencies
 npm install

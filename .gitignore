@@ -739,6 +739,7 @@ FodyWeavers.xsd     # Auto-generated XML schema
 # Logs directory (application runtime logs)
 **/Logs/            # Application log files
 **/logs/            # Alternative log directory
+*.log               # Individual log files (Serilog rolling file output)
 
 # Documentation artifacts
 **/docs/generated/  # Auto-generated documentation

@@ -59,7 +59,6 @@ obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  EduTrack.Infrastructure.UnitTests.AssemblyInfo.cs
  EduTrack.Infrastructure.UnitTests.GlobalUsings.g.cs
-Repositories/StudentRepositoryTests.cs
 
 [metadataReferences]
 ../../src/

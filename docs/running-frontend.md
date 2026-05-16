@@ -13,7 +13,7 @@
 Run once after cloning, or after pulling changes that modify `package.json`:
 
 ```bash
-cd src/frontend/edutrack-ui
+cd frontend/edutrack-ui
 npm install
 ```
 
@@ -22,7 +22,7 @@ npm install
 ## 2. Start the Development Server
 
 ```bash
-cd src/frontend/edutrack-ui
+cd frontend/edutrack-ui
 npm start
 # or equivalently:
 ng serve

@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - [Node.js 18+](https://nodejs.org/) installed
-- Dependencies installed (`npm install` inside `src/frontend/edutrack-ui`)
+- Dependencies installed (`npm install` inside `frontend/edutrack-ui`)
 - [Google Chrome](https://www.google.com/chrome/) installed (Karma uses Chrome by default)
 
 ---
@@ -11,7 +11,7 @@
 ## Run All Tests
 
 ```bash
-cd src/frontend/edutrack-ui
+cd frontend/edutrack-ui
 npm test
 # or equivalently:
 ng test

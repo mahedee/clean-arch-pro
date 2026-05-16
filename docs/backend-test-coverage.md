@@ -16,7 +16,7 @@ dotnet tool install -g dotnet-reportgenerator-globaltool
 The easiest way is to use the provided PowerShell script from the solution root:
 
 ```powershell
-cd src/backend/EduTrack
+cd backend/EduTrack
 .\generate-coverage.ps1
 ```
 
@@ -52,7 +52,7 @@ The script:
 ### Step 1 — Run tests and collect coverage
 
 ```bash
-cd src/backend/EduTrack
+cd backend/EduTrack
 dotnet test --collect:"XPlat Code Coverage" \
             --results-directory ./TestResults \
             --settings coverlet.runsettings

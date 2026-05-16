@@ -55,20 +55,10 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 
 [sourceFiles]
 <NUGET>/microsoft.net.test.sdk/17.6.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs
-Common/BaseEntityTests.cs
-Entities/
- CourseTests.cs
- StudentTests.cs
- TeacherTests.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  EduTrack.Domain.UnitTests.AssemblyInfo.cs
  EduTrack.Domain.UnitTests.GlobalUsings.g.cs
-ValueObjects/
- EmailTests.cs
- FullNameTests.cs
- GPATests.cs
- StudentWithValueObjectsTests.cs
 
 [metadataReferences]
 ../../src/EduTrack.Domain/obj/Debug/net10.0/ref/EduTrack.Domain.dll
