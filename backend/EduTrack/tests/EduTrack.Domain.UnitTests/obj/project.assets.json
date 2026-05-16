@@ -1052,8 +1052,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "d:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
-              "projectPath": "d:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
+            "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
+              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
             }
           }
         }

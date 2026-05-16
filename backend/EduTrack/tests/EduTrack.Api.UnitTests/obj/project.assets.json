@@ -4334,11 +4334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\tests\\EduTrack.Api.UnitTests\\EduTrack.Api.UnitTests.csproj",
+      "projectUniqueName": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Api.UnitTests\\EduTrack.Api.UnitTests.csproj",
       "projectName": "EduTrack.Api.UnitTests",
-      "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\tests\\EduTrack.Api.UnitTests\\EduTrack.Api.UnitTests.csproj",
+      "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Api.UnitTests\\EduTrack.Api.UnitTests.csproj",
       "packagesPath": "C:\\Users\\mahedee\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\tests\\EduTrack.Api.UnitTests\\obj\\",
+      "outputPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Api.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4359,14 +4359,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Api\\EduTrack.Api.csproj": {
-              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Api\\EduTrack.Api.csproj"
+            "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Api\\EduTrack.Api.csproj": {
+              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Api\\EduTrack.Api.csproj"
             },
-            "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Application\\EduTrack.Application.csproj": {
-              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Application\\EduTrack.Application.csproj"
+            "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\EduTrack.Application.csproj": {
+              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Application\\EduTrack.Application.csproj"
             },
-            "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
-              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\src\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
+            "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
+              "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
             }
           }
         }

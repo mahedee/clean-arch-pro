@@ -1,0 +1,25 @@
+{
+  "title": "✨ {{feature_title}}",
+  "body": "## Feature Request\n\n{{feature_description}}\n\n## Problem Statement\n\n{{problem_statement}}\n\n## Proposed Solution\n\n{{proposed_solution}}\n\n## Alternative Solutions\n\n{{alternative_solutions}}\n\n## Implementation Details\n\n### Technical Requirements\n\n{{technical_requirements}}\n\n### Affected Components\n\n{{affected_components}}\n\n## Acceptance Criteria\n\n- [ ] {{criteria_1}}\n- [ ] {{criteria_2}}\n- [ ] {{criteria_3}}\n\n## Additional Context\n\n{{additional_context}}",
+  "labels": [
+    "enhancement",
+    "feature-request",
+    "{{priority}}"
+  ],
+  "assignees": [],
+  "milestone": null,
+  "variables": [
+    "feature_title",
+    "feature_description",
+    "problem_statement",
+    "proposed_solution",
+    "alternative_solutions",
+    "technical_requirements",
+    "affected_components",
+    "criteria_1",
+    "criteria_2",
+    "criteria_3",
+    "additional_context",
+    "priority"
+  ]
+}
