@@ -45,20 +45,22 @@ public class GlobalExceptionHandlerMiddleware
     {
         var correlationId = GetOrCreateCorrelationId(context);
         var traceId = Activity.Current?.Id ?? context.TraceIdentifier;
+        var requestPath = context.Request.Path.HasValue ? context.Request.Path.Value : "/";
+        var userId = context.User?.Identity?.Name;
 
         // Log the exception with structured information
         using (_logger.BeginScope(new Dictionary<string, object>
         {
-            ["CorrelationId"] = correlationId,
-            ["TraceId"] = traceId,
-            ["RequestPath"] = context.Request.Path,
-            ["RequestMethod"] = context.Request.Method,
-            ["UserId"] = context.User?.Identity?.Name ?? "Anonymous"
+            ["CorrelationId"] = SanitizeForLog(correlationId),
+            ["TraceId"] = SanitizeForLog(traceId),
+            ["RequestPath"] = SanitizeForLog(requestPath, "/"),
+            ["RequestMethod"] = SanitizeForLog(context.Request.Method),
+            ["UserId"] = SanitizeForLog(userId, "Anonymous")
         }))
         {
             _logger.LogError(exception, 
                 "Unhandled exception occurred. CorrelationId: {CorrelationId}, TraceId: {TraceId}",
-                correlationId, traceId);
+                SanitizeForLog(correlationId), SanitizeForLog(traceId));
         }
 
         // Create problem details response
@@ -236,7 +238,19 @@ public class GlobalExceptionHandlerMiddleware
 
         var newCorrelationId = Guid.NewGuid().ToString();
         context.Response.Headers.Add(correlationIdHeaderName, newCorrelationId);
-        
+
         return newCorrelationId;
+    }
+
+    private static string SanitizeForLog(string? value, string defaultValue = "")
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            return defaultValue;
+        }
+
+        return value
+            .Replace("\r", string.Empty)
+            .Replace("\n", string.Empty);
     }
 }
