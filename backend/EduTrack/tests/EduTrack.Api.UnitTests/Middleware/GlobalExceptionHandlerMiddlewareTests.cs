@@ -259,4 +259,44 @@ public class GlobalExceptionHandlerMiddlewareTests
                 It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
             Times.Once);
     }
+
+    [Fact]
+    public async Task InvokeAsync_ShouldSanitizeUserControlledScopeValuesBeforeLogging()
+    {
+        // Arrange
+        var context = new DefaultHttpContext();
+        context.Response.Body = new MemoryStream();
+        context.Request.Path = "/api/students%0d%0aforged";
+        context.Request.Method = "POST\r\nFORGED";
+        context.Request.Headers["X-Correlation-ID"] = "corr-123\r\nFORGED";
+        context.User = new System.Security.Claims.ClaimsPrincipal(
+            new System.Security.Claims.ClaimsIdentity(
+                [new System.Security.Claims.Claim(System.Security.Claims.ClaimTypes.Name, "alice\r\nFORGED")],
+                authenticationType: "Test"));
+
+        object? capturedScope = null;
+        var scopeDisposable = Mock.Of<IDisposable>();
+
+        _loggerMock
+            .Setup(x => x.BeginScope(It.IsAny<It.IsAnyType>()))
+            .Callback(new InvocationAction(invocation => capturedScope = invocation.Arguments[0]))
+            .Returns(scopeDisposable);
+
+        var middleware = new GlobalExceptionHandlerMiddleware(
+            async (context) => throw new ArgumentException("Test exception"),
+            _loggerMock.Object,
+            _environmentMock.Object);
+
+        // Act
+        await middleware.InvokeAsync(context);
+
+        // Assert
+        var scopeValues = Assert.IsAssignableFrom<IReadOnlyCollection<KeyValuePair<string, object>>>(capturedScope);
+        var scopeDictionary = scopeValues.ToDictionary(pair => pair.Key, pair => pair.Value?.ToString());
+
+        Assert.Equal("corr-123FORGED", scopeDictionary["CorrelationId"]);
+        Assert.Equal("/api/students%0d%0aforged", scopeDictionary["RequestPath"]);
+        Assert.Equal("POSTFORGED", scopeDictionary["RequestMethod"]);
+        Assert.Equal("aliceFORGED", scopeDictionary["UserId"]);
+    }
 }
