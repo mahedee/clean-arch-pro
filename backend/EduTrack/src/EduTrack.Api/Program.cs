@@ -5,7 +5,7 @@ using EduTrack.Infrastructure.Common.Logging;
 using EduTrack.Infrastructure.Data;
 using EduTrack.Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Serilog;
 using System.Diagnostics;
 

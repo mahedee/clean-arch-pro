@@ -270,6 +270,38 @@ npm run build
 node dist/edutrack-ui/server/server.mjs
 ```
 
+---
+
+### 5. Run Everything with a Single Script
+
+The easiest way to start both the backend and frontend together is to use the provided PowerShell scripts from the repository root.
+
+**Start both applications at once:**
+
+```powershell
+.\scripts\run-edutrack-all.ps1
+```
+
+This opens each application in its own terminal window:
+
+| Script | What it does |
+|--------|-------------|
+| `scripts\run-edutrack-all.ps1` | Launches backend + frontend in separate windows |
+| `scripts\run-edutrack-backend.ps1` | Builds and starts the backend API only |
+| `scripts\run-edutrack-frontend.ps1` | Installs dependencies and starts the Angular dev server only |
+
+Once running, the following URLs are available:
+
+| URL | Description |
+|-----|-------------|
+| `http://localhost:6100` | Backend API |
+| `http://localhost:6100/swagger` | Swagger / OpenAPI UI |
+| `http://localhost:4200` | Angular frontend |
+
+> **Prerequisites:** PowerShell 7+ must be installed. .NET 10 SDK and Node.js must be on the system PATH.
+
+Press **Ctrl+C** in each window to stop the respective application.
+
 ### Troubleshooting
 
 | Problem | Fix |

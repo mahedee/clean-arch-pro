@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj": {}
+    "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
+    "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj",
         "projectName": "EduTrack.Domain",
-        "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj",
+        "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj",
         "packagesPath": "C:\\Users\\mahedee\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\obj\\",
+        "outputPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -349,14 +349,14 @@
         }
       }
     },
-    "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {
+    "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
         "projectName": "EduTrack.Infrastructure",
-        "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
+        "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\mahedee\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\obj\\",
+        "outputPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -377,8 +377,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
-                "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
+              "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
+                "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
               }
             }
           }
@@ -401,47 +401,47 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.Diagnostics.HealthChecks": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.Hosting.Abstractions": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.3, )"
             },
             "Serilog": {
               "target": "Package",
@@ -449,7 +449,7 @@
             },
             "Serilog.AspNetCore": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[10.0.0, )"
             },
             "Serilog.Exceptions": {
               "target": "Package",
@@ -762,14 +762,14 @@
         }
       }
     },
-    "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj": {
+    "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj",
+        "projectUniqueName": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj",
         "projectName": "EduTrack.Infrastructure.UnitTests",
-        "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj",
+        "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\EduTrack.Infrastructure.UnitTests.csproj",
         "packagesPath": "C:\\Users\\mahedee\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\obj\\",
+        "outputPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\tests\\EduTrack.Infrastructure.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -790,11 +790,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
-                "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
+              "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
+                "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj"
               },
-              "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {
-                "projectPath": "D:\\Projects\\GitHub\\clean-arch-pro\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj"
+              "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj": {
+                "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Infrastructure\\EduTrack.Infrastructure.csproj"
               }
             }
           }
@@ -817,7 +817,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
