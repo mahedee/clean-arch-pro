@@ -44,7 +44,7 @@ jobs:
       run: dotnet test backend/EduTrack/tests/ --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
     - name: Code Coverage Report
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v7
       with:
         directory: ./backend/EduTrack/tests/
 
