@@ -48,18 +48,13 @@ namespace EduTrack.Infrastructure.Repositories
         {
             var query = _context.Students.AsQueryable();
 
-            // Apply filters  
-            if (!string.IsNullOrWhiteSpace(searchTerm))
-            {
-                // Skip search for now to avoid value object translation issues
-                // TODO: Implement proper search with value objects
-                query = query.Where(s => true); // No-op for now
-            }
-
+            // Apply filters
             if (status.HasValue)
             {
                 query = query.Where(s => s.Status == status.Value);
             }
+
+            // searchTerm filtering is not yet implemented for value object columns
 
             // Apply sorting
             query = sortBy?.ToLower() switch

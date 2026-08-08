@@ -9,7 +9,6 @@ using EduTrack.Application.Features.Students.Queries.GetStudentList;
 using EduTrack.Application.Features.Students.Queries.GetStudentsByStatus;
 using EduTrack.Application.Features.Students.Queries.GetStudentsOnProbation;
 using EduTrack.Application.Features.Students.DTOs;
-using EduTrack.Domain.Entities;
 using EduTrack.Domain.Enums;
 
 [ApiController]
@@ -40,19 +39,12 @@ public class StudentsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Guid>> CreateStudent([FromBody] CreateStudentDto dto)
     {
-        // Debug logging to check what's being received
-        Console.WriteLine($"DEBUG: Received DTO FullName: '{dto.FullName}'");
-        Console.WriteLine($"DEBUG: Received DTO Email: '{dto.Email}'");
-        Console.WriteLine($"DEBUG: Received DTO PhoneNumber: '{dto.PhoneNumber}'");
-        
         var command = new CreateStudentCommand(
-            dto.FullName, dto.DateOfBirth, dto.Email, 
-            dto.PhoneNumber, 
-            dto.Address?.Street, dto.Address?.City, dto.Address?.State, 
+            dto.FullName, dto.DateOfBirth, dto.Email,
+            dto.PhoneNumber,
+            dto.Address?.Street, dto.Address?.City, dto.Address?.State,
             dto.Address?.ZipCode, dto.Address?.Country);
-        
-        Console.WriteLine($"DEBUG: Command FullName: '{command.FullName}'");
-        
+
         var studentId = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetStudent), new { id = studentId }, studentId);
     }
@@ -87,12 +79,7 @@ public class StudentsController : ControllerBase
     [HttpPut("{id:guid}/status")]
     public async Task<ActionResult> ChangeStudentStatus(Guid id, [FromBody] ChangeStatusDto dto)
     {
-        if (!Enum.TryParse<StudentStatus>(dto.NewStatus, true, out var newStatus))
-        {
-            return BadRequest($"Invalid status: {dto.NewStatus}");
-        }
-        
-        var command = new ChangeStudentStatusCommand(id, newStatus);
+        var command = new ChangeStudentStatusCommand(id, dto.NewStatus);
         await _mediator.Send(command);
         return NoContent();
     }

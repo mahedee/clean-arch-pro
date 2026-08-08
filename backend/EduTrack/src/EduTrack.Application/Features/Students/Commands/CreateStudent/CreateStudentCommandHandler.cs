@@ -1,85 +1,52 @@
-using AutoMapper;
 using EduTrack.Domain.Entities;
 using EduTrack.Domain.Contracts.Repositories;
 using EduTrack.Domain.ValueObjects;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace EduTrack.Application.Features.Students.Commands.CreateStudent;
 
-/// <summary>
-/// Handler for CreateStudentCommand
-/// </summary>
 public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, Guid>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IMapper _mapper;
+    private readonly ILogger<CreateStudentCommandHandler> _logger;
 
-    public CreateStudentCommandHandler(
-        IUnitOfWork unitOfWork,
-        IMapper mapper)
+    public CreateStudentCommandHandler(IUnitOfWork unitOfWork, ILogger<CreateStudentCommandHandler> logger)
     {
         _unitOfWork = unitOfWork;
-        _mapper = mapper;
+        _logger = logger;
     }
 
     public async Task<Guid> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
     {
-        try
+        var fullName = FullName.Create(request.FullName);
+        var email = Email.Create(request.Email);
+
+        var student = Student.Create(fullName, request.DateOfBirth, email);
+
+        if (!string.IsNullOrEmpty(request.PhoneNumber))
         {
-            // Debug logging
-            Console.WriteLine($"DEBUG: Handler received FullName: '{request.FullName}'");
-            Console.WriteLine($"DEBUG: Handler received Email: '{request.Email}'");
-            
-            // Check if email already exists
-            var existingStudent = await _unitOfWork.Students.GetByEmailAsync(request.Email, cancellationToken);
-            if (existingStudent != null)
-            {
-                throw new InvalidOperationException($"Student with email '{request.Email}' already exists");
-            }
-
-            // Create value objects
-            Console.WriteLine($"DEBUG: About to create FullName with value: '{request.FullName}'");
-            var fullName = FullName.Create(request.FullName);
-            Console.WriteLine($"DEBUG: Created FullName: '{fullName.Value}'");
-            
-            var email = Email.Create(request.Email);
-
-            // Create student entity
-            var student = Student.Create(fullName, request.DateOfBirth, email);
-
-            // Set optional properties
-            if (!string.IsNullOrEmpty(request.PhoneNumber))
-            {
-                var phoneNumber = PhoneNumber.Create(request.PhoneNumber);
-                student.UpdatePhoneNumber(phoneNumber);
-            }
-
-            if (!string.IsNullOrEmpty(request.Street) && !string.IsNullOrEmpty(request.City))
-            {
-                var address = Address.Create(
-                    request.Street,
-                    request.City,
-                    request.State ?? string.Empty,
-                    request.ZipCode ?? string.Empty,
-                    request.Country ?? string.Empty);
-                
-                student.UpdateAddress(address);
-            }
-
-            // Add to repository
-            await _unitOfWork.Students.AddAsync(student, cancellationToken);
-            await _unitOfWork.SaveChangesAsync(cancellationToken);
-
-            return student.Id;
+            var phoneNumber = PhoneNumber.Create(request.PhoneNumber);
+            student.UpdatePhoneNumber(phoneNumber);
         }
-        catch (Exception ex)
+
+        if (!string.IsNullOrEmpty(request.Street) && !string.IsNullOrEmpty(request.City))
         {
-            Console.WriteLine($"DETAILED ERROR: {ex.Message}");
-            Console.WriteLine($"STACK TRACE: {ex.StackTrace}");
-            Console.WriteLine($"INNER EXCEPTION: {ex.InnerException?.Message}");
-            Console.WriteLine($"INNER STACK TRACE: {ex.InnerException?.StackTrace}");
-            
-            throw new InvalidOperationException($"Error creating student with email: {request.Email}. Details: {ex.Message}", ex);
+            var address = Address.Create(
+                request.Street,
+                request.City,
+                request.State ?? string.Empty,
+                request.ZipCode ?? string.Empty,
+                request.Country ?? string.Empty);
+
+            student.UpdateAddress(address);
         }
+
+        await _unitOfWork.Students.AddAsync(student, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        _logger.LogInformation("Created student {StudentId}", student.Id);
+
+        return student.Id;
     }
 }
