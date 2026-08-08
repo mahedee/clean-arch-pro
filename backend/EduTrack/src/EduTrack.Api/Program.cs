@@ -24,15 +24,16 @@ namespace EduTrack.Api
             // Add services to the container.
             builder.Services.AddControllers();
 
-            // Add CORS configuration
+            // Add CORS configuration — origins are driven by config to avoid AllowAnyOrigin in production
+            var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", policy =>
+                options.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyOrigin()
+                    policy.WithOrigins(allowedOrigins)
                           .AllowAnyMethod()
                           .AllowAnyHeader()
-                          .WithExposedHeaders("X-Correlation-ID"); // Expose correlation ID header
+                          .WithExposedHeaders("X-Correlation-ID");
                 });
             });
 
@@ -117,7 +118,7 @@ namespace EduTrack.Api
             });
 
             // Add CORS middleware early in the pipeline
-            app.UseCors("AllowAll");
+            app.UseCors("CorsPolicy");
 
             // Structured HTTP request logging via Serilog.
             // Security: query strings and headers are intentionally excluded to prevent
