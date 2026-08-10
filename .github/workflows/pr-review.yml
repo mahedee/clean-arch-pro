@@ -178,7 +178,7 @@ jobs:
       uses: actions/checkout@v4
     
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
     
@@ -193,7 +193,7 @@ jobs:
       run: dotnet build backend/EduTrack/EduTrack.sln
     
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v4
 
   pr-size-check:
     name: PR Size Validation
