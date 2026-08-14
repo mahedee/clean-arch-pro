@@ -8,14 +8,13 @@ public class CorrelationIdMiddleware : IMiddleware
 
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
-        if (!context.Request.Headers.TryGetValue(CorrelationIdHeader, out var correlationId))
-        {
-            correlationId = Guid.NewGuid().ToString();
-            context.Request.Headers.Append(CorrelationIdHeader, correlationId);
-        }
+        var correlationId = context.Request.Headers.TryGetValue(CorrelationIdHeader, out var correlationIdValues)
+            ? correlationIdValues.ToString()
+            : Guid.NewGuid().ToString();
 
-        context.Response.Headers.Append(CorrelationIdHeader, correlationId);
-        Activity.Current?.SetTag("correlation_id", correlationId.ToString());
+        context.Response.Headers[CorrelationIdHeader] = correlationId;
+        context.Items[CorrelationIdHeader] = correlationId;
+        Activity.Current?.SetTag("correlation_id", correlationId);
 
         await next(context);
     }
