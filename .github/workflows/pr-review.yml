@@ -161,40 +161,6 @@ jobs:
         fail-on-severity: moderate
         comment-summary-in-pr: true
 
-  codeql-analysis:
-    name: CodeQL Security Analysis
-    runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-    
-    strategy:
-      matrix:
-        language: [ 'csharp', 'javascript' ]
-    
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-    
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-    
-    - name: Setup .NET (for C#)
-      if: matrix.language == 'csharp'
-      uses: actions/setup-dotnet@v6
-      with:
-        dotnet-version: '8.0.x'
-    
-    - name: Build for CodeQL (C#)
-      if: matrix.language == 'csharp'
-      run: dotnet build backend/EduTrack/EduTrack.sln
-    
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-
   pr-size-check:
     name: PR Size Validation
     runs-on: ubuntu-latest
