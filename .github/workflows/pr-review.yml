@@ -164,6 +164,10 @@ jobs:
   pr-size-check:
     name: PR Size Validation
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     steps:
     - name: Check PR Size
       uses: actions/github-script@v7
@@ -173,6 +177,19 @@ jobs:
           const changedFiles = pr.changed_files;
           const additions = pr.additions;
           const deletions = pr.deletions;
+          
+          const safeWrite = async (operation, callback) => {
+            try {
+              await callback();
+            } catch (error) {
+              if (error.status === 403 && error.message?.includes('Resource not accessible by integration')) {
+                core.warning(`Skipping ${operation} because the workflow token cannot modify this pull request.`);
+                return;
+              }
+          
+              throw error;
+            }
+          };
           
           let sizeLabel = '';
           let comment = '';
@@ -191,27 +208,31 @@ jobs:
           }
           
           // Add size label
-          github.rest.issues.addLabels({
+          await safeWrite('PR size label', () => github.rest.issues.addLabels({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: pr.number,
             labels: [sizeLabel]
-          });
+          }));
           
           // Add comment for large PRs
           if (comment) {
-            github.rest.issues.createComment({
+            await safeWrite('PR size comment', () => github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pr.number,
               body: comment
-            });
+            }));
           }
 
   assign-reviewers:
     name: Auto-assign Reviewers
     runs-on: ubuntu-latest
     if: github.event.action == 'opened'
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     steps:
     - name: Auto-assign Reviewers and Labels
       uses: actions/github-script@v7
@@ -220,6 +241,19 @@ jobs:
           const pr = context.payload.pull_request;
           const author = pr.user.login;
           
+          const safeWrite = async (operation, callback) => {
+            try {
+              await callback();
+            } catch (error) {
+              if (error.status === 403 && error.message?.includes('Resource not accessible by integration')) {
+                core.warning(`Skipping ${operation} because the workflow token cannot modify this pull request.`);
+                return;
+              }
+          
+              throw error;
+            }
+          };
+          
           // Determine labels based on files changed
           const { data: files } = await github.rest.pulls.listFiles({
             owner: context.repo.owner,
@@ -227,7 +261,7 @@ jobs:
             pull_number: pr.number
           });
           
-          let labels = [];
+          const labels = new Set();
           let hasBackendChanges = false;
           let hasFrontendChanges = false;
           
@@ -239,27 +273,27 @@ jobs:
               hasFrontendChanges = true;
             }
             if (file.filename.includes('test') || file.filename.includes('spec')) {
-              labels.push('tests');
+              labels.add('tests');
             }
             if (file.filename.includes('README') || file.filename.includes('.md')) {
-              labels.push('documentation');
+              labels.add('documentation');
             }
           });
           
-          if (hasBackendChanges) labels.push('backend');
-          if (hasFrontendChanges) labels.push('frontend');
+          if (hasBackendChanges) labels.add('backend');
+          if (hasFrontendChanges) labels.add('frontend');
           
           // Add Clean Architecture label
-          labels.push('clean-architecture');
+          labels.add('clean-architecture');
           
           // Apply labels
-          if (labels.length > 0) {
-            github.rest.issues.addLabels({
+          if (labels.size > 0) {
+            await safeWrite('PR labels', () => github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pr.number,
-              labels: labels
-            });
+              labels: [...labels]
+            }));
           }
           
           // Add initial comment with guidelines
@@ -279,9 +313,9 @@ jobs:
             `Please address any issues identified before requesting human review.\n\n` +
             `*Happy coding! 🚀*`;
           
-          github.rest.issues.createComment({
+          await safeWrite('welcome comment', () => github.rest.issues.createComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: pr.number,
             body: welcomeComment
-          });
+          }));
