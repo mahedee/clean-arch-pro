@@ -88,11 +88,11 @@ jobs:
         Write-Host "✅ Clean Architecture dependencies validated successfully!"
 
     # Security Scan
-    - name: Run Security Scan
-      uses: securecodewarrior/github-action-add-sarif@v1
+    - name: Upload Security Scan Results
+      if: hashFiles('security-scan-results.sarif') != ''
+      uses: github/codeql-action/upload-sarif@v3
       with:
-        sarif-file: 'security-scan-results.sarif'
-      continue-on-error: true
+        sarif_file: 'security-scan-results.sarif'
 
     # PR Comment with Review Results
     - name: Comment PR with Review Results
