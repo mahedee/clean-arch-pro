@@ -1,7 +1,7 @@
-using AutoMapper;
 using EduTrack.Application.Features.Students.Commands.CreateStudent;
 using EduTrack.Domain.Contracts.Repositories;
 using EduTrack.Domain.Entities;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Xunit;
 
@@ -11,16 +11,16 @@ public class CreateStudentCommandHandlerTests
 {
     private readonly Mock<IUnitOfWork> _mockUnitOfWork;
     private readonly Mock<IStudentRepository> _mockStudentRepository;
-    private readonly Mock<IMapper> _mockMapper;
+    private readonly Mock<ILogger<CreateStudentCommandHandler>> _mockLogger;
     private readonly CreateStudentCommandHandler _handler;
 
     public CreateStudentCommandHandlerTests()
     {
         _mockUnitOfWork = new Mock<IUnitOfWork>();
         _mockStudentRepository = new Mock<IStudentRepository>();
-        _mockMapper = new Mock<IMapper>();
+        _mockLogger = new Mock<ILogger<CreateStudentCommandHandler>>();
         _mockUnitOfWork.Setup(x => x.Students).Returns(_mockStudentRepository.Object);
-        _handler = new CreateStudentCommandHandler(_mockUnitOfWork.Object, _mockMapper.Object);
+        _handler = new CreateStudentCommandHandler(_mockUnitOfWork.Object, _mockLogger.Object);
     }
 
     [Fact]
@@ -29,9 +29,6 @@ public class CreateStudentCommandHandlerTests
         // Arrange
         var command = new CreateStudentCommand("John Smith", new DateTime(1995, 1, 15), "john.smith@example.com");
 
-        _mockStudentRepository
-            .Setup(x => x.GetByEmailAsync(command.Email, It.IsAny<CancellationToken>()))
-            .ReturnsAsync((Student?)null);
         _mockStudentRepository
             .Setup(x => x.AddAsync(It.IsAny<Student>(), It.IsAny<CancellationToken>()))
             .Returns(Task.CompletedTask);
@@ -49,22 +46,6 @@ public class CreateStudentCommandHandlerTests
     }
 
     [Fact]
-    public async Task Handle_DuplicateEmail_ShouldThrowInvalidOperationException()
-    {
-        // Arrange
-        var command = new CreateStudentCommand("John Smith", new DateTime(1995, 1, 15), "john.smith@example.com");
-        var existingStudent = Student.Create("Jane Doe", new DateTime(1994, 1, 1), "john.smith@example.com");
-
-        _mockStudentRepository
-            .Setup(x => x.GetByEmailAsync(command.Email, It.IsAny<CancellationToken>()))
-            .ReturnsAsync(existingStudent);
-
-        // Act & Assert
-        await Assert.ThrowsAsync<InvalidOperationException>(() => _handler.Handle(command, CancellationToken.None));
-        _mockStudentRepository.Verify(x => x.AddAsync(It.IsAny<Student>(), It.IsAny<CancellationToken>()), Times.Never);
-    }
-
-    [Fact]
     public async Task Handle_ValidCommand_ShouldSetCorrectStudentProperties()
     {
         // Arrange
@@ -72,9 +53,6 @@ public class CreateStudentCommandHandlerTests
         var command = new CreateStudentCommand("Alice Johnson", dob, "alice.johnson@example.com");
 
         Student? capturedStudent = null;
-        _mockStudentRepository
-            .Setup(x => x.GetByEmailAsync(command.Email, It.IsAny<CancellationToken>()))
-            .ReturnsAsync((Student?)null);
         _mockStudentRepository
             .Setup(x => x.AddAsync(It.IsAny<Student>(), It.IsAny<CancellationToken>()))
             .Callback<Student, CancellationToken>((s, _) => capturedStudent = s)

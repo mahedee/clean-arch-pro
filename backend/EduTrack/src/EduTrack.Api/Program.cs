@@ -7,7 +7,6 @@ using EduTrack.Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 using Serilog;
-using System.Diagnostics;
 
 namespace EduTrack.Api
 {
@@ -22,7 +21,11 @@ namespace EduTrack.Api
             builder.Host.UseSerilog();
 
             // Add services to the container.
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+                });
 
             // Add CORS configuration — origins are driven by config to avoid AllowAnyOrigin in production
             var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
@@ -63,6 +66,8 @@ namespace EduTrack.Api
             // Add health checks
             builder.Services.AddHealthChecks();
 
+            builder.Services.AddTransient<CorrelationIdMiddleware>();
+
             // Add application services (includes MediatR, FluentValidation, and enhanced behaviors)
             builder.Services.AddApplication();
 
@@ -80,7 +85,7 @@ namespace EduTrack.Api
                     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
                     
                     logger.LogInformation("Applying database migrations...");
-                    context.Database.Migrate(); // Apply migrations for PostgreSQL
+                    await context.Database.MigrateAsync();
                     logger.LogInformation("Database migrations completed successfully");
                     
                     // Seed the database with initial data
@@ -98,27 +103,12 @@ namespace EduTrack.Api
 
             // Configure the HTTP request pipeline.
             
-            // Add correlation ID middleware (should be early in pipeline)
-            app.Use(async (context, next) =>
-            {
-                const string correlationIdHeaderName = "X-Correlation-ID";
-                
-                if (!context.Request.Headers.TryGetValue(correlationIdHeaderName, out var correlationId))
-                {
-                    correlationId = Guid.NewGuid().ToString();
-                    context.Request.Headers.Add(correlationIdHeaderName, correlationId);
-                }
-                
-                context.Response.Headers.Add(correlationIdHeaderName, correlationId);
-                
-                // Add to Activity for distributed tracing
-                Activity.Current?.SetTag("correlation_id", correlationId.ToString());
-                
-                await next();
-            });
+            app.UseMiddleware<CorrelationIdMiddleware>();
 
             // Add CORS middleware early in the pipeline
             app.UseCors("CorsPolicy");
+
+            app.UseHttpsRedirection();
 
             // Structured HTTP request logging via Serilog.
             // Security: query strings and headers are intentionally excluded to prevent
@@ -154,8 +144,6 @@ namespace EduTrack.Api
             {
                 Predicate = check => check.Tags.Contains("ready")
             });
-
-            app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

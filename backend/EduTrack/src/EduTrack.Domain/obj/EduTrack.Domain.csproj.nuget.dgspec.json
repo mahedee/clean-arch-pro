@@ -1,35 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {}
+    "/home/runner/work/edu-track/edu-track/backend/EduTrack/src/EduTrack.Domain/EduTrack.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj": {
+    "/home/runner/work/edu-track/edu-track/backend/EduTrack/src/EduTrack.Domain/EduTrack.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj",
+        "projectUniqueName": "/home/runner/work/edu-track/edu-track/backend/EduTrack/src/EduTrack.Domain/EduTrack.Domain.csproj",
         "projectName": "EduTrack.Domain",
-        "projectPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\EduTrack.Domain.csproj",
-        "packagesPath": "C:\\Users\\mahedee\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\GitHub\\edu-track\\backend\\EduTrack\\src\\EduTrack.Domain\\obj\\",
+        "projectPath": "/home/runner/work/edu-track/edu-track/backend/EduTrack/src/EduTrack.Domain/EduTrack.Domain.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/work/edu-track/edu-track/backend/EduTrack/src/EduTrack.Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mahedee\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -44,10 +39,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "MediatR.Contracts": {
@@ -71,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using EduTrack.Application.Features.Students.Commands.CreateStudent;
 using EduTrack.Application.Features.Students.Commands.UpdateStudent;
@@ -9,7 +10,6 @@ using EduTrack.Application.Features.Students.Queries.GetStudentList;
 using EduTrack.Application.Features.Students.Queries.GetStudentsByStatus;
 using EduTrack.Application.Features.Students.Queries.GetStudentsOnProbation;
 using EduTrack.Application.Features.Students.DTOs;
-using EduTrack.Domain.Entities;
 using EduTrack.Domain.Enums;
 
 [ApiController]
@@ -37,27 +37,24 @@ public class StudentsController : ControllerBase
         return Ok(result);
     }
 
+    [Authorize]
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<Guid>> CreateStudent([FromBody] CreateStudentDto dto)
     {
-        // Debug logging to check what's being received
-        Console.WriteLine($"DEBUG: Received DTO FullName: '{dto.FullName}'");
-        Console.WriteLine($"DEBUG: Received DTO Email: '{dto.Email}'");
-        Console.WriteLine($"DEBUG: Received DTO PhoneNumber: '{dto.PhoneNumber}'");
-        
         var command = new CreateStudentCommand(
-            dto.FullName, dto.DateOfBirth, dto.Email, 
-            dto.PhoneNumber, 
-            dto.Address?.Street, dto.Address?.City, dto.Address?.State, 
+            dto.FullName, dto.DateOfBirth, dto.Email,
+            dto.PhoneNumber,
+            dto.Address?.Street, dto.Address?.City, dto.Address?.State,
             dto.Address?.ZipCode, dto.Address?.Country);
-        
-        Console.WriteLine($"DEBUG: Command FullName: '{command.FullName}'");
-        
+
         var studentId = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetStudent), new { id = studentId }, studentId);
     }
 
+    [Authorize]
     [HttpPut("{id:guid}")]
+    [Authorize]
     public async Task<ActionResult> UpdateStudent(Guid id, [FromBody] UpdateStudentDto dto)
     {
         var command = new UpdateStudentCommand(
@@ -68,7 +65,9 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut("{id:guid}/contact")]
+    [Authorize]
     public async Task<ActionResult> UpdateStudentContact(Guid id, [FromBody] UpdateStudentContactDto dto)
     {
         var command = new UpdateStudentContactCommand(id, dto.Email, dto.PhoneNumber);
@@ -76,7 +75,9 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut("{id:guid}/gpa")]
+    [Authorize]
     public async Task<ActionResult> UpdateStudentGPA(Guid id, [FromBody] UpdateGPADto dto)
     {
         var command = new UpdateStudentGPACommand(id, dto.GPAValue);
@@ -84,20 +85,19 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut("{id:guid}/status")]
+    [Authorize]
     public async Task<ActionResult> ChangeStudentStatus(Guid id, [FromBody] ChangeStatusDto dto)
     {
-        if (!Enum.TryParse<StudentStatus>(dto.NewStatus, true, out var newStatus))
-        {
-            return BadRequest($"Invalid status: {dto.NewStatus}");
-        }
-        
-        var command = new ChangeStudentStatusCommand(id, newStatus);
+        var command = new ChangeStudentStatusCommand(id, dto.NewStatus);
         await _mediator.Send(command);
         return NoContent();
     }
 
+    [Authorize]
     [HttpDelete("{id:guid}")]
+    [Authorize]
     public async Task<ActionResult> DeleteStudent(Guid id)
     {
         var command = new DeleteStudentCommand(id);
