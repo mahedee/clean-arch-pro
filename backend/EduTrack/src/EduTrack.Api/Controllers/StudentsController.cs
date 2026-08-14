@@ -39,6 +39,7 @@ public class StudentsController : ControllerBase
 
     [Authorize]
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<Guid>> CreateStudent([FromBody] CreateStudentDto dto)
     {
         var command = new CreateStudentCommand(
@@ -53,6 +54,7 @@ public class StudentsController : ControllerBase
 
     [Authorize]
     [HttpPut("{id:guid}")]
+    [Authorize]
     public async Task<ActionResult> UpdateStudent(Guid id, [FromBody] UpdateStudentDto dto)
     {
         var command = new UpdateStudentCommand(
@@ -65,6 +67,7 @@ public class StudentsController : ControllerBase
 
     [Authorize]
     [HttpPut("{id:guid}/contact")]
+    [Authorize]
     public async Task<ActionResult> UpdateStudentContact(Guid id, [FromBody] UpdateStudentContactDto dto)
     {
         var command = new UpdateStudentContactCommand(id, dto.Email, dto.PhoneNumber);
@@ -74,6 +77,7 @@ public class StudentsController : ControllerBase
 
     [Authorize]
     [HttpPut("{id:guid}/gpa")]
+    [Authorize]
     public async Task<ActionResult> UpdateStudentGPA(Guid id, [FromBody] UpdateGPADto dto)
     {
         var command = new UpdateStudentGPACommand(id, dto.GPAValue);
@@ -83,6 +87,7 @@ public class StudentsController : ControllerBase
 
     [Authorize]
     [HttpPut("{id:guid}/status")]
+    [Authorize]
     public async Task<ActionResult> ChangeStudentStatus(Guid id, [FromBody] ChangeStatusDto dto)
     {
         var command = new ChangeStudentStatusCommand(id, dto.NewStatus);
@@ -92,6 +97,7 @@ public class StudentsController : ControllerBase
 
     [Authorize]
     [HttpDelete("{id:guid}")]
+    [Authorize]
     public async Task<ActionResult> DeleteStudent(Guid id)
     {
         var command = new DeleteStudentCommand(id);

@@ -21,7 +21,11 @@ namespace EduTrack.Api
             builder.Host.UseSerilog();
 
             // Add services to the container.
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+                });
 
             // Add CORS configuration — origins are driven by config to avoid AllowAnyOrigin in production
             var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
