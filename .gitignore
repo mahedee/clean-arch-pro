@@ -95,8 +95,10 @@ bld/                # Build directory
 [Ll]ogs/            # Application log files
 
 # Clean Architecture specific build artifacts
-**/EduTrack.*/bin/  # All project bin folders
-**/EduTrack.*/obj/  # All project obj folders
+# All project bin folders
+**/EduTrack.*/bin/
+# All project obj folders
+**/EduTrack.*/obj/
 
 # ===============================================
 # 🎨 IDE CACHE & TEMP FILES
