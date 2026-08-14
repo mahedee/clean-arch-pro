@@ -96,7 +96,7 @@ jobs:
 
     # PR Comment with Review Results
     - name: Comment PR with Review Results
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       if: always()
       with:
         script: |
@@ -170,7 +170,7 @@ jobs:
       issues: write
     steps:
     - name: Check PR Size
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: |
           const pr = context.payload.pull_request;
@@ -235,7 +235,7 @@ jobs:
       issues: write
     steps:
     - name: Auto-assign Reviewers and Labels
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: |
           const pr = context.payload.pull_request;
