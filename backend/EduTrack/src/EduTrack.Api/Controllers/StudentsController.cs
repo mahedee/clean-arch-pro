@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using EduTrack.Application.Features.Students.Commands.CreateStudent;
 using EduTrack.Application.Features.Students.Commands.UpdateStudent;
@@ -36,6 +37,7 @@ public class StudentsController : ControllerBase
         return Ok(result);
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Guid>> CreateStudent([FromBody] CreateStudentDto dto)
     {
@@ -49,6 +51,7 @@ public class StudentsController : ControllerBase
         return CreatedAtAction(nameof(GetStudent), new { id = studentId }, studentId);
     }
 
+    [Authorize]
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> UpdateStudent(Guid id, [FromBody] UpdateStudentDto dto)
     {
@@ -60,6 +63,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut("{id:guid}/contact")]
     public async Task<ActionResult> UpdateStudentContact(Guid id, [FromBody] UpdateStudentContactDto dto)
     {
@@ -68,6 +72,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut("{id:guid}/gpa")]
     public async Task<ActionResult> UpdateStudentGPA(Guid id, [FromBody] UpdateGPADto dto)
     {
@@ -76,6 +81,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut("{id:guid}/status")]
     public async Task<ActionResult> ChangeStudentStatus(Guid id, [FromBody] ChangeStatusDto dto)
     {
@@ -84,6 +90,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> DeleteStudent(Guid id)
     {
