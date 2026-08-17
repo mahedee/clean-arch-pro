@@ -1,0 +1,33 @@
+# CODEOWNERS
+#
+# Purpose:
+# This file defines the owners responsible for reviewing changes
+# to specific files or directories in this repository.
+#
+# How it works:
+# - Each rule maps a file/directory pattern to one or more owners.
+# - Owners can be individual GitHub users or GitHub teams.
+# - When a Pull Request changes a matching file, GitHub automatically
+#   requests a review from the specified owner(s).
+# - If branch protection requires CODEOWNER approval, the PR cannot
+#   be merged until the required owner approves it.
+#
+# Syntax:
+# <file/directory pattern> <owner>
+#
+# Examples:
+# /src/Backend/ @backend-team
+# /src/Frontend/ @frontend-team
+#
+# Note:
+# This file should be named exactly "CODEOWNERS" (without .md or .txt)
+# and is typically located under .github/CODEOWNERS.
+
+# Docs changes
+/docs/ @mahedee
+
+# Frontend
+# /src/Frontend/ @frontend-team
+
+# Infrastructure
+# /infrastructure/ @devops-team
