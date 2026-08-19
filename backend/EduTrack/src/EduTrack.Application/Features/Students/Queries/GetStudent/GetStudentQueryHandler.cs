@@ -2,6 +2,7 @@ using AutoMapper;
 using MediatR;
 using EduTrack.Application.Features.Students.DTOs;
 using EduTrack.Domain.Contracts.Repositories;
+using EduTrack.Domain.Common.Exceptions;
 
 namespace EduTrack.Application.Features.Students.Queries.GetStudent;
 
@@ -24,7 +25,7 @@ public class GetStudentQueryHandler : IRequestHandler<GetStudentQuery, StudentDt
         var student = await _unitOfWork.Students.GetByIdAsync(request.StudentId, cancellationToken);
         
         if (student == null)
-            return null;
+            throw new EntityNotFoundException(nameof(student), request.StudentId);
             
         return _mapper.Map<StudentDto>(student);
     }

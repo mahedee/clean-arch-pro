@@ -13,34 +13,14 @@ using Xunit;
 
 namespace EduTrack.Api.IntegrationTests.ErrorHandling;
 
-public class ErrorHandlingIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
+public class ErrorHandlingIntegrationTests : IClassFixture<CustomWebApplicationFactory<Program>>
 {
-    private readonly WebApplicationFactory<Program> _factory;
+    private readonly CustomWebApplicationFactory<Program> _factory;
     private readonly HttpClient _client;
 
-    public ErrorHandlingIntegrationTests(WebApplicationFactory<Program> factory)
+    public ErrorHandlingIntegrationTests(CustomWebApplicationFactory<Program> factory)
     {
-        _factory = factory.WithWebHostBuilder(builder =>
-        {
-            builder.ConfigureServices(services =>
-            {
-                // Remove the app's ApplicationDbContext registration
-                var descriptor = services.SingleOrDefault(
-                    d => d.ServiceType == typeof(DbContextOptions<ApplicationDbContext>));
-
-                if (descriptor != null)
-                {
-                    services.Remove(descriptor);
-                }
-
-                // Add ApplicationDbContext using an in-memory database for testing
-                services.AddDbContext<ApplicationDbContext>(options =>
-                {
-                    options.UseInMemoryDatabase("TestDb");
-                });
-            });
-        });
-
+        _factory = factory;
         _client = _factory.CreateClient();
     }
 
@@ -48,7 +28,7 @@ public class ErrorHandlingIntegrationTests : IClassFixture<WebApplicationFactory
     public async Task GetStudent_WhenStudentNotFound_ShouldReturnNotFoundWithProblemDetails()
     {
         // Arrange
-        var nonExistentStudentId = 999;
+        var nonExistentStudentId = Guid.NewGuid();
 
         // Act
         var response = await _client.GetAsync($"/api/students/{nonExistentStudentId}");
@@ -187,11 +167,14 @@ public class ErrorHandlingIntegrationTests : IClassFixture<WebApplicationFactory
         {
             builder.ConfigureServices(services =>
             {
-                // Configure a database that will fail
-                var descriptor = services.SingleOrDefault(
-                    d => d.ServiceType == typeof(DbContextOptions<ApplicationDbContext>));
-                
-                if (descriptor != null)
+                // Remove all EF-related services to replace with a failing database
+                var toRemove = services.Where(d =>
+                    d.ServiceType == typeof(ApplicationDbContext) ||
+                    d.ServiceType == typeof(DbContextOptions<ApplicationDbContext>) ||
+                    d.ServiceType.Name.Contains("DbContext") ||
+                    d.ServiceType.Namespace?.Contains("EntityFrameworkCore") == true)
+                    .ToList();
+                foreach (var descriptor in toRemove)
                 {
                     services.Remove(descriptor);
                 }
@@ -199,7 +182,7 @@ public class ErrorHandlingIntegrationTests : IClassFixture<WebApplicationFactory
                 // Add a bad connection string to simulate database failure
                 services.AddDbContext<ApplicationDbContext>(options =>
                 {
-                    options.UseNpgsql("Host=nonexistent;Database=test;Username=test;Password=test");
+                    options.UseNpgsql("Host=nonexistent;Database=test;Username=test;******");
                 });
             });
         }).CreateClient();

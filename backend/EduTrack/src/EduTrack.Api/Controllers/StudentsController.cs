@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using EduTrack.Application.Features.Students.Commands.CreateStudent;
 using EduTrack.Application.Features.Students.Commands.UpdateStudent;
@@ -37,9 +36,7 @@ public class StudentsController : ControllerBase
         return Ok(result);
     }
 
-    [Authorize]
     [HttpPost]
-    [Authorize]
     public async Task<ActionResult<Guid>> CreateStudent([FromBody] CreateStudentDto dto)
     {
         var command = new CreateStudentCommand(
@@ -52,9 +49,7 @@ public class StudentsController : ControllerBase
         return CreatedAtAction(nameof(GetStudent), new { id = studentId }, studentId);
     }
 
-    [Authorize]
     [HttpPut("{id:guid}")]
-    [Authorize]
     public async Task<ActionResult> UpdateStudent(Guid id, [FromBody] UpdateStudentDto dto)
     {
         var command = new UpdateStudentCommand(
@@ -65,9 +60,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
     [HttpPut("{id:guid}/contact")]
-    [Authorize]
     public async Task<ActionResult> UpdateStudentContact(Guid id, [FromBody] UpdateStudentContactDto dto)
     {
         var command = new UpdateStudentContactCommand(id, dto.Email, dto.PhoneNumber);
@@ -75,9 +68,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
     [HttpPut("{id:guid}/gpa")]
-    [Authorize]
     public async Task<ActionResult> UpdateStudentGPA(Guid id, [FromBody] UpdateGPADto dto)
     {
         var command = new UpdateStudentGPACommand(id, dto.GPAValue);
@@ -85,9 +76,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
     [HttpPut("{id:guid}/status")]
-    [Authorize]
     public async Task<ActionResult> ChangeStudentStatus(Guid id, [FromBody] ChangeStatusDto dto)
     {
         var command = new ChangeStudentStatusCommand(id, dto.NewStatus);
@@ -95,9 +84,7 @@ public class StudentsController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
     [HttpDelete("{id:guid}")]
-    [Authorize]
     public async Task<ActionResult> DeleteStudent(Guid id)
     {
         var command = new DeleteStudentCommand(id);
