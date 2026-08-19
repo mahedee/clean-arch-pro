@@ -41,7 +41,7 @@ jobs:
       run: dotnet build backend/EduTrack/EduTrack.sln --no-restore --configuration Release
 
     - name: Run Backend Tests
-      run: dotnet test backend/EduTrack/tests/ --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
+      run: dotnet test backend/EduTrack/EduTrack.sln --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
     - name: Code Coverage Report
       uses: codecov/codecov-action@v7
