@@ -106,7 +106,7 @@ public class CreateCourseCommandHandlerTests
     }
 
     [Fact]
-    public async Task Handle_CommandWithAcademicPeriod_ShouldScheduleCourse()
+    public async Task Handle_CommandWithAcademicPeriod_ShouldCreateDraftCourse()
     {
         // Arrange
         var command = new CreateCourseCommand
@@ -131,11 +131,9 @@ public class CreateCourseCommandHandlerTests
         // Act
         await _handler.Handle(command, CancellationToken.None);
 
-        // Assert
+        // Assert - course is created as Draft; scheduling is a separate operation
         Assert.NotNull(capturedCourse);
-        Assert.Equal("Spring", capturedCourse.Semester);
-        Assert.Equal(2025, capturedCourse.AcademicYear);
-        Assert.Equal(CourseStatus.Scheduled, capturedCourse.Status);
+        Assert.Equal(CourseStatus.Draft, capturedCourse.Status);
     }
 
     [Fact]

@@ -24,7 +24,7 @@ public class GetDepartmentQueryHandlerTests
         _mockDepartmentRepository = new Mock<IDepartmentRepository>();
         _mockUnitOfWork.Setup(x => x.Departments).Returns(_mockDepartmentRepository.Object);
 
-        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<DepartmentProfile>());
+        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<DepartmentProfile>(), Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         _mapper = mapperConfig.CreateMapper();
 
         _handler = new GetDepartmentQueryHandler(_mockUnitOfWork.Object, _mapper);
@@ -88,7 +88,7 @@ public class GetDepartmentListQueryHandlerTests
         _mockDepartmentRepository = new Mock<IDepartmentRepository>();
         _mockUnitOfWork.Setup(x => x.Departments).Returns(_mockDepartmentRepository.Object);
 
-        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<DepartmentProfile>());
+        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<DepartmentProfile>(), Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         _mapper = mapperConfig.CreateMapper();
 
         _handler = new GetDepartmentListQueryHandler(_mockUnitOfWork.Object, _mapper);

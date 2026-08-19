@@ -6,6 +6,7 @@ namespace EduTrack.Domain.Contracts.Repositories
         ICourseRepository Courses { get; }
         ITeacherRepository Teachers { get; }
         IDepartmentRepository Departments { get; }
+        IFeedbackRepository Feedbacks { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }

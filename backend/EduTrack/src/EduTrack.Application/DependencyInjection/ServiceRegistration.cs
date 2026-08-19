@@ -31,7 +31,7 @@ namespace EduTrack.Application.DependencyInjection
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             // Register AutoMapper with all profiles
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(cfg => cfg.AddMaps(Assembly.GetExecutingAssembly()));
 
             return services;
         }

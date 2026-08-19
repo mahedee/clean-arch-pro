@@ -84,14 +84,21 @@ namespace EduTrack.Api
                     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
                     
-                    logger.LogInformation("Applying database migrations...");
-                    await context.Database.MigrateAsync();
-                    logger.LogInformation("Database migrations completed successfully");
-                    
-                    // Seed the database with initial data
-                    logger.LogInformation("Starting database seeding...");
-                    await EduTrack.Infrastructure.Data.SeedData.DataSeeder.SeedAllDataAsync(context, logger);
-                    logger.LogInformation("Database seeding completed successfully");
+                    if (context.Database.IsRelational() && !app.Environment.IsEnvironment("Testing"))
+                    {
+                        logger.LogInformation("Applying database migrations...");
+                        await context.Database.MigrateAsync();
+                        logger.LogInformation("Database migrations completed successfully");
+                        
+                        // Seed the database with initial data
+                        logger.LogInformation("Starting database seeding...");
+                        await EduTrack.Infrastructure.Data.SeedData.DataSeeder.SeedAllDataAsync(context, logger);
+                        logger.LogInformation("Database seeding completed successfully");
+                    }
+                    else if (!context.Database.IsRelational())
+                    {
+                        await context.Database.EnsureCreatedAsync();
+                    }
                 }
                 catch (Exception ex)
                 {

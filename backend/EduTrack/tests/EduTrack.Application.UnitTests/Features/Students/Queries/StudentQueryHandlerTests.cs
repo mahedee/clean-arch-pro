@@ -54,7 +54,7 @@ public class GetStudentQueryHandlerTests
     }
 
     [Fact]
-    public async Task Handle_NonExistingStudentId_ShouldReturnNull()
+    public async Task Handle_NonExistingStudentId_ShouldThrowEntityNotFoundException()
     {
         // Arrange
         var studentId = Guid.NewGuid();
@@ -65,11 +65,9 @@ public class GetStudentQueryHandlerTests
 
         var query = new GetStudentQuery(studentId);
 
-        // Act
-        var result = await _handler.Handle(query, CancellationToken.None);
-
-        // Assert
-        Assert.Null(result);
+        // Act & Assert
+        await Assert.ThrowsAsync<EduTrack.Domain.Common.Exceptions.EntityNotFoundException>(
+            () => _handler.Handle(query, CancellationToken.None));
         _mockMapper.Verify(x => x.Map<StudentDto>(It.IsAny<Student>()), Times.Never);
     }
 }

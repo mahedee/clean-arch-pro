@@ -27,7 +27,7 @@ public class GetCourseQueryHandlerTests
         var mapperConfig = new MapperConfiguration(cfg =>
         {
             cfg.AddProfile<CourseMappingProfile>();
-        });
+        }, Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         _mapper = mapperConfig.CreateMapper();
 
         _handler = new GetCourseQueryHandler(_mockUnitOfWork.Object, _mapper);
@@ -100,7 +100,7 @@ public class GetCourseListQueryHandlerTests
         var mapperConfig = new MapperConfiguration(cfg =>
         {
             cfg.AddProfile<CourseMappingProfile>();
-        });
+        }, Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         _mapper = mapperConfig.CreateMapper();
 
         _handler = new GetCourseListQueryHandler(_mockUnitOfWork.Object, _mapper);

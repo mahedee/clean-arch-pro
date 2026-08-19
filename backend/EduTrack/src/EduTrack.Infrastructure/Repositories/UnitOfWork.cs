@@ -29,6 +29,9 @@ namespace EduTrack.Infrastructure.Repositories
         private IDepartmentRepository? _departmentRepository;
         public IDepartmentRepository Departments => _departmentRepository ??= new DepartmentRepository(_context, _loggerFactory.CreateLogger<DepartmentRepository>());
 
+        private IFeedbackRepository? _feedbackRepository;
+        public IFeedbackRepository Feedbacks => _feedbackRepository ??= new FeedbackRepository(_context, _loggerFactory.CreateLogger<FeedbackRepository>());
+
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             _logger.LogDebug("Persisting pending changes to database...");
