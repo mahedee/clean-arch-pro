@@ -360,14 +360,23 @@ namespace EduTrack.Api.IntegrationTests.Controllers
                 $"/api/courses/{createdCourse!.Id}/schedule",
                 new { Semester = "Fall", AcademicYear = 2025, StartDate = startDate, EndDate = endDate });
             scheduleResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var scheduledCourse = JsonConvert.DeserializeObject<CourseDto>(
+                await scheduleResponse.Content.ReadAsStringAsync());
+            scheduledCourse!.Status.Should().Be("Scheduled");
 
             // Act & Assert - Activate
             var activateResponse = await _client.PostAsync($"/api/courses/{createdCourse.Id}/activate", null);
             activateResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var activatedCourse = JsonConvert.DeserializeObject<CourseDto>(
+                await activateResponse.Content.ReadAsStringAsync());
+            activatedCourse!.Status.Should().Be("Active");
 
             // Act & Assert - Complete
             var completeResponse = await _client.PostAsJsonAsync($"/api/courses/{createdCourse.Id}/complete", new { });
             completeResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var completedCourse = JsonConvert.DeserializeObject<CourseDto>(
+                await completeResponse.Content.ReadAsStringAsync());
+            completedCourse!.Status.Should().Be("Completed");
         }
 
         private async Task<Course> CreateTestCourse(string title = "Test Course", string code = "TC001", string department = "Computer Science")

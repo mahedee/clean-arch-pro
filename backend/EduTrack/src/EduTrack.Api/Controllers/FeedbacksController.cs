@@ -7,6 +7,8 @@ using EduTrack.Application.Features.Feedbacks.Queries.GetFeedbacks;
 using EduTrack.Application.Features.Feedbacks.Dtos;
 using EduTrack.Api.Models.Requests;
 
+namespace EduTrack.Api.Controllers;
+
 [ApiController]
 [Route("api/[controller]")]
 public class FeedbacksController : ControllerBase

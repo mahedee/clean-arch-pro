@@ -109,7 +109,7 @@ public class CoursesController : ControllerBase
     /// <param name="command">Schedule details</param>
     /// <returns>Success status</returns>
     [HttpPost("{id}/schedule")]
-    public async Task<ActionResult> ScheduleCourse(Guid id, [FromBody] ScheduleCourseCommand command)
+    public async Task<ActionResult<CourseDto>> ScheduleCourse(Guid id, [FromBody] ScheduleCourseCommand command)
     {
         try
         {
@@ -118,8 +118,9 @@ public class CoursesController : ControllerBase
             
             if (!result)
                 return NotFound(new { Message = "Course not found" });
-                
-            return Ok(new { Message = "Course scheduled successfully" });
+            
+            var courseDto = await _mediator.Send(new GetCourseQuery(id));
+            return Ok(courseDto);
         }
         catch (ValidationException ex)
         {
