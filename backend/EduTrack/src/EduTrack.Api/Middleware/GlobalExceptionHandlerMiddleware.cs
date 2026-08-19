@@ -236,8 +236,14 @@ public class GlobalExceptionHandlerMiddleware
             return correlationId.FirstOrDefault() ?? Guid.NewGuid().ToString();
         }
 
+        // Check if CorrelationIdMiddleware already added the header to the response
+        if (context.Response.Headers.TryGetValue(correlationIdHeaderName, out var existingResponseId))
+        {
+            return existingResponseId.FirstOrDefault() ?? Guid.NewGuid().ToString();
+        }
+
         var newCorrelationId = Guid.NewGuid().ToString();
-        context.Response.Headers.Add(correlationIdHeaderName, newCorrelationId);
+        context.Response.Headers.Append(correlationIdHeaderName, newCorrelationId);
 
         return newCorrelationId;
     }

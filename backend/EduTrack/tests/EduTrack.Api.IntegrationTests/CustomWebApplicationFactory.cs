@@ -61,13 +61,6 @@ namespace EduTrack.Api.IntegrationTests
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                // Clean up the database
-                using var scope = Services.CreateScope();
-                var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                dbContext.Database.EnsureDeleted();
-            }
             base.Dispose(disposing);
         }
     }

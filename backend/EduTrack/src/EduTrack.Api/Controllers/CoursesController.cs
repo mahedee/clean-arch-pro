@@ -34,7 +34,7 @@ public class CoursesController : ControllerBase
     /// <param name="command">Course creation details</param>
     /// <returns>Created course ID</returns>
     [HttpPost]
-    public async Task<ActionResult<Guid>> CreateCourse([FromBody] CreateCourseCommand command)
+    public async Task<ActionResult<CourseDto>> CreateCourse([FromBody] CreateCourseCommand command)
     {
         try
         {
@@ -44,8 +44,9 @@ public class CoursesController : ControllerBase
             // 3. If validation fails -> throws ValidationException
             // 4. If validation passes -> continues to CreateCourseCommandHandler
             var courseId = await _mediator.Send(command);
+            var courseDto = await _mediator.Send(new GetCourseQuery(courseId));
             
-            return CreatedAtAction(nameof(GetCourse), new { id = courseId }, courseId);
+            return CreatedAtAction(nameof(GetCourse), new { id = courseId }, courseDto);
         }
         catch (ValidationException ex)
         {
@@ -76,7 +77,7 @@ public class CoursesController : ControllerBase
     /// <param name="command">Course update details</param>
     /// <returns>Success status</returns>
     [HttpPut("{id}")]
-    public async Task<ActionResult> UpdateCourse(Guid id, [FromBody] UpdateCourseCommand command)
+    public async Task<ActionResult<CourseDto>> UpdateCourse(Guid id, [FromBody] UpdateCourseCommand command)
     {
         try
         {
@@ -85,8 +86,9 @@ public class CoursesController : ControllerBase
             
             if (!result)
                 return NotFound(new { Message = "Course not found" });
-                
-            return NoContent();
+            
+            var courseDto = await _mediator.Send(new GetCourseQuery(id));
+            return Ok(courseDto);
         }
         catch (ValidationException ex)
         {
@@ -107,7 +109,7 @@ public class CoursesController : ControllerBase
     /// <param name="command">Schedule details</param>
     /// <returns>Success status</returns>
     [HttpPost("{id}/schedule")]
-    public async Task<ActionResult> ScheduleCourse(Guid id, [FromBody] ScheduleCourseCommand command)
+    public async Task<ActionResult<CourseDto>> ScheduleCourse(Guid id, [FromBody] ScheduleCourseCommand command)
     {
         try
         {
@@ -116,8 +118,9 @@ public class CoursesController : ControllerBase
             
             if (!result)
                 return NotFound(new { Message = "Course not found" });
-                
-            return Ok(new { Message = "Course scheduled successfully" });
+            
+            var courseDto = await _mediator.Send(new GetCourseQuery(id));
+            return Ok(courseDto);
         }
         catch (ValidationException ex)
         {
@@ -141,7 +144,7 @@ public class CoursesController : ControllerBase
     /// <param name="id">Course ID</param>
     /// <returns>Success status</returns>
     [HttpPost("{id}/activate")]
-    public async Task<ActionResult> ActivateCourse(Guid id)
+    public async Task<ActionResult<CourseDto>> ActivateCourse(Guid id)
     {
         try
         {
@@ -150,8 +153,9 @@ public class CoursesController : ControllerBase
             
             if (!result)
                 return NotFound(new { Message = "Course not found" });
-                
-            return Ok(new { Message = "Course activated successfully" });
+            
+            var courseDto = await _mediator.Send(new GetCourseQuery(id));
+            return Ok(courseDto);
         }
         catch (InvalidOperationException ex)
         {
@@ -166,7 +170,7 @@ public class CoursesController : ControllerBase
     /// <param name="command">Completion details</param>
     /// <returns>Success status</returns>
     [HttpPost("{id}/complete")]
-    public async Task<ActionResult> CompleteCourse(Guid id, [FromBody] CompleteCourseCommand command)
+    public async Task<ActionResult<CourseDto>> CompleteCourse(Guid id, [FromBody] CompleteCourseCommand command)
     {
         try
         {
@@ -175,8 +179,9 @@ public class CoursesController : ControllerBase
             
             if (!result)
                 return NotFound(new { Message = "Course not found" });
-                
-            return Ok(new { Message = "Course completed successfully" });
+            
+            var courseDto = await _mediator.Send(new GetCourseQuery(id));
+            return Ok(courseDto);
         }
         catch (ValidationException ex)
         {

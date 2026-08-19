@@ -45,21 +45,6 @@ public class CreateCourseCommandHandler : IRequestHandler<CreateCourseCommand, G
             course.SetPrerequisiteRequirement(totalPrerequisiteCredits);
         }
 
-        // Schedule the course if academic period is provided
-        if (!string.IsNullOrEmpty(request.AcademicPeriod))
-        {
-            // Parse academic period (e.g., "Fall 2024" -> semester="Fall", year=2024)
-            var parts = request.AcademicPeriod.Split(' ');
-            if (parts.Length == 2 && int.TryParse(parts[1], out var year))
-            {
-                var semester = parts[0];
-                var startDate = DateTime.Now.AddMonths(1); // Default start date
-                var endDate = startDate.AddMonths(4); // Default end date (4 months later)
-                
-                course.Schedule(semester, year, startDate, endDate);
-            }
-        }
-
         // Add to repository
         await _unitOfWork.Courses.AddAsync(course);
         

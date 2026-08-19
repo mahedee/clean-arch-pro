@@ -17,6 +17,7 @@ namespace EduTrack.Infrastructure.Data
         public DbSet<Teacher> Teachers => Set<Teacher>();
         public DbSet<Department> Departments => Set<Department>();
         public DbSet<Attendance> Attendances => Set<Attendance>();
+        public DbSet<Feedback> Feedbacks => Set<Feedback>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -156,6 +157,15 @@ namespace EduTrack.Infrastructure.Data
             });
 
             // Seed data will be applied at runtime, not through migrations
+
+            modelBuilder.Entity<Feedback>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Message).IsRequired().HasMaxLength(2000);
+                entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.IsRead).IsRequired().HasDefaultValue(false);
+                entity.Property(e => e.ReadAt);
+            });
         }
     }
 }

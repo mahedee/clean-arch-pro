@@ -45,7 +45,7 @@ public class CreateCourseCommand : IRequest<Guid>
     /// <summary>
     /// Course prerequisites (course IDs)
     /// </summary>
-    public List<Guid> Prerequisites { get; set; } = new();
+    public List<Guid>? Prerequisites { get; set; }
 
     /// <summary>
     /// Academic year/semester for the course

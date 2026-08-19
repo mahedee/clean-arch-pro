@@ -24,7 +24,7 @@ public class GetTeacherQueryHandlerTests
         _mockTeacherRepository = new Mock<ITeacherRepository>();
         _mockUnitOfWork.Setup(x => x.Teachers).Returns(_mockTeacherRepository.Object);
 
-        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<TeacherProfile>());
+        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<TeacherProfile>(), Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         _mapper = mapperConfig.CreateMapper();
 
         _handler = new GetTeacherQueryHandler(_mockUnitOfWork.Object, _mapper);
@@ -92,7 +92,7 @@ public class GetTeacherListQueryHandlerTests
         _mockTeacherRepository = new Mock<ITeacherRepository>();
         _mockUnitOfWork.Setup(x => x.Teachers).Returns(_mockTeacherRepository.Object);
 
-        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<TeacherProfile>());
+        var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<TeacherProfile>(), Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         _mapper = mapperConfig.CreateMapper();
 
         _handler = new GetTeacherListQueryHandler(_mockUnitOfWork.Object, _mapper);
