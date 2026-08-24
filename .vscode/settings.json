@@ -1,6 +1,11 @@
 {
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.codeGeneration.instructions": [],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".github/commit-message.md"
+    }
+  ],
   "chat.promptFilesLocations": {
     ".github/prompts": true
   }
