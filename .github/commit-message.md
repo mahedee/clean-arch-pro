@@ -4,7 +4,7 @@ Write a descriptive commit message based solely on the provided changes. Follow 
 
 ## Rules
 
-- Use the correct gitmoji from the provided list to represent the type of change
+- Use the conventional commit format `<type>[optional scope]: <subject>`, and prefix the subject with the appropriate gitmoji from the list
 - Separate subject from body with a blank line
 - Use the body to explain what and why you have done something. In most cases, you can leave out details about how a change has been made
 - In the body, use bullet points to describe everything
